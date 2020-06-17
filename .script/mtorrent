@@ -1,0 +1,25 @@
+#!/bin/sh
+
+
+
+while true; do
+    read -p "Do you wish to install this torrent? [Y/n] " yn
+    case $yn in
+        [Yy] ) 	echo "HAHAHAHA! You FOOL this a MOTHER F*CKING VIRUS!!! 😈"
+		break
+		;;
+
+        [Nn] ) 	echo "Well, bye then 👋"
+		exit
+		;;
+
+        * ) 	echo "Sure, you can waste my time... 🙂 "
+		echo ""
+		;;
+    esac
+done
+
+list=$(transmission-remote -l| tail -n +2| head -n +2| tr -s " " "\t")
+
+echo "$list"
+

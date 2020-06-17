@@ -1,0 +1,10 @@
+#!/bin/sh
+
+dir=/tmp/mpv-wpf.txt
+pid=$(cat $dir |grep -i "$1.*F")
+if [ -z "$(echo $pid)" ]; then
+	pid=$(cat $dir| tail -1)
+fi
+
+wid=$(echo $pid| head -1| cut -d' ' -f1)
+echo $wid

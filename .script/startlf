@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+declare -r -x TEXT_WIDTH=38	# Change according to your character width (in pixels)
+declare -r -x TEXT_HEIGHT=12	# Change according to your character height
+declare -r -x UEBERZUG_FIFO="$(mktemp --dry-run --suffix "lf-$$-ueberzug")"
+declare -r -x PREVIEW_TMP="$(mktemp -d --suffix "lf-$$-ueberzug")"
+
+function check_cache {
+    if [ ! -d "$HOME/.cache/lf" ]; then
+	mkdir -p "$HOME/.cache/lf"
+    fi
+}
+
+function start_ueberzug {
+    mkfifo "${UEBERZUG_FIFO}"
+    <"${UEBERZUG_FIFO}" ueberzug layer --parser bash --silent &
+    3> "${UEBERZUG_FIFO}" exec
+}
+
+function remove_temp {
+    rm "${UEBERZUG_FIFO}"
+    rm -r "${PREVIEW_TMP}"
+}
+
+
+check_cache
+start_ueberzug
+lf
+remove_temp

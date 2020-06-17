@@ -1,0 +1,43 @@
+#!/bin/sh
+app=$(echo $0|rev |cut -d'/' -f1| rev)
+
+# Flagshandler
+t=""
+while getopts ":t" OPTIONS; do
+  case $OPTIONS in
+    t  ) t="-t"
+         ;;
+    \? ) echo "$app: Unrecognized option '-$OPTARG'">&2
+         exit 1
+     esac
+done
+
+shift "$((OPTIND-1))"
+
+# Handles with which application the URL should be opened
+case $1 in
+	*youtube*watch*)
+		setsid -f youtube-viewer --no-interactive "$1" > /dev/null 2>&1 || setsid -f mpv "$1" > /dev/null 2>&1 &
+		;;
+	*twitch*videos*)
+		setsid -f streamlink --twitch-low-latency $1 best > /dev/null 2>&1 || setsid -f mpv --profile=low-latency "$1" > /dev/null 2>&1 &
+		;;
+	*twitch*)
+		setsid -f streamlink --twitch-low-latency $1 best > /dev/null 2>&1 &
+		streamer=$(echo $1 | cut -d'/' -f4)
+		bspc desktop '^3' -l tiled
+		bspc desktop -f '^3' && surf "www.twitch.tv/$streamer/chat" > /dev/null 2>&1 && bspc desktop '^3' -l monocle
+		;;
+	*torrent|magnet*)
+		dunstify -u critical "Torrent" " Still a work in progress... :("
+		;;
+	*)
+		link=$(echo "$1" | tr './:' '|'|sed "s/|\+/\|/g"|sed "s/|$//")
+		supported="$(egrep -iw "$link" $XDG_DATA_HOME/youtube-dl/supported)"
+		if [ ! -z "$supported" ]; then
+			[ -z "$t" ] && mpv $1 || mpv --profile=low-latency $1 || dunstify -u critical "MPV" ":(\nERROR: mpv ran into a problem"
+		else
+			qutebrowser ":open $t $1"
+		fi
+		;;
+	esac

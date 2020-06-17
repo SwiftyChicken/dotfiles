@@ -1,0 +1,8 @@
+#!/bin/sh
+source "`ueberzug library`"
+
+{
+    ImageLayer::add [identifier]="example0" [x]="0" [y]="0" [path]="/home/swifty/Pictures/wall.jpg"
+    read
+} | ImageLayer
+

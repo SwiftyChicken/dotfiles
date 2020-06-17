@@ -1,0 +1,4 @@
+#!/bin/sh
+
+class=$(xprop -id "$1"| grep "WM_CLASS(STRING) ="| cut -d',' -f2| cut -d'"' -f2)
+echo $class

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ -z "$(wmctrl -l | cut -d' ' -f1| xargs -L1 xclass| grep "Spotify")" ] \
+	&& (polybar player &) \
+	&& (LD_PRELOAD=/usr/lib/libcurl.so.3:/usr/lib/spotifywm.so spotify 2> /dev/null 2>&1)\
+	&& (xdo kill -N 'Spotify' ; xdo kill -a 'polybar-player_eDP1') \
+	|| exit 0
