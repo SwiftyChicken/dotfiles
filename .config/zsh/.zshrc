@@ -17,6 +17,7 @@ nice_exit_code() {
 	
 	# is this a signal name (error code = signal + 128) ?
 	case $exit_status in
+		128)  sig_name=󰗖 ;;
 		129)  sig_name=HUP ;;
 		130)  sig_name=󰚌 ;;
 		131)  sig_name=QUIT ;;

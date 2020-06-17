@@ -339,3 +339,46 @@ ls
 ls -a
 rm -rf .git INSTALL.md screenshot.png readme.md .gitignore
 ls
+config push --set-upstream SwiftyChicken master
+git status
+config status
+rm rf Documents/Repos/dotfiles
+rm -rf Documents/Repos/dotfiles
+mkdir Documents/Repos/dotfiles
+git init --bare Documents/Repos/dotfiles
+config status
+config add .script/
+config commit -m "Adding script folder."
+config log
+config add .config/polybar .config/dunst .config/nvim .config/alacritty .config/bspwm .config/picom .config/qutebrowser .config/spicetify .config/sxhkd .config/zathura .config/zsh .config/aliasrc .config/env
+git rm --cached .config/qutebrowser/dracula
+config rm --cached .config/qutebrowser/dracula
+config rm --cached .config/qutebrowser/
+config rm -r --cached .config/qutebrowser
+config rm -rf --cached .config/qutebrowser
+config add .config/polybar .config/dunst .config/nvim .config/alacritty .config/bspwm .config/picom .config/qutebrowser .config/spicetify .config/sxhkd .config/zathura .config/zsh .config/aliasrc .config/env
+config commit -m "Add config files"
+config status
+config log
+$ git config --global user.name\
+
+$ git config --global user.name
+git config --global user.name
+config config --global user.name
+git config --global user.name
+git config --global user.email
+git config --global user.email erwema25@gmail.com
+git config --global user.name SwiftyChicken
+git config --global user.email
+git config --global user.name
+config push
+config push Swifty 
+config push SwiftyChicken
+config push SwiftyChicken https://github.com/SwiftyChicken/dotfiles
+config push SwiftyChicken "https://github.com/SwiftyChicken/dotfiles"
+config push SwiftyChicken https://github.com/SwiftyChicken/dotfiles.git
+config branch
+git log
+config branch
+config push SwiftyChicken https://github.com/SwiftyChicken/dotfiles.git
+$?
