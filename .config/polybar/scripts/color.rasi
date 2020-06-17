@@ -1,0 +1,111 @@
+* {
+  accent:           #ff004b;
+  background:       #101a2c;
+  background-light: #2d3848;
+  foreground:       #c8d8ff;
+  foreground-alt:   #fefefe;
+  on:               #66bb6a;
+  off:              #ef5350;
+}
+
+* {
+  /* General */
+  text-font:                            "Material Design Icons Desktop  32";
+  icon-font:                            "BreezeSans 0";
+  
+  option-6-listview-spacing:            6px;
+  menu-window-padding:                  5px 5px;
+  menu-element-padding:                 2px 0px -3px 3px;
+}
+
+#window {
+  width: 3.1%;
+  height: 26%;
+  anchor: east;
+  location: east;
+  x-offset: -10px;
+  y-offset: 0%;
+  border: 0px;
+  border-radius: 0%;
+}
+
+* {
+  background-color: @background;
+  text-color: @foreground;
+  font: @icon-font;
+}
+
+#horibox {
+  children: [ listview ];
+}
+
+#listview {
+  cycle: false;
+  spacing: 2.5%;
+  dynamic: true;
+  layout: vertical;
+}
+
+#element {
+  orientation: horizontal;
+  border: 0px;
+  border-radius: 100%;
+  background-color: @background-light;
+}
+
+element-icon {
+    size: 65px;
+    border: 0px;
+}
+
+#element.selected {
+  background-color: @accent;
+  text-color: @foreground-alt;
+}
+
+* {
+  font: @text-font;
+}
+
+#window {
+  padding: @menu-window-padding;
+  children: [ horibox ];
+}
+
+#listview {
+  spacing: @option-6-listview-spacing;
+  lines: 6;
+}
+
+#element {
+  font: @icon-font;
+  border: @menu-element-border;
+  padding: @menu-element-padding;
+  border-color: @background-light;
+}
+
+#element.selected {
+  border-color: @accent;
+}
+
+element.active,
+element.selected.urgent {
+  background-color: @on;
+  text-color: @background;
+  border-color: @on;
+}
+
+element.selected.urgent {
+  border-color: @accent;
+}
+
+element.urgent,
+element.selected.active {
+  background-color: @off;
+  text-color: @background;
+  border-color: @off;
+}
+
+element.selected.active {
+  border-color: @accent;
+}

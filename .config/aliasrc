@@ -1,0 +1,31 @@
+#!/bin/sh
+
+ ####################################
+ #           COLOR PALLETE          #
+ ####################################
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+red="\e[1;31m"
+green="\e[1;32m"
+nrm="\e[0m"
+
+ ####################################
+ #          LIST OF ALIASES         #
+ ####################################
+
+alias calc='calc -d'
+alias rm='rm -I'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+alias ls='ls --color=auto'
+alias vim='start-vim.sh'
+alias vi='start-vim.sh'
+alias config='/usr/bin/git --git-dir=$HOME/Documents/Repos/dotfiles/ --work-tree=$HOME'
+alias checkupdates='\
+echo "${bold}Checking Pacman...${normal}" \
+&& checkupdates || echo -e "${green}󰕥  Up To Date${nrm}";\
+echo "\n${bold}Checking the AUR...${normal}" \
+&& [ -z "$(yay -Qum)" ] \
+&& echo -e "${green}󰕥  Up To Date${nrm}" || yay -Qum ;\
+dunstify -u low "Pacman" "Finished checking for updates."'
