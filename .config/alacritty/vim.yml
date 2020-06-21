@@ -178,8 +178,8 @@ colors:
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '#d8d8d8'
-    cursor: '#d8d8d8'
+    text: '#072962'
+    cursor: '#d2d9dd'
 
   # Normal colors
   normal:
@@ -524,3 +524,4 @@ key_bindings:
 
   # Print all received window events.
   #print_events: false
+  # vim:ft=dosini
