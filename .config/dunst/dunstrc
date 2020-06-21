@@ -75,7 +75,7 @@
     shrink = true
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
-    transparency = 20
+    transparency = 18
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -208,32 +208,38 @@
 [spotify]
     body = *Spotify*
     format = "%b\n[ <span font_desc='Ubuntu Mono 20'><i>%s</i></span> ]"
-    backfround = "#191414"
+    background = "#191414"
 
 [bluetooth]
     summary = Bluetooth
     format = "<span size="x-large">󰂯<b>%s</b></span>\n%b"
-    background = "#2f66a9"
+    background = "#1555a0"
 
 [scrot]
     summary = Say cheese...
     format = "<span size="x-large">📷<b>  %s </b></span>\n<i>%b</i>"
-    background = "#987A5C"
+    background = "#7a614d"
+
+[zathura]
+    summary = *annotation's
+    format = "<span size="x-large">󰛓<b>  %s </b></span>\n<i>%b</i>"
+    foreground = "#0f3880"
+    background = "#e5efff"
 
 [pacman-S]
     summary = Pacman
     body = *installed*
     format = "<span size="x-large">󰏗<b> %s </b></span>\n%b"
-    background = "#325a95"
+    background = "#243577"
 
 [pacman-Rs]
     summary = Pacman
     body = *removed*
     format = "<span size="x-large">󰆴<b> %s </b></span>\n%b"
-    background = "#953232"
+    background = "#c8144c"
 
 [pacman-Syu]
     summary = Pacman
     body = *upgraded*
     format = "<span size="x-large">󱆢<b> %s </b></span>\n%b"
-    background = "#329555"
+    background = "#156142"
