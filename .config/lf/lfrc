@@ -1,0 +1,31 @@
+set icons
+set ratios 1:1
+set shell zsh
+set shellopts '-eu:--shwordsplit'
+set ifs "\n"
+set filesep "\n"  # default already
+map R :bulk-rename
+map ob $ln -f "$f" $HOME/.config/bspwm/wallpaper && feh --no-fehbg --bg-fill "$HOME/.config/bspwm/wallpaper" 2>/dev/null
+map oo $xdg-open "$f"
+set preview true
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
+
+cmd bulk-rename ${{
+    old=$(mktemp)
+    new=$(mktemp)
+    [ -n $fs ] && fs=$(ls)
+    printf "$fs\n" > $old
+    printf "$fs\n" > $new
+    $EDITOR $new
+    [ $(cat $new | wc -l) -ne $(cat $old | wc -l) ] && exit
+    paste $old $new | while read names; do
+        src=$(printf $names | cut -f1)
+        dst=$(printf $names | cut -f2)
+        [ $src = $dst ] && continue
+        [ -e $dst ] && continue
+        mv $src $dst
+    done
+    rm $old $new
+    lf -remote "send $id unselect"
+}}
