@@ -8,12 +8,15 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Rigellute/rigel'
 Plug 'rakr/vim-one'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 " Syntax highlighting
 Plug 'ap/vim-css-color'
 Plug 'sheerun/vim-polyglot'
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " Initialize plugin system
 call plug#end()
 
@@ -28,7 +31,9 @@ set ignorecase
 set smartcase
 set noswapfile
 set nohlsearch
+set autoread
 set mouse=a
+set t_Co=256
 " Use system clipboard
 set clipboard=unnamedplus
 " Colorscheme
@@ -57,6 +62,54 @@ map <C-l> <C-w>l
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline_theme = 'minimalist'
+
+""""""""""""""""""""""""""""""""""""""""
+"	  MARKDOWN PREVIEWER	       "
+""""""""""""""""""""""""""""""""""""""""
+let g:mkdp_auto_start = 1
+let g:mkdp_auto_close = 1
+let g:mkdp_refresh_slow = 0
+let g:mkdp_command_for_global = 0
+let g:mkdp_open_to_the_world = 0
+let g:mkdp_open_ip = ''
+let g:mkdp_browser = 'surf'
+let g:mkdp_echo_preview_url = 0
+let g:mkdp_browserfunc = ''
+let g:mkdp_markdown_css = '~/.config/nvim/plugin/markdown-preview/markdown.css'
+let g:mkdp_highlight_css = '~/.config/nvim/plugin/markdown-preview/highlight/tomorrow-night-blue.css'
+let g:mkdp_port = ''
+let g:mkdp_page_title = '「${name}-Markdown Preview'
+
+" options for markdown render
+" mkit: markdown-it options for render
+" katex: katex options for math
+" uml: markdown-it-plantuml options
+" maid: mermaid options
+" disable_sync_scroll: if disable sync scroll, default 0
+" sync_scroll_type: 'middle', 'top' or 'relative', default value is 'middle'
+"   middle: mean the cursor position alway show at the middle of the preview page
+"   top: mean the vim top viewport alway show at the top of the preview page
+"   relative: mean the cursor position alway show at the relative positon of the preview page
+" hide_yaml_meta: if hide yaml metadata, default is 1
+" sequence_diagrams: js-sequence-diagrams options
+" content_editable: if enable content editable for preview page, default: v:false
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false
+    \ }
+
+""""""""""""""""""""""""""""""""""""""""
+"	   COLOR HIGHLIGHTER	       "
+""""""""""""""""""""""""""""""""""""""""
+let g:cssColorVimDoNotMessMyUpdatetime = 1
 
 """"""""""""""""""""""""""""""""""""""""
 "	    NETRW SETINGS	       "
