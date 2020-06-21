@@ -36,7 +36,7 @@ case $1 in
 		sed -i "s/ F$/ C/I" $WPF
 		sed -i "s/$pid T$/$pid F/I" $WPF
 		grep -i " C$" $WPF | cut -d' ' -f1 |xargs -L1 -I{} bspc node {} -t tiled -g sticky=off -d '^3'
-		[ ! -z "$(bspc wm -g| grep ":OIII:")" ] && bspc desktop -f last && bspc node -f newest.local.!floating
+		[ ! -z "$(bspc wm -g| grep ":OIII:")" ] && bspc desktop -f last.occupied && bspc node -f newest.local.!floating
 		;;
 
 	-t)	if [ -z "$(grep -i "$pid C$" $WPF)" ]; then
