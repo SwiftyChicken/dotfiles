@@ -3,7 +3,7 @@
 <pre>
   _______________________________
 /    Thanks for passing by :)     \
-\ Dotfiles info are comming soon!  /
+\ Dotfiles manual is comming soon!/
   ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨ 
 	  \ \	     .".".".
 	    \\	   (`       `)               _.-=-.
