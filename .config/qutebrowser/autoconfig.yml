@@ -19,10 +19,14 @@ settings:
     global:
       normal:
         F: hint links spawn --detach urlhandler -t {hint-url}
+        I: hint inputs --first
         J: tab-prev
         K: tab-next
         V: enter-mode caret
         f: hint links spawn --detach urlhandler {hint-url}
+        gi: hint inputs --first
+        gv: spawn --detach urlhandler {url:pretty}
+        i: enter-mode insert
         j: scroll-px 0 200
         k: scroll-px 0 -200
   colors.completion.scrollbar.bg:

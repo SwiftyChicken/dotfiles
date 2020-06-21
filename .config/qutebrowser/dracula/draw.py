@@ -1,9 +1,9 @@
 def blood(c, options = {}):
     palette = {
-        'background': '#101723',
-        'background-alt': '#172132', 
+        'background': '#1c2c43',
+        'background-alt': '#101723', 
         'background-attention': '#bd2c40',
-        'border': '#101723',
+        'border': '#bd93f9',
         'current-line': '#44475a',
         'selection': '#44475a',
         'foreground': '#f8f8f2',
@@ -32,7 +32,7 @@ def blood(c, options = {}):
     })
 
     ## Background color of the completion widget category headers.
-    c.colors.completion.category.bg = palette['orange']
+    c.colors.completion.category.bg = palette['purple']
 
     ## Bottom border color of the completion widget category headers.
     c.colors.completion.category.border.bottom = palette['border']
@@ -273,7 +273,7 @@ def blood(c, options = {}):
 
     # ## Background color of selected even tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.even.bg = palette['background']
+    c.colors.tabs.selected.even.bg = palette['background-alt']
 
     # ## Foreground color of selected even tabs.
     # ## Type: QtColor
@@ -281,7 +281,7 @@ def blood(c, options = {}):
 
     # ## Background color of selected odd tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.odd.bg = palette['background']
+    c.colors.tabs.selected.odd.bg = palette['background-alt']
 
     # ## Foreground color of selected odd tabs.
     # ## Type: QtColor
