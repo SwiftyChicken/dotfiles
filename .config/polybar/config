@@ -8,10 +8,10 @@
           ;=====================================;
 
 [colors]
-background = #26354b
-background-alt = #101a2c
+background = #1c2c43
+background-alt = #0e1827
 foreground = #FEFEFE
-foreground-alt = #9da7d5 
+foreground-alt = #9ac4ff
 primary = #fff
 secondary = #a9b3c2
 alert = #bd2c40
@@ -121,10 +121,10 @@ cursor-click = pointer
 cursor-scroll = default
 
 [bar/music]
-width = 25%
+width = 30%
 height = 4.3%
-offset-x = 37.5%
-offset-y = 5%:1
+offset-x = 35%
+offset-y = 6%:1
 radius = 22
 fixed-center = true
 bottom = true
@@ -139,15 +139,16 @@ padding-left = 2
 padding-right = 2
 
 module-margin-left = 0
-module-margin-right = 1
+module-margin-right = 0
  
 font-0 = BreezeSans:pixelsize=16:style=Medium Condensed;2
 font-1 = Font Awesome 5 Pro:pixelsize=20:style=Solid;3
 font-2 = Font Awesome 5 Brands:pixelsize=21;3
 font-3 = SourceHanSansJP:pixelsize=14:style=Medium;2
 font-4 = Font Awesome 5 Pro:pixelsize=18:style=Solid;3
+font-5 = Hack Nerd Font:pixelsize=31:style=Medium Condensed;7
  
-modules-center = song
+modules-center = right song left
 
 override-redirect = true
 
@@ -387,7 +388,7 @@ label-focused-padding = 0
 label-occupied ="%icon% "
 label-occupied-padding = 0
 
-label-urgent ="%icon%%{F#ff004b}%{T3}%{O-12}󰀨%{T-}%{F-}"
+label-urgent ="%icon%%{F#ff004b}%{T3}%{O-12}󰀨 %{T-}%{F-}"
 label-urgent-padding = 0
 
 label-empty =
@@ -515,7 +516,8 @@ click-left = scrot "$(date +%s).png" -e 'mv "$f" ~/Pictures/Screenshots/ && duns
 
 [module/prev]
 type = custom/script
-exec = echo "%{T5}%{F#FFF}%{F-}%{T-}" &
+exec = echo "%{T5}%{T-}" &
+format = "%{F#e5efff}<label>%{F-}"
 interval = 0.5
 
 tail = true
@@ -528,29 +530,43 @@ interval = 0.5
 
 tail = true
 click-left = ~/.config/polybar/scripts/info.sh 2>/dev/null &
+click-right = bspc desktop -f '^10'
 
 [module/toggle]
 type = custom/script
-exec = [[ "$(playerctl -p spotify status)" == "Playing" ]] && echo "" || echo ""
+exec = [[ "$(playerctl -p spotify status 2>/dev/null)" == "Playing" ]] && echo "" || echo ""
 interval = 0.2
 
 tail = true
 click-left = playerctl --player=spotify play-pause &
 
+[module/right]
+type = custom/text
+content-background = #00000000
+content-foreground = #df191414
+content = ""
+
 [module/song]
 type = custom/script
-exec = ~/.config/polybar/scripts/song.sh 2>/dev/null 
-format = "<label>    "
-format-prefix = "%{F#1db954}     %{F-}"
-format-background = #ce191414
+exec = ~/.config/polybar/scripts/song.sh 2>/dev/null || echo "No player found"
+format = "<label>  "
+format-prefix = "%{F#1db954}   %{F-}"
+format-background = #df191414
 interval = 0.5
 
 tail = true
 click-left = playerctl -p spotify play-pause & 
 
+[module/left]
+type = custom/text
+content-background = #00000000
+content-foreground = #df191414
+content =""
+
 [module/next]
 type = custom/script
-exec = echo "%{T5}%{F#FFF}%{F-}%{T-}" &
+exec = echo "%{T5}%{T-}" &
+format = "%{F#e5efff}<label>%{F-}"
 interval = 0.5
 
 tail = true
