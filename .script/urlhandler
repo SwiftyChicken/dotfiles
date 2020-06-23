@@ -17,12 +17,15 @@ shift "$((OPTIND-1))"
 # Handles with which application the URL should be opened
 case $1 in
 	*youtube*watch*)
+		dunstify -r 5864642 "󰗃  YouTube" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#ff0041"
 		setsid -f youtube-viewer --no-interactive "$1" > /dev/null 2>&1 || setsid -f mpv "$1" > /dev/null 2>&1 &
 		;;
 	*twitch*videos*)
+		dunstify -r 5864642 "󰕃  Twitch" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#b736de"
 		setsid -f streamlink --twitch-low-latency $1 best > /dev/null 2>&1 || setsid -f mpv --profile=low-latency "$1" > /dev/null 2>&1 &
 		;;
 	*twitch*)
+		dunstify -r 5864642 "󰕃  Twitch" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#b736de"
 		setsid -f streamlink --twitch-low-latency $1 best > /dev/null 2>&1 &
 		streamer=$(echo $1 | cut -d'/' -f4)
 		bspc desktop '^3' -l tiled
@@ -35,7 +38,8 @@ case $1 in
 		link=$(echo "$1" | tr './:' '|'|sed "s/|\+/\|/g"|sed "s/|$//")
 		supported="$(egrep -iw "$link" $XDG_DATA_HOME/youtube-dl/supported)"
 		if [ ! -z "$supported" ]; then
-			[ -z "$t" ] && mpv $1 || mpv --profile=low-latency $1 || dunstify -u critical "MPV" ":(\nERROR: mpv ran into a problem"
+			dunstify -r 5864642 "󰄙  MPV" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#ff004b"
+			[ -z "$t" ] && mpv $1 || mpv --profile=low-latency $1 || dunstify -u critical -r 5864642 "MPV" "<b>ERROR:</b> Sorry, mpv failed.  🥺"
 		else
 			qutebrowser ":open $t $1"
 		fi
