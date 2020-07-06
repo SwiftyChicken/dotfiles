@@ -1,0 +1,449 @@
+PCSX2 1.7.0-20200613042937 - compiled on Jun 13 2020
+Savestate version: 0x9a0e0000
+
+Host Machine Init:
+	Operating System =  Linux 5.7.4-arch1-1 x86_64
+	Physical RAM     =  7684 MB
+	CPU name         =  Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+	Vendor/Model     =  GenuineIntel (stepping 09)
+	CPU speed        =  2.709 ghz (4 logical threads)
+	x86PType         =  Standard OEM
+	x86Flags         =  bfebfbff 7ffafbbf
+	x86EFlags        =  2c100000
+
+x86 Features Detected:
+	SSE2.. SSE3.. SSSE3.. SSE4.1.. SSE4.2.. AVX.. AVX2.. FMA
+
+Installing POSIX SIGSEGV handler...
+Reserving memory for recompilers...
+
+Loading plugins from /usr/lib32/pcsx2...
+	Bound   GS: libGSdx.so [GSdx (GCC 10.1.0 AVX2/AVX2) 1.2.0]
+	Bound  PAD: libonepad.so [OnePAD 20200613042937 2.0.0]
+	Bound SPU2: libspu2x-2.0.0.so [SPU2-X 2.0.0]
+	Bound CDVD: libCDVDnull.so [CDVDnull Driver 20200613042937 0.6.0]
+	Bound  USB: libUSBnull-0.7.0.so [USBnull Driver 20200613042937 0.7.0]
+	Bound   FW: libFWnull-0.7.0.so [FWnull Driver 20200613042937 0.7.0]
+	Bound DEV9: libdev9ghzdrk-0.4.so [GiGaHeRz's DEV9 Driver 0.4.0]
+Plugins loaded successfully.
+
+HLE Notice: ELF does not have a path.
+
+Initializing plugins...
+	Init GS
+	Init PAD
+	Init SPU2
+	Init CDVD
+	Init USB
+	Init FW
+FWnull plugin version 0,7
+Initializing FWnull
+	Init DEV9
+Plugins initialized successfully.
+
+Patches: No CRC found, using 00000000 instead.
+Opening plugins...
+	Opening GS
+(GameDB) 9863 games on record (loaded in 207ms)
+OpenGL information. GPU: Mesa Intel(R) HD Graphics 620 (KBL GT2). Vendor: Intel. Driver: (Core Profile) Mesa 20.1.1
+INFO: GL_ARB_sparse_texture is NOT SUPPORTED
+INFO: GL_ARB_sparse_texture2 is NOT SUPPORTED
+INFO: GL_ARB_gpu_shader5 is available
+INFO: GL_ARB_shader_image_load_store is available
+INFO: GL_ARB_compute_shader is available
+INFO: GL_ARB_shader_storage_buffer_object is available
+INFO: GL_ARB_texture_view is available
+INFO: GL_ARB_vertex_attrib_binding is available
+INFO: GL_ARB_clear_texture is available
+INFO: GL_ARB_multi_bind is available
+INFO: GL_ARB_direct_state_access is available
+INFO: GL_ARB_texture_barrier is available
+INFO: GL_ARB_get_texture_sub_image is available
+
+Failed to init the freetype face
+Current Renderer: OpenGL (Hardware renderer)
+No extenstion supported to get available memory. Use default value !
+Available VRAM/RAM:3840MB for textures
+	Opening PAD
+GSdx Lookup CRC:0
+GSdx Lookup CRC:0
+	Opening SPU2
+onepad: controller (Wireless Controller) detected with rumble support, GUID:050000004c050000cc09000000810000
+Request SDL audio driver: pulseaudio
+Opened SDL audio driver: pulseaudio
+	Opening CDVD
+isoFile open ok: /home/swifty/Games/PS2/GTA San Andreas/Grand Theft Auto - San Andreas (USA) (v3.00).iso
+	Image type  = DVD
+ * CDVD Disk Open: DVD, Single layer or unknown:
+ * * Track 1: Data (Mode 1) (2205584 sectors)
+	Opening USB
+	Opening FW
+	Opening DEV9
+Opening FWnull.
+Failed to GetNetAdapter()
+McdSlot 0 [File]: /home/swifty/.config/PCSX2/memcards/Mcd001.ps2
+McdSlot 1 [File]: /home/swifty/.config/PCSX2/memcards/Mcd002.ps2
+Plugins opened successfully.
+EE/iR5900-32 Recompiler Reset
+	Bios Found: Europe  v02.00(14/06/2004)  Console
+	BIOS r module not found, skipping...
+	BIOS r module not found, skipping...
+	BIOS e module not found, skipping...
+# Initialize memory (rev:3.70, ctm:196Mhz, cpuclk:147Mhz detected)
+FW read mem 0x1f80847c: 0x10000001
+FW write mem 0x1f808414: 0x417f0000
+FW read mem 0x1f808400: 0xffc00001
+FW write mem 0x1f80844c: 0xffffffff
+FW write mem 0x1f808420: 0xffffffff
+FW write mem 0x1f808428: 0xffffffff
+FW write mem 0x1f808430: 0xffffffff
+
+PlayStation 2 ======== Hard reset boot
+ ROMGEN=2004-0614, IOP info (CPUID=1f, CACH_CONFIG=0, 2MB, IOP mode)
+ <20040614-100914,ROMconf,PS20200EC20040614.bin:11696>
+# Total accessable memory size: 32 MB (B:2:8:0) (370:2:7c30)
+# TLB spad=0 kernel=1:12 default=13:30 extended=31:38
+# Initialize Start.
+# Initialize GS ...
+# Initialize INTC ...
+# Initialize TIMER ...
+# Initialize DMAC ...
+# Initialize VU1 ...
+# Initialize VIF1 ...
+# Initialize GIF ...
+# Initialize VU0 ...
+# Initialize VIF0 ...
+# Initialize IPU ...
+# Initialize FPU ...
+# Initialize User Memory ...
+onepad: controller (Wireless Controller) detected with rumble support, GUID:050000004c050000cc09000000810000
+# Initialize Scratch Pad ...
+# Initialize Done.
+
+EE DECI2 Manager version 0.06 Feb  6 2003 08:38:48
+  CPUID=2e20, BoardID=0, ROMGEN=2004-0614, 32M
+
+Patches: No CRC found, using 00000000 instead.
+(SYSTEM.CNF) Detected PS2 Disc = cdrom0:\SLUS_209.46;1
+(SYSTEM.CNF) Software version = 3.00
+(SYSTEM.CNF) Disc region type = NTSC
+found 0 symbols
+ELF (cdrom0:\SLUS_209.46;1) Game CRC = 0x2C6BE434, EntryPoint = 0x00100008
+(SYSTEM.CNF) Detected PS2 Disc = cdrom0:\SLUS_209.46;1
+(SYSTEM.CNF) Software version = 3.00
+(SYSTEM.CNF) Disc region type = NTSC
+
+IOP Realtime Kernel Ver.0.9.1
+    Copyright 1999 (C) Sony Computer Entertainment Inc. 
+Reboot service module.(99/11/10)
+cdvd driver module version 0.1.1 (C)SCEI
+Load File service.(99/11/05)
+Multi Threaded Fileio module.(99/11/15) 
+iop heap service (99/11/03)
+loadelf: fname cdrom0:¥SLUS_209.46;1 secname all
+loadelf version 3.30
+Input ELF format filename = cdrom0:¥SLUS_209.46;1
+0 00100000 0056b900 .......................................................................................
+Loaded, cdrom0:¥SLUS_209.46;1
+start address 0x100008
+gp address 00000000
+# Restart Without Memory Clear.
+# Initialize GS ...
+# Initialize INTC ...
+# Initialize TIMER ...
+# Initialize DMAC ...
+# Initialize VU1 ...
+# Initialize VIF1 ...
+# Initialize GIF ...
+# Initialize VU0 ...
+# Initialize VIF0 ...
+# Initialize IPU ...
+# Initialize FPU ...
+# Initialize Scratch Pad ...
+# Restart Without Memory Clear Done.
+Elf entry point @ 0x00100008 about to get recompiled. Load patches first.
+Get Reboot Request From EE
+GSdx Lookup CRC:2C6BE434
+GSdx Lookup CRC:2C6BE434
+ROM directory not found
+
+PlayStation 2 ======== Update rebooting..
+
+PlayStation 2 ======== Update reboot complete
+cdvdman Init
+
+IOP Realtime Kernel Ver. 2.2
+    Copyright 1999-2002 (C) Sony Computer Entertainment Inc. 
+Reboot service module.(99/11/10)
+cdvd driver module version 0.1.1 (C)SCEI
+Load File service.(99/11/05)
+Multi Threaded Fileio module.(99/11/15) 
+iop heap service (99/11/03)
+Loading cdrom0:¥SYSTEM¥SIO2MAN.IRX
+loadmodule: fname cdrom0:¥SYSTEM¥SIO2MAN.IRX args 0 arg 
+loadmodule: id 25, ret 0
+Loading cdrom0:¥SYSTEM¥PADMAN.IRX
+loadmodule: fname cdrom0:¥SYSTEM¥PADMAN.IRX args 0 arg 
+loadmodule: id 26, ret 0
+Loading cdrom0:¥SYSTEM¥LIBSD.IRX
+loadmodule: fname cdrom0:¥SYSTEM¥LIBSD.IRX args 0 arg 
+loadmodule: id 27, ret 0
+Loading cdrom0:¥SYSTEM¥SDRDRV.IRX
+loadmodule: fname cdrom0:¥SYSTEM¥SDRDRV.IRX args 0 arg 
+SDR driver version 4.0.1 (C) SCEI
+ Exit rsd_main 
+loadmodule: id 28, ret 2
+Loading cdrom0:¥SYSTEM¥MCMAN.IRX
+loadmodule: fname cdrom0:¥SYSTEM¥MCMAN.IRX args 0 arg 
+loadmodule: id 29, ret 2
+Loading cdrom0:¥SYSTEM¥MCSERV.IRX
+loadmodule: fname cdrom0:¥SYSTEM¥MCSERV.IRX args 0 arg 
+loadmodule: id 30, ret 2
+Loading cdrom0:¥SYSTEM¥CDSTREAM.IRX
+loadmodule: fname cdrom0:¥SYSTEM¥CDSTREAM.IRX args 0 arg 
+cdvd_stream: Loaded
+cdvd_stream: Registered LibraryEntries
+cdvd_stream: Start RpcServer Thread
+loadmodule: id 31, ret 0
+Loading cdrom0:¥SYSTEM¥IOPAUDIO.IRX
+loadmodule: fname cdrom0:¥SYSTEM¥IOPAUDIO.IRX args 0 arg 
+IOPAudio: Loaded IOPAudio module
+loadmodule: id 32, ret 0
+cdvd_stream: buffer 9bf00
+cdvd_stream: request queue abf00
+cdvd_stream: read info ac000
+cdvd_stream: Start Streaming Thread
+Loading code overlay mc.nm
+Loading code overlay mpeg.nm
+(UpdateVSyncRate) Mode Changed to NTSC.
+(UpdateVSyncRate) FPS Limit Changed : 59.94 fps
+========================== decode MPEG2 ============= 0 ===========
+IOP memory 0x000ac100(size:24576) is allocated
+IOP memory 0x000b2100(size:2048) is allocated
+file: ¥MOVIES¥VCNTSC.PSS;1
+-------- audio information --------------------
+[SShd]
+[SSbd]
+decode thread: aborted
+========================== decode MPEG2 ============= 1 ===========
+IOP memory 0x000ac100(size:24576) is allocated
+IOP memory 0x000b2100(size:2048) is allocated
+file: ¥MOVIES¥OPEN1.PSS;1
+-------- audio information --------------------
+[SShd]
+[SSbd]
+decode thread: aborted
+Loading code overlay init.nm
+IOPAudio: Started Sound Manager
+IOPAudio: Started Load Manager
+IOPAudio: Found BANKSLOT.DAT;1	LSN = 69f5, Size = 221722 bytes
+IOPAudio: 46 bank slots
+IOPAudio: Found PAKFILES.DAT;1	LSN = 6a67, Size = 468 bytes
+IOPAudio: Found PAKFILES.DAT;1	LSN = 6a67, Size = 468 bytes
+IOPAudio: 9 SFX pack files
+IOPAudio: Finding SFX pack file LSNs... IOPAudio: Found FEET01.PAK;1	LSN = e8251, Size = 126652 bytes
+IOPAudio: Found FEET02.PAK;1	LSN = 1cd759, Size = 126652 bytes
+IOPAudio: Found GENRL01.PAK;1	LSN = e7404, Size = 7497316 bytes
+IOPAudio: Found GENRL02.PAK;1	LSN = 1cc90c, Size = 7497316 bytes
+IOPAudio: Found PAIN_A01.PAK;1	LSN = 121372, Size = 1941724 bytes
+IOPAudio: Found PAIN_A02.PAK;1	LSN = 20687a, Size = 1941724 bytes
+IOPAudio: Found SCRIPT01.PAK;1	LSN = 121727, Size = 91943096 bytes
+IOPAudio: Found SCRIPT02.PAK;1	LSN = 206c2f, Size = 91943096 bytes
+IOPAudio: Found SPC_EA01.PAK;1	LSN = 12c812, Size = 36050600 bytes
+IOPAudio: Found SPC_FA01.PAK;1	LSN = 130cd5, Size = 28924952 bytes
+IOPAudio: Found SPC_GA01.PAK;1	LSN = 134401, Size = 317358068 bytes
+IOPAudio: Found SPC_NA01.PAK;1	LSN = 15a151, Size = 123033568 bytes
+IOPAudio: Found SPC_PA01.PAK;1	LSN = 168bfc, Size = 51153824 bytes
+Done
+IOPAudio: Found BANKLKUP.DAT;1	LSN = 6a62, Size = 8520 bytes
+IOPAudio: Found BANKLKUP.DAT;1	LSN = 6a62, Size = 8520 bytes
+IOPAudio:  sound banks
+IOPAudio: Found STRMPAKS.DAT;1	LSN = 6a68, Size = 256 bytes
+IOPAudio: Found STRMPAKS.DAT;1	LSN = 6a68, Size = 256 bytes
+IOPAudio: 16 stream pack files
+IOPAudio: Finding stream pack file LSNs... IOPAudio: Found AA.PAK;1	LSN = 18d684, Size = 18915336 bytes
+IOPAudio: Found ADVERTS.PAK;1	LSN = 181184, Size = 103284372 bytes
+IOPAudio: Found AMBIENCE.PAK;1	LSN = 174e78, Size = 102259872 bytes
+IOPAudio: Found BEATS.PAK;1	LSN = 16ed8e, Size = 50809640 bytes
+IOPAudio: Found CH.PAK;1	LSN = 18fa99, Size = 119996680 bytes
+IOPAudio: Found CO.PAK;1	LSN = 1bd307, Size = 128984300 bytes
+IOPAudio: Found CR.PAK;1	LSN = d4e07, Size = 154133616 bytes
+IOPAudio: Found CUTSCENE.PAK;1	LSN = 3e2b1, Size = 269618100 bytes
+IOPAudio: Found DS.PAK;1	LSN = 96aaa, Size = 164997452 bytes
+IOPAudio: Found HC.PAK;1	LSN = 19df7a, Size = 139880524 bytes
+IOPAudio: Found MH.PAK;1	LSN = aa560, Size = 162616928 bytes
+IOPAudio: Found MR.PAK;1	LSN = 5e4f3, Size = 145410252 bytes
+IOPAudio: Found NJ.PAK;1	LSN = 1aea48, Size = 122024200 bytes
+IOPAudio: Found RE.PAK;1	LSN = 83f2f, Size = 157012484 bytes
+IOPAudio: Found RG.PAK;1	LSN = 6fa4d, Size = 170331560 bytes
+IOPAudio: Found TK.PAK;1	LSN = bdb8b, Size = 194240276 bytes
+Done
+IOPAudio: Found TRAKLKUP.DAT;1	LSN = 6a69, Size = 23064 bytes
+IOPAudio: Found TRAKLKUP.DAT;1	LSN = 6a69, Size = 23064 bytes
+IOPAudio:  audio tracks
+IOPAudio: Started Audio Track Manager
+Initialised SoundManager
+IOPAudio: Loading sound bank 59 into bank slot 1...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 60 into bank slot 2...
+IOPAudio: Load complete
+IOPAudio: Loading sound 6 from bank 82 into bank slot 3...
+IOPAudio: Load complete
+IOPAudio: Loading sound 7 from bank 82 into bank slot 6...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 28 into bank slot 43...
+IOPAudio: Load complete
+Into TheGame!!!
+Loading code overlay fileload.nm
+IOPAudio: Loading sound bank 52 into bank slot 5...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 105 into bank slot 7...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 74 into bank slot 18...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 13 into bank slot 19...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 138 into bank slot 20...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 51 into bank slot 32...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 128 into bank slot 33...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 0 into bank slot 42...
+IOPAudio: Load complete
+Loading code overlay init.nm
+Loading code overlay init.nm
+Loading code overlay mc.nm
+IOPAudio Error: Cannot load bank/sound into bank slot 3 as slot is being played back
+IOPAudio Error: Cannot load bank/sound into bank slot 6 as slot is being played back
+IOPAudio: Starting track 174
+IOPAudio: Loading sound bank 27 into bank slot 4...
+IOPAudio: Load complete
+Loading code overlay clothes.nm
+IOPAudio: Loading sound bank 39 into bank slot 3...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 143 into bank slot 6...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 45 into bank slot 8...
+IOPAudio: Load complete
+IOPAudio: Stopping track
+Loading code overlay clothes.nm
+Loading code overlay cutscene.nm
+IOPAudio: Starting track 706
+IOPAudio: Stopping track
+IOPAudio: Loading sound bank 18 into bank slot 9...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 92 into bank slot 10...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 25 into bank slot 11...
+Loading code overlay mc.nm
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 86 into bank slot 12...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 40 into bank slot 13...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 19 into bank slot 41...
+IOPAudio: Load complete
+IOPAudio: Loading sound 246 from bank 641 into bank slot 21...
+IOPAudio: Load complete
+IOPAudio: Loading sound 60 from bank 642 into bank slot 24...
+IOPAudio: Load complete
+IOPAudio: Loading sound 25 from bank 461 into bank slot 25...
+IOPAudio: Load complete
+IOPAudio: Loading sound 63 from bank 642 into bank slot 22...
+IOPAudio: Load complete
+IOPAudio: Loading sound 19 from bank 456 into bank slot 23...
+IOPAudio: Load complete
+IOPAudio: Loading sound 102 from bank 144 into bank slot 26...
+IOPAudio: Load complete
+IOPAudio: Loading sound 31 from bank 432 into bank slot 25...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 131 into bank slot 14...
+IOPAudio: Load complete
+IOPAudio: Loading sound 0 from bank 491 into bank slot 23...
+IOPAudio: Load complete
+IOPAudio: Loading sound 159 from bank 434 into bank slot 21...
+IOPAudio: Load complete
+IOPAudio: Loading sound 131 from bank 460 into bank slot 22...
+IOPAudio: Load complete
+IOPAudio: Loading sound 169 from bank 434 into bank slot 21...
+IOPAudio: Load complete
+IOPAudio: Loading sound 114 from bank 460 into bank slot 22...
+IOPAudio: Load complete
+IOPAudio: Loading sound 166 from bank 434 into bank slot 21...
+IOPAudio: Load complete
+IOPAudio: Loading sound 5 from bank 460 into bank slot 25...
+IOPAudio: Load complete
+IOPAudio: Loading sound 122 from bank 460 into bank slot 22...
+IOPAudio: Load complete
+IOPAudio: Loading sound 165 from bank 434 into bank slot 21...
+IOPAudio: Load complete
+IOPAudio: Loading sound 139 from bank 460 into bank slot 22...
+IOPAudio: Load complete
+IOPAudio: Loading sound 27 from bank 382 into bank slot 21...
+IOPAudio: Load complete
+IOPAudio: Loading sound 2 from bank 437 into bank slot 22...
+IOPAudio: Load complete
+IOPAudio: Loading sound 64 from bank 460 into bank slot 25...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 34 into bank slot 15...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 94 into bank slot 16...
+IOPAudio: Load complete
+IOPAudio: Loading sound 38 from bank 608 into bank slot 23...
+IOPAudio: Load complete
+IOPAudio: Loading sound 105 from bank 144 into bank slot 26...
+IOPAudio: Load complete
+IOPAudio: Loading sound 9 from bank 634 into bank slot 24...
+IOPAudio: Load complete
+IOPAudio: Loading sound 128 from bank 608 into bank slot 21...
+IOPAudio: Load complete
+IOPAudio: Loading sound 8 from bank 634 into bank slot 23...
+IOPAudio: Load complete
+IOPAudio: Loading sound 152 from bank 600 into bank slot 22...
+IOPAudio: Load complete
+IOPAudio: Loading sound 141 from bank 608 into bank slot 21...
+IOPAudio: Load complete
+IOPAudio: Loading sound 25 from bank 641 into bank slot 24...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 136 into bank slot 17...
+IOPAudio: Load complete
+IOPAudio: Loading sound bank 1 into bank slot 31...
+IOPAudio: Load complete
+IOPAudio: Loading sound 24 from bank 641 into bank slot 25...
+IOPAudio: Load complete
+IOPAudio: Loading sound 54 from bank 642 into bank slot 23...
+IOPAudio: Load complete
+IOPAudio: Loading sound 41 from bank 608 into bank slot 24...
+IOPAudio: Load complete
+IOPAudio: Loading sound 157 from bank 144 into bank slot 26...
+IOPAudio: Load complete
+IOPAudio: Loading sound 5 from bank 196 into bank slot 27...
+IOPAudio: Load complete
+IOPAudio: Loading sound 6 from bank 196 into bank slot 28...
+IOPAudio: Load complete
+IOPAudio: Loading sound 111 from bank 144 into bank slot 26...
+IOPAudio: Load complete
+IOPAudio: Loading sound 233 from bank 640 into bank slot 25...
+IOPAudio: Load complete
+IOPAudio: Loading sound 242 from bank 641 into bank slot 21...
+IOPAudio: Load complete
+IOPAudio: Loading sound 16 from bank 590 into bank slot 22...
+IOPAudio: Load complete
+Loading code overlay clothes.nm
+Loading code overlay cutscene.nm
+IOPAudio: Starting track 703
+Closing plugins...
+	Closing DEV9
+	Closing FW
+	Closing USB
+	Closing CDVD
+Closing FWnull.
+	Closing SPU2
+	Closing PAD
+	Closing GS
+Delete 0 Shaders, 73 Programs, 28 Pipelines
+Plugins closed successfully.
+Shutting down plugins...
+Plugins shutdown successfully.
+(GameDB) Unloading...

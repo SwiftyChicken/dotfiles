@@ -15,6 +15,10 @@ nrm="\e[0m"
  ####################################
 
 alias calc='calc -d'
+alias tb='taskbook'
+alias a='taskbook -t'
+alias c='taskbook -c'
+alias torrent='transmission-remote'
 alias rm='rm -I'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'

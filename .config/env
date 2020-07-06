@@ -5,16 +5,16 @@
  ####################################
 
 # DEFAULT PROGRAMS:
-export EDITOR="start-vim.sh -w"
+export EDITOR="start-vim.sh"
 export BROWSER="qutebrowser"
 export TERM="alacritty"
 
 # BASIC VARIABLES:
-export PATH="$PATH:$HOME/.script"
-
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+export PATH="$PATH:$HOME/.local/bin:$XDG_DATA_HOME/chess-linux-x64"
 
 # CONFIG:
 export VIMINIT="source $HOME/.config/nvim/init.vim"
@@ -68,7 +68,7 @@ ex=󱁻:\
 *.js= :\
 *.json= :\
 *.lua=󰢱 :\
-*.md=󰷊 :\
+*.md=󰗚 :\
 *.php=󰌟 :\
 *.pl=:\
 *.pro=:\
@@ -107,8 +107,8 @@ ex=󱁻:\
 *.xz=󰏗 :\
 *.zst=:\
 *.tzst=:\
-*.bz2=:\
-*.bz=:\
+*.bz2=󰏓 :\
+*.bz=󰏓 :\
 *.tbz=:\
 *.tbz2=:\
 *.tz=:\
@@ -123,7 +123,7 @@ ex=󱁻:\
 *.ace=:\
 *.zoo=:\
 *.cpio=:\
-*.7z=:\
+*.7z=󰗄 :\
 *.rz=:\
 *.cab=:\
 *.wim=:\
@@ -197,11 +197,19 @@ ex=󱁻:\
 *.xspf=:\
 *.pdf=󰈥 :\
 *.nix=:\
-*.iso=󰉉 :\
+*.iso=󰨆 :\
+*.gba=󱎓 :\
 *.xcf=󱇣 :\
 *.docx=󰈬 :\
+*.dotx=󰈬 :\
 *.txt=󰈙 :\
 *.srt=󰨖 :\
 *.gitignore=󰊢 :\
 *.zshrc=󰒔 :\
+*.download=󰇚 :\
+*.yml=󰒔 :\
+*.tex=󰈛 :\
+*.tp=󱉬 :\
+*.doc=󱁯 :\
+*.todo=󰝖 :\
 "

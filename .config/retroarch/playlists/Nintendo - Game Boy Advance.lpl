@@ -1,0 +1,19 @@
+{
+  "version": "1.4",
+  "default_core_path": "",
+  "default_core_name": "",
+  "label_display_mode": 0,
+  "right_thumbnail_mode": 0,
+  "left_thumbnail_mode": 0,
+  "sort_mode": 0,
+  "items": [
+    {
+      "path": "/home/swifty/Games/GBA/Castlevania: Aria of Sorrow/0999 - Castlevania - Aria of Sorrow (U)(GBATemp).gba",
+      "label": "Castlevania - Aria of Sorrow (USA)",
+      "core_path": "/usr/lib/libretro/mgba_libretro.so",
+      "core_name": "Nintendo - Game Boy Advance (mGBA)",
+      "crc32": "35536183|crc",
+      "db_name": "Nintendo - Game Boy Advance.lpl"
+    }
+  ]
+}

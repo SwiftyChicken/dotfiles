@@ -1,0 +1,27 @@
+{
+  "version": "1.4",
+  "default_core_path": "",
+  "default_core_name": "",
+  "label_display_mode": 0,
+  "right_thumbnail_mode": 0,
+  "left_thumbnail_mode": 0,
+  "sort_mode": 2,
+  "items": [
+    {
+      "path": "/home/swifty/Videos/Kane.mp4",
+      "label": "",
+      "core_path": "builtin",
+      "core_name": "movieplayer",
+      "crc32": "",
+      "db_name": ""
+    },
+    {
+      "path": "/home/swifty/Videos/Movies/Iron Man (2008) [ENG]/Iron Man.mp4",
+      "label": "",
+      "core_path": "builtin",
+      "core_name": "movieplayer",
+      "crc32": "",
+      "db_name": ""
+    }
+  ]
+}

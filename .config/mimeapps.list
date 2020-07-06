@@ -1,0 +1,10 @@
+
+[Default Applications]
+application/pdf=zathura.desktop
+image/jpeg=sxiv.desktop
+image/jpg=sxiv.desktop
+image/gif=sxiv.desktop
+text/x-shellscript=nvim.desktop
+image/png=sxiv.desktop
+inode/directory=pcmanfm.desktop
+x-scheme-handler/mailspring=mailspring.desktop

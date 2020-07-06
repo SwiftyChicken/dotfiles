@@ -1,0 +1,10 @@
+2020/07/04-14:16:58.897 13a574 Reusing MANIFEST /home/swifty/.config/chess-nativefier-b30d50/Local Storage/leveldb/MANIFEST-000001
+2020/07/04-14:16:58.897 13a574 Recovering log #13
+2020/07/04-14:16:58.899 13a574 Level-0 table #17: started
+2020/07/04-14:16:58.905 13a574 Level-0 table #17: 32813 bytes OK
+2020/07/04-14:16:58.907 13a574 Recovering log #17
+2020/07/04-14:16:58.907 13a574 Reusing old log /home/swifty/.config/chess-nativefier-b30d50/Local Storage/leveldb/000017.log 
+2020/07/04-14:16:58.914 13a574 Delete type=0 #13
+2020/07/04-14:18:03.963 13bd52 Level-0 table #19: started
+2020/07/04-14:18:03.969 13bd52 Level-0 table #19: 36206 bytes OK
+2020/07/04-14:18:03.975 13bd52 Delete type=0 #17

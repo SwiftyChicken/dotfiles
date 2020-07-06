@@ -1,0 +1,1097 @@
+pgrep -x
+ps aux
+ps aux| grep polybar
+ps aux| grep polybar notify
+ps aux| grep "polybar notify"
+ps aux| grep "polybar notify"
+ps aux| grep "polybar notify"| cut -d'\t' -f2
+ps aux| grep "polybar notify"| cut -d '\t' -f2
+ps aux| grep "polybar notify"| cut -d "\t" -f2
+ps aux| grep "polybar notify"| cut -d\t -f2
+ps aux| grep "polybar notify"| cut -d$\t -f2
+ps aux| grep "polybar notify"| cut -d$'\t' -f2
+ps aux| grep "polybar notify"| cut -d$' ' -f2
+ps aux| grep "polybar notify"| cut -d' ' -f2
+ps aux| grep "polybar notify"| cut -d' ' -f3
+ps aux| grep "polybar notify"| cut -d' ' -f5
+ps aux| grep "polybar notify"| cut -d' ' -f1
+ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2
+kill 3479300
+kill 3479300
+ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2
+ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2 | kill
+ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2 | xargs kill 
+ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2 | xargs kill 
+ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2 | xargs kill 
+ps
+man ps
+time ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2 | xargs kill 
+time p(s aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2 | xargs kill)
+time (ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2 | xargs kill)
+time (ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2 | xargs kill)
+time (xdo kill -a "polybar-notify_eDP1")
+time (ps aux| grep "polybar notify"| tr -s ' ' |cut -d' ' -f2 | xargs kill)
+time (xdo kill -a "polybar-notify_eDP1")
+visudo
+sudo visudo
+man visudo
+mpv https://lbry.tv/@MovieGasm:d/the-boys-2-sneak-peek-trailer-2020:a
+ps aux| grep "polybar open"| tr -s ' ' |cut -d' ' -f2 | xargs kill\
+
+ps aux| grep "polybar open"| tr -s ' ' |cut -d' ' -f2 | xargs kill\
+
+~/.config/polybar/scripts/close.sh
+~/.config/polybar/scripts/open.sh
+~/.config/polybar/scripts/close.sh
+~/.config/polybar/scripts/open.sh
+gotop
+jobs
+ps aux | grep bspswallow
+kill 553 
+ps aux | grep bspswallow
+kill 980
+pacman -Ss texlive-most
+pacman -Ss texlive-most
+pacman -Ss texlive-lang
+sudo pacman -S texlive-most texlive-lang
+pacman -Ss texlive-most
+sudo pacman -S texlive-lang
+pacman -Ss mupdf
+sudo pacman -S latex
+sudo pacman -S texlive-most
+sudo pacman -S texlive-most
+sudo pacman -S texlive-most
+polybar level
+polybar level
+polybar workspace
+pkill polbar
+pkill polybar
+polybar status
+man polybar
+polybar status -s
+polybar status -s
+xprop
+xprop
+sleep 3 && xprop
+pkill polybar
+dock.sh
+figlet Analyse I
+figlet Analyse I > Documents/Notes/Analyse-I-ToDo.txt
+gotop
+man xdo
+tail -1 /tmp/mpv-wpf.txt | cut -d' ' -f2| xargs -L1 -I{} xdotool key --window "{}" p
+tail -1 /tmp/mpv-wpf.txt | cut -d' ' -f2| xargs -L1 -I{} xdotool key --window "{}" p
+tail -1 /tmp/mpv-wpf.txt | cut -d' ' -f2| xargs -L1 -I{} xdotool key --window "{}" p
+tail -1 /tmp/mpv-wpf.txt | cut -d' ' -f2| xargs -L1 -I{} xdotool key --window "{}" p
+grep " T " /tmp/mpv-wpf.txt | cut -d' ' -f2| xargs -L1 -I{} xdotool key --window "{}" p
+checkupdates
+pkill alacritty
+gotop
+playerctl -l
+gotop
+wmctrl -l
+pkill Alacrity
+pkill Alacritty
+pkill Alacritty
+pkill alacritty
+man pkill
+pkill -o alacritty
+neofetch
+ls -a
+rm -rf .emacs.d/ .pki .npm .oracle_jre_usage .minecraft .surf .taskboo* .thumbnails VideoDecodeStats
+ls -a
+ls -a| wc -l
+ls -a| wc -l
+sudo pacman -Rs taskbook
+rm .taskbook*
+rm -rf .taskbook/
+ls -a
+rm -rf .stardict
+rm -rf shared_proto_db
+ls -a
+ls -a|wc -l
+neofetch
+ls -a
+gotop
+systemd-tmpfiles --clean
+expr `date +'%d'` + 0
+man cal
+expr `date +'%d'` + 0
+expr `date +'%d'`
+sudo pacman -Rs brave-bin
+gotop
+sudo pacman -Rs min
+clear
+neofetch
+sudo pacman -Rs cmus
+sudo pacman -Rs kitty
+sudo pacman -Rs libfm
+sudo pacman -Rs mailspring
+sudo pacman -Rs ranger
+wall
+wall -h
+clear
+checkupdates
+sudo pacman -Rs minecraft-launcher
+pkill polybar
+dock.sh
+xprop -root _NET_ACTIVE_WINDOW
+sleep 3 && xprop -root _NET_ACTIVE_WINDOW
+sleep 3 && xprop -root _NET_ACTIVE_WINDOW
+clear
+sudo find /
+sudo find / -name ly.service
+sudo -e /usr/lib/systemd/system/ly.service
+sudo -e /usr/lib/systemd/system/ly.service
+sudo -e /usr/lib/systemd/system/ly.service
+vi .local/bin/mkfile
+cut -d'.' -f1 <(exten.lol)
+cut -d'.' -f1 <(echo exten.lol)
+mkfile ijfos.png
+mkfile ijfos.png
+polybar -c status
+polybar -s status
+! command -v bluetoothctl &> /dev/null && echo "%{F#6c809e}ó°‚¯%{F-}" && echo exit 0\
+\
+# Flagshandler\
+
+! command -v bluetoothctl &> /dev/null && echo "%{F#6c809e}ó°‚¯%{F-}" && echo exit 0\
+
+sudo pacman -S bluez-utils
+mkfile tex.lol
+mkfile tex.lol
+mkfile tex.tp
+mkfile tex.tp
+grep "#;;" .local/bin/mkfile
+sed "s/#;;/;;\n\t#<)\n\t#folder="<!folder!>"\n\t\t#makeFile\n\t\t#<!command!>\n\t\t#;;/" .local/bin/mkfile
+sed "s/#;;/;;\n\t#<)\n\t#folder=\"<\"\n\t\t#makeFile\n\t\t#<!command!>\n\t\t#;;/" .local/bin/mkfile
+mkfile tex.tp
+$HOME
+$HOME
+echo $HOME
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+grep -nr "## MAIN PROGRAM" .local/bin/mkfile
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile tex.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile ijfos.png
+mkfile ijfos.png
+mkfile ijfos.png
+mkfile ijfos.png
+mkfile ijfos.png
+mkdir .local/share/FileTemplates
+mkdir .local/share/FileTemplates
+rmdir .local/share/FileTemplates
+mkfile ijfos.png
+mkfile ijfos
+count columns
+man cut
+mkfile ijfos
+mkfile ijfos
+mkfile ijfos.png
+mkfile ijfos.pn.lol
+mkfile
+mkfile
+mkfile jldkjf.klfj.kdljf
+jdklf
+$0
+mkfile ijfos.png
+lkdjsfq
+$?
+$?
+mkfile ijfos.png
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+echo -e \e[1;32m
+echo -e "\e[1;32m lol"
+echo -e "\e[1;34m lol"
+echo -e "\e[1;34m lol"
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kdl
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+clear
+mkfile ijf.skl
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile ijf.skl.kd.skls
+mkfile ijf.sh
+mkfile ijf.sh
+mkfile ijf.tar.gz
+mkfile ijf.tar.gz
+touch .local/share/template/tp.tp
+mkfile sh.tp
+mkfile sh.tp
+touch \h
+ls
+rm h
+touch /h
+touch html2text test.html|less
+ls
+rm html2text
+echo "sudo -e /usr/lib/systemd/system/ly.service"
+touch html2text test.html|less
+ls
+rm html2text test.html
+clear
+mkfile sh.tp
+TEST="a.b.c.d"
+echo $TEST
+echo ${TEST}
+echo ${TEST#.*}
+echo ${TEST#*.}
+echo ${TEST%.*}
+figlet lol
+figlet -c lol
+figlet -c lol > test
+vi test
+rm test
+mkfile sh.lol.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.lol.tp
+mkfile sh.lol.tp
+mkfile sh.lol.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+ls
+[ -f README.md ] && echo exist || echo nope
+[ -f READMO.md ] && echo exist || echo nope
+touch lol
+[ -f lol ] && echo exist || echo nope
+rm lol
+[ -f lol ] && echo exist || echo nope
+echo "\e[1;31mpink?"
+echo "\e[1;30mpink?"
+echo "\e[1;32mpink?"
+echo "\e[1;33mpink?"
+echo "\e[1;34mpink?"
+echo "\e[1;35mpink?"
+echo "\t\e[1;35mpink?"
+mkfile lol.png
+mkfile lol.png
+mkfile lol.png
+mkfile lol.png
+mkfile lol.png
+mkfile lol.png
+mkfile lol.png
+mkfile png.tp
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+man read
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.sh
+mkfile lol.tex
+mkfile tex.tp
+mkfile tex.sh
+mkfile tex.sh
+mkfile tex.sh
+mkfile tex.h
+mkfile tex.sh
+mkfile tex.sh
+mkfile tex.sh
+mkfile tex.sh
+mkfile tex.sh
+mkfile tex.sh
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile s.tp
+mkfile s.tp
+mkfile sh.tp
+cd jlkj
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile sh.tp
+mkfile tex.tp
+[ -z $ldklf ] && echo empty
+[ -z $HOME ] && echo empty
+[ -d . ] && echo empty
+cat > test
+cat test
+sed -e "s/line/lol\nlol/"
+sed -e "s/line/lol\nlol/" test
+sudo pacman -Rs bluez
+sudo pacman -Rs bluez-utils
+gotop
+cp .local/bin/mkfile Documents/Rest/mkfile_vanilla
+chmod -x Documents/Rest/mkfile_vanilla
+mkfile sh
+mkfile txt.tp
+mkfile test.tp
+mkfile test.tp
+mkfile test.tp
+mkfile test.tp
+mkfile test.tp
+mkfile test.tp
+mkfile test.tp
+mkfile test.tp
+mkfile test
+mkfile test
+mkfile txt.tp
+mkfile txt.tp
+mkfile test
+ls
+mkfile new
+mkfile test
+mkfile test
+mkfile test
+touch test
+touch test
+vi test
+vi test
+touch test
+vi test
+mkfile test
+mkfile test
+mkfile test
+mkfile test
+mkfile test
+mkfile test
+mkfile -f test
+mkfile -f test
+mkfile test
+mkfile -f test
+mkfile -f test
+mkfile test
+mkfile 
+mkfile 
+mkfile -e 
+mkfile -e 
+mkfile -e 
+mkfile -e 
+mkfile 
+mkfile -e
+mkfile -e jlk
+mkfile -e 
+mkfile -e help
+mkfile -e help
+mkfile -e help
+mkfile -e help
+mkfile -e help
+vi .local/bin/mkfile
+mkfile -e help
+mkfile -e
+mkfile -e ""
+mkfile -e ""
+mkfile 
+mkfile text
+mkfile text
+mkfile text > /dev/null
+mkfile -e ""
+mkfile -e
+mkfile -e ""
+mkfile e ""
+mkfile -e ""
+mkfile -e ""
+vi .local/bin/start-vim.sh
+mkfile -e ""
+vi .local/bin/start-vim.sh
+mkfile -e ""
+mkfile -e ""
+mkfile text
+mkfile -e
+mkfile -e ""
+mkfile 
+mkfile -c
+mkfile -c
+mkfile -e text
+mkfile -c
+mkfile -e text
+mkfile -fe text
+mkfile -c
+mkfile -e text
+mkfile -e text
+mkfile -fe text
+mkfile -e txt.tp
+mkfile -e html.tp
+gotop
+sudo -e /etc/modprobe.d/iwlwifi.conf
+ls /tmp
+ls /tmp
+iwconfig
+vi .xinitrc 
+sudo -e /etc/modprobe.d/iwlwifi.conf
+netctl-auto disable-all
+netctl-auto enable-all
+sudo rm /etc/modprobe.d/iwlwifi.conf
+netctl-auto disable-all
+netctl-auto enable-all
+modprobe
+man modprobe
+modprobe -c
+modprobe -c | grep iwlwifi
+modprobe -c | grep bluetooth
+modprobe -c | grep iwlwifi
+ls /etc/modprobe.d/iwlwifi.conf
+ls /etc/modprobe.d/
+sudo touch /etc/modprobe.d/iwlwifi.conf
+sudo iwlist scanning
+man modesetting
+man modprobe
+man modprobe
+sudo modprobe iwlwifi -r
+sudo modprobe iwlwifi 11n_disable=0
+man modprobe
+sudo modprobe -r iwlwifi
+sudo modprobe iwlwifi 11n_disable=0
+sudo modprobe -r iwlwifi
+sudo -e /etc/modprobe.d/iwlwifi.conf
+sudo -e /etc/modprobe.d/iwlwifi.conf
+sudo -e /etc/modprobe.d/iwlwifi.conf
+sudo -e /etc/modprobe.d/iwlwifi.conf
+sudo pacman -S linux-firmware
+sudo pacman -S linux
+pacman -Ss chromium
+sudo pacman -S chromium
+sudo rm /etc/modprobe.d/iwlwifi.conf
+sudo pacman -Ss linux
+sudo pacman -S linux linux-firmware base
+man pacman
+sudo pacman -Scc linux linux-firmware base
+sudo pacman -S linux linux-firmware base
+sudo -e /etc/modprobe.d/iwlwifi.conf
+sudo -e /etc/modprobe.d/iwlwifi.conf
+lspci -k
+ip link
+ip link set wlp58s0 down
+sudo ip link set wlp58s0 down
+sudo ip link set wlp58s0 up
+dmseg | grep firmware
+dmesg
+dmesg| grep frimewar
+dmesg| grep frimeware
+dmesg| grep frimeware
+dmesg| grep frimware
+dmesg| grep frimware
+dmesg| grep grep iwlwifi
+dmesg| grep iwlwifi
+dmesg| grep iwlwifi
+sudo ip link set wlp58s0 up
+dmesg| grep iwlwifi
+dmesg| grep frimware
+dmesg
+lspci -k
+ls  /etc/modprobe.d
+sudo rm  /etc/modprobe.d/iwlwifi.conf
+sudo -e  /etc/modprobe.d/ath9k.conf
+sudo reboot
+modprobe
+modprobe -h
+modprobe -r iwlwifi
+modprobe -c
+modprobe -c| grep wifi
+modprobe -fr iwlwifi
+modprobe -c| grep wifi
+sudo rm  /etc/modprobe.d/ath9k.conf
+sudo -e  /etc/modprobe.d/iwlwifi.conf
+modprobe -rfv iwlwifi
+modprobe -v iwlwifi
+sudo modprobe -v iwlwifi
+sudo -e  /etc/modprobe.d/iwlwifi.conf
+modprobe -rfv iwlwifi
+sudo modprobe -rfv iwlwifi
+sudo modprobe -v iwlwifi
+sudo modprobe -r iwlwifi
+sudo modprobe iwlwifi 11n_disable=0
+sudo modprobe -rf iwlwifi
+sudo modprobe -rfv iwlwifi
+sudo modprobe -v iwlwifi 11n_disable=0
+netctl-auto disable-all
+netctl-auto enable-all
+sudo -e  /etc/modprobe.d/iwlwifi.conf
+sudo modprobe iwlwifi -r
+sudo modprobe -v iwlwifi 11n_disable=0
+sudo modprobe iwlwifi 11n_disable=0
+sudo modprobe iwlwifi -r
+sudo modprobe iwlwifi 11n_disable=0
+ping archlinux.org
+sudo rm /etc/modprobe.d/iwlwifi.conf 
+sudo modprobe iwlwifi -r
+sudo modprobe iwlwifi 11n_disable=0
+netctl-auto disable-all
+netctl-auto enable-all
+sudo modprobe iwlwifi -r
+sudo modprobe iwlwifi 11n_disable=0
+modprobe -h
+pacman -Ss modprobe
+lsmod
+sudo modprobe iwlwifi 11n_disable=0
+lsmod
+sudo modprobe iwlwifi
+neofetch
+lspci -nnk
+lspci -nnk|grep 0280 -A3
+sudo modprobe ath10k_pci
+sudo pacman -S linux linux-firmware base
+mkfile -c
+ip link set wlp58s0 down
+sudo ip link set wlp58s0 down
+sudo ip link set wlp58s0 up
+sudo ip link set wlp58s0 down
+sudo ip link set wlp58s0 up
+dunstify -r 5864642 -u critical "MPV" "ERROR: mpv ran into a problem... :("
+dunstify -r 5864642 -u critical "MPV" "<b>
+dunstify -r 5864642 -u critical "MPV" "mpv ran into a problem... :("
+dunstify -r 5864642 -u critical "MPV" "mpv ran into a problem... :("
+dunstify -r 5864642 -u critical "MPV" "mpv ran into a problem... :("
+dunstify -r 5864642 -u critical "MPV" "mpv ran into a problem... :("
+dunstify -r 5864642 -u critical "MPV" "mpv ran into a problem..."
+dunstify -r 5864642 -u critical "MPV" "Sorry, MPV ran into a problem..."
+dunstify -r 5864642 -u critical "MPV" "Sorry, mpv ran into a problem..."
+dunstify -r 5864642 -u critical "MPV" "Sorry, mpv ran into a problem..."
+dunstify -r 5864642 -u critical "MPV" "Sorry, mpv ran into a problem..."
+dunstify -r 5864642 -u critical "MPV" "Sorry, mpv ran\ninto a problem..."
+dunstify -r 5864642 -u critical "MPV" "Sorry, mpv ran\ninto a problem..."
+dunstify -r 5864642 -u critical "MPV" "Sorry, mpv ran\ninto a problem..."
+dunstify -r 5864642 -u critical "MPV" "Sorry, mpv ran\ninto a problem..."
+netctl-auto enable-all
+netctl-auto disable-all
+netctl-auto enable-all
+bspc desktop -f ^0
+mkfile -c
+mkfile -c
+bspc desktop -f ^10
+mkfile sh.tp
+mkfile -c
+mkfile test.tp
+mkfile -c
+mkfile test.tp
+mkfile -c
+mkfile test.tp
+mkfile test.tp
+mkfile -c
+mkfile test.tp
+mkfile -c
+mkfile test.tp
+mkfile -c
+mkfile test.tp
+mkfile -c
+mkfile test.tp
+mkfile test.tp
+mkfile -c
+mkfile -c
+chmod 0444 Documents/Saved/mkfile_vanilla
+vi Documents/Saved/mkfile_vanilla
+man figlet
+man wc
+figlet Ideas&ToDo
+figlet "Ideas & ToDo"
+figlet "Ideas & To Do"
+figlet "Ideas&To Do"
+figlet "Ideas& To Do"
+figlet "Ideas & To Do"
+echo ${#figlet "Ideas & To Do"}
+echo ${#$(figlet "Ideas & To Do")}
+figlet "Ideas & To Do" | xargs -L1 -I{} echo -e "{}\n"
+figlet "Ideas & To Do" | xargs -L1 -I{} echo -e "{}"
+figlet "Ideas & To Do" | xargs -L1 -0I{} echo -e "{}"
+figlet "Ideas & To Do" | xargs -L1 -0I{} echo -e "{}\n"
+figlet "Ideas & To Do" | xargs -L1 -0I{} echo -e "{}"
+echo ${#$(figlet "Ideas & To Do")}
+echo ${#$(figlet "Ideas & To D")}
+mkfile
+mkfile -c
+mkfile -c
+man figlet
+figlet )b
+figlet -b
+help
+mkfile lol -x tp
+mkfile lol -x tp
+mkfile -x tp lol
+mkfile -x tp lol
+mkfile -x tp lol
+mkfile -x tp lol
+mkfile -x sh lol
+mkfile -x tp lol
+mkfile -x sh lol
+mkfile -xf sh lol
+mkfile -xf sh lol
+mkfile -fx sh lol
+mkfile -x sh -e neofiglet
+neofiglet
+neofiglet
+neofiglet
+neofiglet lol
+figlet
+figlet
+neofiglet lol
+neofiglet
+neofiglet -h
+figlet -h
+figlet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h| sed 's/message/nope/'
+figlet -h| sed 's/message/nope/'
+neofiglet -h
+figlet LOL| xargs -I{} echo "-{}"
+figlet LOL| xargs -L -I{} echo "-{}"
+figlet LOL| xargs -L1 -I{} echo "-{}"
+figlet LOL| xargs -I0{} echo "-{}"
+neofiglet lol
+neofiglet -b lol
+figlet -h
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+s=$(printf "%-30s" "*")
+ echo "${s// /*}"
+printf "%-30s" "*"
+printf "%-30s" "*"
+printf "%-30*" "*"
+printf "%-30s" "*"
+neofiglet -b lol
+echo ${#$(figlet "Ideas & To D")}
+echo ${#$(figlet "Ideas & To D")}
+neofiglet -b lol
+echo ${#$(figlet "Ideas & To D")}
+echo ${#$(figlet "Ideas & To D")}
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+man wc
+figlet lol
+figlet lol| wc -L
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -cb lol
+neofiglet -cb lol| sed "s/ /*/g"
+neofiglet -cb lol
+neofiglet -b lol
+neofiglet -cb lol
+neofiglet -c lol
+neofiglet lol
+neofiglet lol
+neofiglet -blol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet --cb lol
+neofiglet -cb lol
+neofiglet -cb lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -cb lol
+neofiglet -cb lol
+neofiglet -cb lol
+neofiglet -cb lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -b lol
+neofiglet -cb lol
+neofiglet -cb lol
+neofiglet -cb lol
+neofiglet -cb lol
+neofiglet -c lol
+neofiglet -b lol
+neofiglet -cb lol
+mkfile -c
+mkfile test
+mkfile -c
+mkfile test
+mkfile -c
+neofiglet -h
+neofiglet -h
+neofiglet -h h
+neofiglet hi there
+neofiglet -b hi there
+neofiglet -cb hi there
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+neofiglet -h
+netctl disable-all
+netctl-auto disable-all
+netctl-auto enable-all
+neofiglet Analyse I: To Do
+neofiglet Analyse I-To Do
+neofiglet Analyse I - To Do
+neofiglet -b Analyse I - To Do
+neofiglet -b Analyse I: To Do
+neofiglet -b Analyse I : To Do
+mkfile todo.tp
+mkfile todo.tp
+mkfile todo.tp
+mkfile AnalyseI.todo
+mkfile -c
+mkfile AnalyseI.todo
+mkfile -c
+mkfile -c
+mkfile AnalyseI.todo
+mkfile -c
+mkfile AnalyseI.todo
+checkupdates
+yay -Syu
+checkupdates
+sudo pacman -Syu
+sudo shutdown
+netctl-auto disable-all
+netctl-auto enable-all
+ly.service
+ly.service
+sudo -e /usr/lib/systemd/system/ly.service
+netctl-auto enable-all
+netctl-auto disable-all
+netctl-auto enable-all
+neofetch
+  echo "${WHITE}              äºº  å·¥  çƒ¿¥  èƒ£½  ã‚ƒ¤  ãƒ£­  ãƒ£ƒ¼  ãƒ£ƒ£  ãƒ£ƒ¨  ã‚¨  å­¦              "\
+  echo "${RED}####    ####       ###     ####      #### ####    #####      ###"\
+  echo "${RED}####    ####      #####    #####     #### ####   #####      #####"\
+  echo "${RED}####    ####     #######   ######    #### #### #####       #######"\
+  echo "${RED}############    #### ####  #######   #### #########       #### ####"\
+  echo "${RED}############   ####   #### ########  #### ##########     ####   ####"\
+  echo "${RED}####    ####  ####     ######## #### #### ##### #####   ####     ####"\
+  echo "${RED}####    #### ####       #######  ######## ####   ##### ####       ####"\
+  echo "${RED}####    ########         ######   ####### ####    ########         ####"\
+  echo "${WHITE}       R       O       B       O       T       I       C       S      "\
+  echo "\n"
+  echo "${WHITE}              äºº  å·¥  çƒ¿¥  èƒ£½  ã‚ƒ¤  ãƒ£­  ãƒ£ƒ¼  ãƒ£ƒ£  ãƒ£ƒ¨  ã‚¨  å­¦              "\
+  echo "${RED}####    ####       ###     ####      #### ####    #####      ###"\
+  echo "${RED}####    ####      #####    #####     #### ####   #####      #####"\
+  echo "${RED}####    ####     #######   ######    #### #### #####       #######"\
+  echo "${RED}############    #### ####  #######   #### #########       #### ####"\
+  echo "${RED}############   ####   #### ########  #### ##########     ####   ####"\
+  echo "${RED}####    ####  ####     ######## #### #### ##### #####   ####     ####"\
+  echo "${RED}####    #### ####       #######  ######## ####   ##### ####       ####"\
+  echo "${RED}####    ########         ######   ####### ####    ########         ####"\
+  echo "${WHITE}       R       O       B       O       T       I       C       S      "\
+  echo "\n"
+  echo "${WHITE}              äºº  å·¥  çƒ¿¥  èƒ£½  ã‚ƒ¤  ãƒ£­  ãƒ£ƒ¼  ãƒ£ƒ£  ãƒ£ƒ¨  ã‚¨  å­¦              "\
+  echo "${RED}####    ####       ###     ####      #### ####    #####      ###"\
+  echo "${RED}####    ####      #####    #####     #### ####   #####      #####"\
+  echo "${RED}####    ####     #######   ######    #### #### #####       #######"\
+  echo "${RED}############    #### ####  #######   #### #########       #### ####"\
+  echo "${RED}############   ####   #### ########  #### ##########     ####   ####"\
+  echo "${RED}####    ####  ####     ######## #### #### ##### #####   ####     ####"\
+  echo "${RED}####    #### ####       #######  ######## ####   ##### ####       ####"\
+  echo "${RED}####    ########         ######   ####### ####    ########         ####"\
+  echo "${WHITE}       R       O       B       O       T       I       C       S      "\
+  echo "\n"
+gotop
+alacritty -e gotop
+alacritty -e gotop
+sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+cat /sys/devices/platform/coretemp.0/hwmon/hwmon5/power/runtime_status 
+/sys/devices/platform/coretemp.0/hwmon/hwmon5/power/runtime_active_time
+cat /sys/devices/platform/coretemp.0/hwmon/hwmon5/power/runtime_active_time
+cat /sys/devices/platform/coretemp.0/hwmon/hwmon5/power/runtime_active_time
+xev
+polybar player
+clear
+mkfile Rice.todo
+mkfile -l
+mkfile -l
+mkfile -l
+mkfile -l
+mkfile -l
+mkfile -l
+mkfile -l
+mkfile -l
+mkfile -l
+mkfile -l
+mkfile -l
+mkfile -l
+vi .config/sxhkd/sxhkdrc
+man bspc
+pacman -Ss xetex
+pacman -Ss xelatex
+mkfile -l
+man ls
+ls --hide='t_*'
+ls -hLlF
+ls -hLF
+ls -LF
+ls -F
+ls -F | grep "[^/]$\
+"
+ls -F | grep "[^/]$"
+mkfile -c
+mkfile -l
+netctl-auto enable-all
+netctl-auto disable-all
+netctl-auto enable-all
+mkfile -c
+mkfile -e todo.tp
+mkfile -c
+mkfile -x tp todo
+mkfile -c
+mkfile -x tp todo
+mkfile -c
+mkfile -h
+mkfile -c
+help
+mkfile -c
+mkfile -c
+mkfile -h
+mkfile -c
+mkfile -h
+mkfile -l
+mkfile -c
+mkfile -l
+mkfile -c
+mkfile -l
+mkfile -c
+mkfile -l
+ls -1
+mkfile -l
+mkfile -c
+mkfile -c
+mkfile -l
+mkfile -c
+mkfile -l
+mkfile -c
+gotop
+man pdflatex
+find . -name "tutorialrc"
+vi .local/share/nvim/plugged/vim-visual-multi/tutorialrc
+nvim -Nu .local/share/nvim/plugged/vim-visual-multi/tutorialrc
+gotop
+netctl-auto enable
+netctl-auto enable-all
+man basename
+basename lol.tex
+basename ho/lol.tex
+basename hojdlkjf/dkklfj/lol.tex
+basename hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename /hojdlkjf/dkklfjjlk/ljdf/lol.txt
+man basename
+basename -s /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename -s tex /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename -s .tex /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename -s .* /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename -suffix=.* /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename -suffix=.tex /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename --suffix=.tex /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename --suffix=.* /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+basename /hojdlkjf/dkklfjjlk/ljdf/lol.tex
+man date
+sed "d/\\end{document}/" ~/Documents/Notes/330b0b355ef709fba53741703451629a.tex
+sed "d/\end{document}/" ~/Documents/Notes/330b0b355ef709fba53741703451629a.tex
+sed "/\end{document}/d" ~/Documents/Notes/330b0b355ef709fba53741703451629a.tex
+start-vim.sh -c
+start-vim.sh -t
+$EDITOR
+$EDITOR
+$EDITOR -t
+vi .config/env
+$EDITOR -t
+$EDITOR -t
+source .config/env
+$EDITOR -t
+source .config/env
+$EDITOR
+$EDITOR -t
+source .config/env
+vi .config/env
+source .config/env
+$EDITOR
+echo "{}" | sed "s/\([{}]\)/\\&/g"
+echo "{}" | sed "s/\([{}]\)/\\1/g"
+echo "{}" | sed "s/\([{}]\)/\\\1/g"
+echo "{}" | sed "s/\([{}]\)/\\\\1/g"
+echo "{}" | sed "s/\([{}]\)/\\\\\1/g"
+echo "{}" | sed "s/\([{}]\)/\\\\\in/g"
+echo "{}" | sed "s/\([{}]\)/\\\\in/g"
+echo "{}" | sed "s/\([{}]\)/\\\in/g"
+echo "{}" | sed "s/\([{}]\)/\\in/g"
+echo "{}" | sed "s/\([{}]\)/\\\in/g"
+bash -c "echo lol"
+start-vim.sh -c
+start-vim.sh -c
+start-vim.sh -c
+start-vim.sh -c
+start-vim.sh -c
+start-vim.sh -c
+start-vim.sh -c
+config status
+config add .script/start-vim.sh
+config commit -m "Vim resizing problem fixed"
+netctl-auto enable-all
+xdg-open Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+cd lkjlm
+ljkj
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+pwd
+cd Documents/.Notes
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v ~/Documents/Unif/Analyse\ I.pdf
+cd
+znotes.sh -v ~/Documents/Unif/Analyse\ I.pdf
+sed "s/<folder>/test/" Documents/.Notes/330b0b355ef709fba53741703451629a.tex
+znotes.sh -v ~/Documents/Unif/Analyse\ I.pdf
+znotes.sh -v ~/Documents/Unif/Analyse\ I.pdf
+man pdf latex
+man pdflatex
+znotes.sh -v ~/Documents/Unif/Analyse\ I.pdf
+clear
+znotes.sh -h
+znotes.sh -h jlk
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+znotes.sh -h
+netctl-auto enable-all
+znotes.sh -v
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -t Documents/Unif/Analyse\ I.pdf
+znotes.sh -e Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+znotes.sh -v Documents/Unif/Analyse\ I.pdf
+bspc node -t tiled
+/usr/share/applications/nvim.desktop
+sudo -e /usr/share/applications/nvim.desktop
+sudo -e /usr/share/applications/nvim.desktop
+sudo -e /usr/share/applications/nvim.desktop
+znotes.sh -e Documents/Unif/Analyse\ I.pdf
+man bspc
+vi .config/sxhkd/sxhkdrc
+bspc desktop -l monocle
+bspc desktop -l tiled
+bspc desktop -l monocle
+bspc desktop -l tiled

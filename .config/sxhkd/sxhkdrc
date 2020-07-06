@@ -137,23 +137,23 @@ XF86AudioPlay
 
 # Volume up
 XF86AudioRaiseVolume 
-	pamixer -i 10 ; volume.sh
+	pamixer -i 10 ; ~/.config/polybar/scripts/volume.sh
 
 # Volume down
 XF86AudioLowerVolume 
-	pamixer -d 10 ; volume.sh
+	pamixer -d 10 ; ~/.config/polybar/scripts/volume.sh
 
 # Volume mute
 XF86AudioMute 
-	pamixer -t ; volume.sh
+	pamixer -t ; ~/.config/polybar/scripts/volume.sh
 
 # Brightness up
 XF86MonBrightnessUp
-	brightnessctl set +10% ; volume.sh
+	brightnessctl set +10% ; ~/.config/polybar/scripts/volume.sh
 
 # Brightnes down
 XF86MonBrightnessDown
-	[ $(($(brightnessctl g)-750)) -le "0" ] && brightnessctl set 1% || brightnessctl set 10%- ; volume.sh
+	[ $(($(brightnessctl g)-750)) -le "0" ] && brightnessctl set 1% || brightnessctl set 10%- ; ~/.config/polybar/scripts/volume.sh
 
 ################################################
 #              APPLICATIONS                    #
@@ -173,7 +173,7 @@ XF86MonBrightnessDown
 
 # Qutebrowser
 {mod5,super} + {_,shift + } q
-	{_,_}{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled}
+	{_,_}{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled} & bspc desktop -f '^{2}'
 
 # Spotify
 {mod5,super} + s
@@ -209,5 +209,5 @@ XF86MonBrightnessDown
 
 # Lf: File manager
 {mod5,super} + l
-	lid=$(cat /tmp/lfID);\
-	wmctrl -ir $lid -b toggle,hidden && wmctrl -ia $lid
+	toggle-lf.sh
+

@@ -14,7 +14,8 @@ foreground = #FEFEFE
 foreground-alt = #9ac4ff
 primary = #fff
 secondary = #a9b3c2
-alert = #bd2c40
+background-level= #cec8d8ff
+alert = #c8144c
 
 [bar/level]
 width = 19%
@@ -25,11 +26,8 @@ radius = 22
 fixed-center = true
 bottom = false
 
-background = #cec8d8ff
+background = ${colors.background-level}
 foreground = ${colors.background}
-
-border-size = 0
-border-color = #000
 
 padding-left = 2
 padding-right = 2
@@ -44,13 +42,6 @@ font-2 = Hack Nerd Font:pixelsize=20:style=Medium Condensed;7
 modules-center = xbacklight pulseaudio
 
 override-redirect = true
-
-scroll-up = bspwm-desknext
-scroll-down = bspwm-deskprev
-
-cursor-click = ns-resize 
-cursor-scroll = ns-resize 
-
 enable-ipc = true
 
 [bar/control]
@@ -155,8 +146,7 @@ override-redirect = true
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
 
-cursor-click = ns-resize 
-cursor-scroll = ns-resize 
+cursor-click = pointer
 
 [bar/player]
 width = 11%
@@ -336,7 +326,7 @@ radius = 22
 fixed-center = true
 bottom = true
 
-background = #ff004b
+background = ${colors.alert}
 foreground = #fff
 
 border-size = 0
@@ -368,27 +358,28 @@ type = internal/bspwm
 reverse-scroll = false
 enable-scroll = false
 
-ws-icon-0 = I;%{F#fefefe}󰆍%{F-}
-ws-icon-1 = II;%{F#1EBBEE}󰇧%{F-}
-ws-icon-2 = III;%{F#ff004b}󰄘%{F-}
-ws-icon-3 = IV;%{F#ffca00}󰇰%{F-}
-ws-icon-4 = V;%{F#1164f1}󰹻%{F-}
-ws-icon-5 = VI;%{F#c46a4b}󰉨%{F-}
-ws-icon-6 = VII;%{F#ff93aa}󰿁%{F-}
-ws-icon-7 = VIII;%{F#FF8C00}󰊠%{F-}
-ws-icon-8 = IX;%{F#d448ff}󰆉%{F-}
-ws-icon-9 = X;%{F#21cd5f}󰫔%{F-}
-ws-icon-default =%{F#9e43ba}󰗹%{F-}
+ws-icon-0 = I;%{F#fefefe}%{A3:alacritty &:}󰆍%{A}%{F-}
+ws-icon-1 = II;%{F#00c0ff}%{A3:qutebrowser &:}󰇧%{A}%{F-}
+ws-icon-2 = III;%{F#ff0900}%{A3:grep " T " /tmp/mpv-wpf.txt | tail -1 | cut -d' ' -f2| xargs -L1 -I[] xdotool key --window "[]" p &:}󰄘%{A}%{F-}
+ws-icon-3 = IV;%{F#ffca00}%{A3:start-newsboat.sh &:}󰇰%{A}%{F-}
+ws-icon-4 = V;%{F#0048ff}%{A3:start-vim.sh -c &:}󰹻%{A}%{F-}
+ws-icon-5 = VI;%{F#c46a4b}%{A3:zathura &:}󰉨%{A}%{F-}
+ws-icon-6 = VII;%{F#ff93aa}%{A3:gimp &:}󰿁%{A}%{F-}
+ws-icon-7 = VIII;%{F#FF8C00}%{A3:retroarch &:}󰊠%{A}%{F-}
+ws-icon-8 = IX;%{F#d448ff}%{A3:discord &:}󰆉%{A}%{F-}
+ws-icon-9 = X;%{F#05d183}%{A3:start-spotify || playerctl -p spotify play-pause &:}󰫔%{A}%{F-}
+ws-icon-default =%{F#9e43ba}%{A3:<!!>:}󰗹%{A}%{F-}
 
 format = "<label-state>" 
 
-label-focused ="{%icon%} "
+label-focused ="{%{A1:bspc node -f next.local.!floating:}%{A2:xdo close:}%icon%%{A}%{A}} "
 label-focused-padding = 0
 
 label-occupied ="%icon% "
 label-occupied-padding = 0
 
 label-urgent ="%icon%%{F#ff004b}%{T3}%{O-12}󰀨 %{T-}%{F-}"
+labeel-foreground= ${color.alert}
 label-urgent-padding = 0
 
 label-empty =
@@ -429,15 +420,6 @@ ramp-signal-2 = 󰤢
 ramp-signal-3 = 󰤥
 ramp-signal-4 = 󰤨
 ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/date]
-type = internal/date
-interval = 60
-
-date = %a %e %b
-time = %H:%M
-
-label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -507,28 +489,31 @@ click-left = ~/.config/polybar/scripts/search.sh &
 [module/file-man]
 type = custom/script
 exec = echo "󰉋"
-click-left = lid=$(cat /tmp/lfID); wmctrl -ir $lid -b toggle,hidden && wmctrl -ia $lid &
+click-left = toggle-lf.sh &
 
 [module/screenshot]
 type = custom/script
 exec = echo "󰨤"
-click-left = scrot "$(date +%s).png" -e 'mv "$f" ~/Pictures/Screenshots/ && dunstify -r "991030" "Say cheese..." "$f"' &
+
+click-right = scrot "$(date +%s).png" -e 'mv "$f" ~/Pictures/Screenshots/ && dunstify -r "991030" "Say cheese..." "$f" -a scrot' &
+
+click-left = image=$(date +%s).png && maim -s -s -b 5.0 -p -5 -c 1,0,0.294 "$HOME/Pictures/Screenshots/$image" && dunstify -r "991030" "Say cheese..." "$image" -a scrot &
 
 [module/prev]
 type = custom/script
 exec = echo "%{T5}%{T-}" &
 format = "%{F#e5efff}<label>%{F-}"
-interval = 0.5
-
+interval = 600
 tail = true
+
 click-left = playerctl --player=spotify previous &
 
 [module/info]
 type = custom/script
 exec = echo "" &
-interval = 0.5
-
+interval = 600
 tail = true
+
 click-left = ~/.config/polybar/scripts/info.sh 2>/dev/null &
 click-right = bspc desktop -f '^10'
 
@@ -552,10 +537,10 @@ exec = ~/.config/polybar/scripts/song.sh 2>/dev/null || echo "No player found"
 format = "<label>  "
 format-prefix = "%{F#1db954}   %{F-}"
 format-background = #df191414
-interval = 0.5
+interval = 600
 
 tail = true
-click-left = playerctl -p spotify play-pause & 
+click-left = bspc desktop -f ^10 &
 
 [module/left]
 type = custom/text
@@ -567,7 +552,7 @@ content =""
 type = custom/script
 exec = echo "%{T5}%{T-}" &
 format = "%{F#e5efff}<label>%{F-}"
-interval = 0.5
+interval = 600
 
 tail = true
 click-left = playerctl --player=spotify next &
@@ -587,6 +572,8 @@ format-foreground = ${colors.secondary}
 
 interval = 1
 tail = true
+
+click-left = alacritty -e gotop &
 
 [module/update]
 type = custom/script
@@ -614,7 +601,7 @@ tail = true
 
 [module/open-menu]
 type = custom/script
-exec = echo "%{O-3}󰅁" &
+exec = echo "%{O-3}󰅁"
 interval = 600
 
 tail = true
@@ -627,6 +614,14 @@ interval = 0.5
 
 tail = true
 click-left = ~/.config/polybar/scripts/bluetooth-status.sh -t &
+
+[module/date]
+type = custom/script
+exec =  date '+%a %e %b %H:%M' 
+interval = 600
+tail=true
+
+click-left = ~/.config/polybar/scripts/calendar.sh &
 
 [module/power-menu]
 type = custom/script

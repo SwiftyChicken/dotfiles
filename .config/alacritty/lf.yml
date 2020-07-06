@@ -190,7 +190,7 @@ colors:
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
   cursor:
-    text: '#000000'
+    text: '#e0e9ff'
     cursor: '#1f1c1a'
 
   # Selection colors
@@ -199,8 +199,8 @@ colors:
   # background is unset, selection color will be the inverse of the cell colors.
   # If only text is unset the cell text color will remain the same.
   selection:
-    text: '#eaeaea'
-    background: '#404040'
+    text: '#e0e9ff'
+    background: '#1f1c1a'
 
 # Colors (BlulocoLight)
   bright:

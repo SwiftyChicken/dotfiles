@@ -15,6 +15,9 @@ Plug 'ryanoasis/vim-devicons'
 " Syntax highlighting
 Plug 'ap/vim-css-color'
 Plug 'sheerun/vim-polyglot'
+" Latex
+Plug 'xuhdev/vim-latex-live-preview'
+", { 'for': 'text' }
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " Initialize plugin system
@@ -40,22 +43,34 @@ set clipboard=unnamedplus
 set termguicolors
 "let g:codedark_conservative = 1
 colorscheme one
-
+""""""""""""""""""""""""""""""""""""""""
+"	    FOLD SETTING	       "
+""""""""""""""""""""""""""""""""""""""""
+set foldmethod=marker   
+autocmd FileType sh set foldmarker=\ ()\ {,}\ #
+autocmd BufNewFile,BufRead *.tex set foldmarker=%begin%,%end%
+set foldnestmax=1
+"set nofoldenable
+set foldlevel=0
 """"""""""""""""""""""""""""""""""""""""
 "	    MAP CHARACTER	       "
 """"""""""""""""""""""""""""""""""""""""
-nnoremap <C-q> :q <CR>
+nnoremap <C-q> :q <CR> 
 nnoremap gl $
 nnoremap gh 0
 nnoremap gk H
 nnoremap gj L
+nnoremap M a<!!><Esc>
+nnoremap m a<??><Esc>
+nnoremap <C-Space> /<!!><Enter>"_c4l
+nnoremap <Space><Space> /<??><Enter>"_c4l
+inoremap <C-Space> <Esc>/<!!><Enter>"_c4l
 nnoremap <C-s> :%s//gI<Left><Left><Left>
 " Shortcutting split navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
 """"""""""""""""""""""""""""""""""""""""
 "	        AIRLINE		       "
 """"""""""""""""""""""""""""""""""""""""
@@ -64,9 +79,36 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline_theme = 'minimalist'
 
 """"""""""""""""""""""""""""""""""""""""
+"	   LATEX PREVIEWER	       "
+""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.tex nmap <C-e> :e! <CR>
+autocmd BufNewFile,BufRead *.tex nmap <C-a> :w! <CR>:!pdflatex % <CR>
+autocmd BufNewFile,BufRead *.tex nmap <C-p> :LLPStartPreview <CR>
+autocmd BufNewFile,BufRead *.tex setl updatetime=1
+autocmd BufNewFile,BufRead *.tex nnoremap ;b o\begin{<replace>}<CR>\end{<replace>}<Esc>Vk:s/<replace>//<Left>
+autocmd BufNewFile,BufRead *.tex vnoremap a$ c$<C-r>"$<Esc>
+autocmd BufNewFile,BufRead *.tex vnoremap a" c``<C-r>"''<Esc>
+autocmd BufNewFile,BufRead *.tex vnoremap ai c\textit{<C-r>"}<Esc>
+autocmd BufNewFile,BufRead *.tex vnoremap ab c\textbf{<C-r>"}<Esc>
+let g:livepreview_previewer = 'zathura'
+let g:livepreview_cursorhold_recompile = 0
+
+""""""""""""""""""""""""""""""""""""""""
+"	   TO DO LIST	     	       "
+""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.todo inoremap <Enter> <Enter>[ ] 
+autocmd BufNewFile,BufRead *.todo inoremap <Tab>l <Esc>I<Tab><Esc>A
+autocmd BufNewFile,BufRead *.todo inoremap <Tab>h <Esc>I<BackSpace><Esc>A
+autocmd BufNewFile,BufRead *.todo inoremap <Esc> <Esc>:%s/\[ \] $/[ ] <!!>/<CR>
+autocmd BufNewFile,BufRead *.todo nnoremap <Enter> V:s/\[ \]/[x]/<CR>
+autocmd BufNewFile,BufRead *.todo nnoremap <BackSpace> V:s/\[x\]/[ ]/<CR>
+
+""""""""""""""""""""""""""""""""""""""""
 "	  MARKDOWN PREVIEWER	       "
 """"""""""""""""""""""""""""""""""""""""
-let g:mkdp_auto_start = 1
+autocmd BufNewFile,BufRead *.md nmap <C-p> <Plug>MarkdownPreviewToggle
+
+let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
 let g:mkdp_refresh_slow = 0
 let g:mkdp_command_for_global = 0

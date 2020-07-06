@@ -39,4 +39,6 @@ map J zoom out
 
 # Annotate in zathura settings
 set selection-clipboard clipboard
-map n feedkeys "o<BackSpace><BackSpace><BackSpace><BackSpace><BackSpace>exec zathura-annotate $FILE<Return>"
+map <C-n> feedkeys "o<BackSpace><BackSpace><BackSpace><BackSpace><BackSpace>exec znotes.sh $FILE <Return>"
+map <C-e> feedkeys "o<BackSpace><BackSpace><BackSpace><BackSpace><BackSpace>exec znotes.sh -e $FILE <Return>"
+map <C-v> feedkeys "o<BackSpace><BackSpace><BackSpace><BackSpace><BackSpace>exec znotes.sh -v $FILE <Return>"

@@ -37,6 +37,7 @@ bspc rule -a Pcmanfm state=floating
 bspc rule -a mpv focus=off state=floating
 bspc rule -a Screenkey manage=off
 bspc rule -a scratchpad locked=on sticky=on state=floating hidden=on
+bspc rule -a taskbook locked=on sticky=on state=floating hidden=on
 bspc rule -a lf locked=on sticky=on state=floating hidden=on
 bspc rule -a cool-retro-term state=pseudo_tiled
 bspc rule -a Surf state=tiled
@@ -67,6 +68,3 @@ lid=$(wmctrl -lx | grep lf.lf| cut -d' ' -f1| head -1) \
 	& sleep 1 \
 	&& lid=$(wmctrl -lx | grep lf.lf| cut -d' ' -f1| head -1) \
 	&& echo "$lid" > /tmp/lfID;
-
-# Because spotify won't listen
-setsid -f start-spotify > /dev/null 2>&1 &

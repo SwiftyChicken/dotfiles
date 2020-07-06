@@ -69,7 +69,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "540x1-20+40"
+    geometry = "600x1-20+40"
 
     notification_height = 100
     shrink = true
@@ -111,7 +111,7 @@
     separator_height = 0
 
     # padding between text and separator
-    padding = 25
+    padding = 20
 
     # horizontal padding
     horizontal_padding = 20
@@ -171,8 +171,8 @@
 
 [critical]
     msg_urgency = critical
-    format = "<span size="x-large">󰚌 <b>%s </b></span>\n%b"
-    background = "#fb2020"
+    format = "<span size="x-large">󰚌 <b>%s </b></span>\n<b>ERROR: </b>%b"
+    background = "#ff0041"
     foreground = "#ffffff"
     timeout = 5
 
@@ -216,7 +216,7 @@
     background = "#1555a0"
 
 [scrot]
-    summary = Say cheese...
+    appname = scrot
     format = "<span size="x-large">📷<b>  %s </b></span>\n<i>%b</i>"
     background = "#7a614d"
 

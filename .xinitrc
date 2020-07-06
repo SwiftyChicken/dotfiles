@@ -10,7 +10,9 @@ auto-connect-bt.sh &
 remaps &
 timer-checkupdates.sh &
 newsboat -x reload &
+bspswallow &
 SPTN.sh &
 MO.sh &
+DFO.sh &
 exec bspwm
 

@@ -55,7 +55,8 @@ settings:
     global:
       accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
   content.headers.user_agent:
-    global: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/76.0
+    global: Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko)
+      {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}
   content.notifications:
     https://na.op.gg: false
     https://www.chess.com: false
@@ -75,7 +76,7 @@ settings:
     global: BreezeSans
   fonts.default_size:
     global: 13pt
-  input.rocker_gestures:
+  input.mouse.rocker_gestures:
     global: true
   scrolling.smooth:
     global: true
@@ -85,6 +86,8 @@ settings:
     - en-US
     - nl-NL
     - fr-FR
+  statusbar.show:
+    global: in-mode
   tabs.padding:
     global:
       bottom: 6

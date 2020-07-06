@@ -31,16 +31,15 @@ xmodmap -e "keycode 45 = k"
 
 case $chosen in
     $shutdown)
-        sudo poweroff
+	systemctl poweroff
         ;;
     $reboot)
-        sudo reboot
+	systemctl reboot
         ;;
     $lock)
         betterlockscreen -l &
         ;;
     $suspend)
-        mpc -q pause
         amixer set Master mute
 	betterlockscreen -l & 
 	sleep 0.5

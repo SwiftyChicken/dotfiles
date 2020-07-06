@@ -1,5 +1,7 @@
 #!/bin/sh
 
+! command -v bluetoothctl &> /dev/null && echo "%{F#6c809e}󰂯%{F-}" && exit 0
+
 # Flagshandler
 app=$(echo $0|rev |cut -d'/' -f1| rev)
 toggle="false"
@@ -40,6 +42,7 @@ bluetooth_print() {
 }
 
 bluetooth_toggle() {
+	! command -v bluetoothctl &> /dev/null && dunstify -r "991043" "Bluetooth" "bluez-utils isn't installed" && exit 1
     if bluetoothctl show | grep -q "Powered: no"; then
 	dunstify -r "991043" "Bluetooth" "Turning power ON" &
         bluetoothctl power on >> /dev/null

@@ -1,0 +1,5 @@
+net_retropad_ip_octet1 = "0"
+net_retropad_ip_octet2 = "0"
+net_retropad_ip_octet3 = "0"
+net_retropad_ip_octet4 = "0"
+net_retropad_port = "55400"

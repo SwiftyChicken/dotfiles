@@ -1,0 +1,3 @@
+play_bilinear_filtering = "true"
+play_presentation_mode = "Fit Screen"
+play_res_multi = "4x"
