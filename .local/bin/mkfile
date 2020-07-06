@@ -1,0 +1,201 @@
+#!/bin/sh
+
+## DESCRIPTION:
+# Makes a file with a the designated template, location and the correct configuration.
+# Based on the name of the file.
+
+## COLORS
+red="\e[1;31m"
+green="\e[1;32m"
+magenta="\e[1;35m"
+blue="\e[1;34m"
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+## HANDLE FLAGS
+app=$(echo $0|rev |cut -d'/' -f1| rev)
+
+# Flagshandler
+_force="false"
+_edit="false"
+_help="false"
+_list="false"
+_skip="false"
+_extension=""
+
+# template name convention: {extension}.tp
+template_folder="$HOME/.local/share/template"
+while getopts ":fcex:lh" OPTIONS; do
+  case $OPTIONS in
+	f) 	
+		_force="true"
+	      	;;
+	c) 	
+		$EDITOR $0 && exit 0
+	      	;;
+	e) 	
+		_edit="true"
+	      	;;
+	x) 	
+		[[ "$OPTARG" == "tp" ]] \
+	      		&& echo -e "${red}${bold}error:${normal} Wait, that's illegal!...
+				The template files always need a ${blue}.tp${normal} extension"| tr -d '\t' >&2 \
+	      		&& exit 1
+	   		_extension="$OPTARG"
+		;;
+	l)	
+		_list="true"
+		_skip="true"
+		;;
+	h)	
+		_help="true"
+		_skip="true"
+		;;
+	\?) echo -e "${red}${bold}error:${normal} Unrecognized option '-$OPTARG'">&2
+         exit 1
+     esac
+done
+
+shift "$((OPTIND-1))"
+
+## CHECK ARGUMENTS
+[ "$(echo $1 | tr '.' ' ' | wc -w)" -eq 0 ] && [[ "$_skip" == "false" ]] && echo -e "${red}${bold}error:${normal} Did you cut your fingers off midway because I don't see any filename...">&2 && exit 1
+[ "$(echo $1 | tr '.' ' ' | wc -w)" -eq 1 ] && f="$1.txt" || f="$1"
+
+## VARIABLES
+name=${f%%.*}
+[ -z "$_extension" ] && ext=${f#*.} || ext=$_extension
+
+## FUNCTIONS
+function help () {
+	echo "Comming soon..."
+	exit 0
+}
+
+function list () {
+	echo -e "${bold}Available extensions:${normal}"
+	echo -e "${bold}---------------------${normal}"
+	ls -1 -F $template_folder | grep "[^/]$"| sed "s/\(.*\).tp$/${blue} \1 ${normal}/" | xargs -L1 -I{} echo -e "\{}"
+	exit 0
+}
+
+function extensionNotFound () {
+	echo -e "${red}${bold}error:${normal} The extension ${blue}${bold}$1${normal} has not been configured yet. You can configure it with the following command: ${magenta}mkfile $1.tp${normal}">&2 && exit 127
+}
+
+function templateSetup () {
+	extension=${f%.*}
+	[ -f "$template_folder/$extension.tp" ] && echo -e "${red}${bold}error:${normal} The ${blue}${bold}$extension.tp${normal} template already exists.">&2 && exit 1
+	
+	# Edit mkfile Script
+	if ! grep "$extension)" $0 > /dev/null; then
+		while true; do
+			echo -e "What will the default folder be, for ${blue}${bold}$extension${normal} files? (Default value: \".\") "
+			printf "> "
+                 	read folder
+			folder="$(echo "$folder"| sed "s|^\([^\/~].*\)$|$HOME\/\1|" | sed "s|~|$HOME|" |sed "s|\/$||" )"
+			[ -z "$folder" ] && folder="."
+			[ -d "$folder" ] \
+				&& break \
+				|| echo -e "${red}${bold}error:${normal} no such directory: ${green}$folder${normal}">&2
+         	done
+
+		cmd=""
+		echo -e "\nDo you want to excute a specific command?\n(help for a list of available variables)"
+		while true; do
+			printf "> "
+                 	read input
+			case $input in
+				help)  	printf "${magenta}!f${normal}\t\tfile with full path\n${magenta}\$folder${normal}\t\tfile folder path\n${magenta}\$name${normal}\t\tfile name without extension\n${magenta}\$ext${normal}\t\tfile extension\nEnvironment variables also works.\nEmpty line will the confirm command.\n\n"
+                                 	;;
+				"")	break
+					;;
+				*)	input="$(echo "$input" | sed -e 's|!f|$folder/$name.$ext|g'| sed -e 's/\//\\\//g' )"
+					[ -z "$cmd" ] && cmd="$input" || cmd="$cmd\n\t\t$input"
+					;;
+                 	esac
+         	done
+		sed_start="$(grep -nr "## MAIN PROGRAM" $0| tail -1 |cut -d':' -f1)"
+		sed -i "$sed_start,$ s/#<!ext!>)/$extension)/" $0
+		sed -i "$sed_start,$ s|<!folder!>|$folder|" $0 
+		sed -i "$sed_start,$ s/#<!command!>/<!command!>/" $0
+		sed -i "$sed_start,$ s/<!command!>/$cmd/" $0
+		sed -i "$sed_start,$ s/#folder=/folder=/" $0
+		sed -i "$sed_start,$ s/#makeFile/makeFile/" $0
+		# Create new indentation for future templates
+		sed -i "$sed_start,$ s/#;;/;;\n\t#<!ext!>)\n\t\t#folder=\"<!folder!>\"\n\t\t#makeFile\n\t\t#<!command!>\n\t\t#;;/" $0
+	fi
+
+	createTemplate $extension
+}
+
+function createTemplate () {
+	name=$1
+	while true; do
+		printf "\nDo you want to edit the new template \"${green}$name.tp${normal}\"? [Y/n] "
+    		read yn
+    		case $yn in
+        		[Yy]) 	$EDITOR $template_folder/$name.tp
+				break
+				;;
+        		[Nn]) 	touch $template_folder/$name.tp
+				exit
+				;;
+			   *) 	echo -e "${bold}Sure, you can waste my time... 🙂${normal}\n"
+				;;
+    		esac
+	done
+}
+
+function makeFile () {
+	[ ! -f $template_folder/$ext.tp ] \
+		&&  echo -e "${red}${bold}error:${normal} Sorry, the template ${blue}${bold}$ext.tp${normal} has somehow been deleted or lost from the ${green}$template_folder${normal} folder. You can create a new one with the following command: ${magenta}mkfile $ext.tp${normal}">&2 \
+		&& exit 2
+	[ -f  $folder/$name.$ext ] && [[ "$_force" == "false" ]] \
+		&& echo -e "${red}${bold}error:${normal} The file ${blue}${bold}$name.$ext${normal} already exists in the ${green}$folder${normal} folder. You can force it with the ${magenta}${bold}-f${normal} flag.">&2 \
+		&& exit 1
+	cp "$template_folder/$ext.tp" "$folder/$name.$ext"
+}
+
+
+## MAIN PROGRAM
+[[ "$_help" == "true" ]] && help
+[[ "$_list" == "true" ]] && list
+
+case $ext in 
+	*.tp|tp)	
+		folder="$template_folder"
+		templateSetup $name
+		;;
+	txt)
+		folder="/home/swifty/Documents/TextFiles"
+		makeFile
+		neofiglet -cb "$(echo $name | tr 'a-z' 'A-Z')" > $folder/$name.$ext
+		echo -e "\n<!!>" >> $folder/$name.$ext
+		;;
+	sh)
+		folder="/home/swifty/.local/bin"
+		makeFile
+		chmod +x $folder/$name.$ext
+		;;
+	todo)
+		folder="/home/swifty/Documents/ToDo"
+		makeFile
+		neofiglet -b $name : To Do > $folder/$name.$ext
+		sed -i "s/^\(.*\)$/\t\1/" $folder/$name.$ext
+		echo -e "\n[ ] <!!>" >> $folder/$name.$ext
+		;;
+	#<!ext!>)
+		#folder="<!folder!>"
+		#makeFile
+		#<!command!>
+		#;;
+	*) 
+		extensionNotFound $ext
+		;;
+esac
+
+[[ "$_edit" == "true" ]] && $EDITOR $folder/$name.$ext
+[ ! -z "$_extension" ] && mv $folder/$name.$ext $folder/$name 
+
+exit 0

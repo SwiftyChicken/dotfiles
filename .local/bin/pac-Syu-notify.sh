@@ -19,6 +19,6 @@ done < $upgraded_pkg
 [ -z "$Packages" ] && Packages="Only dependencies..."
 
 /usr/bin/sudo -u swifty DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send "Pacman" "The following packages have been upgraded:\n$Packages"
-/usr/bin/sudo -u swifty DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /home/swifty/.script/timer-checkupdates.sh > /dev/null 2>&1 &
+/usr/bin/sudo -u swifty DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /home/swifty/.local/bin/timer-checkupdates.sh > /dev/null 2>&1 &
 
 rm "$upgraded_pkg" "$all_pkg"

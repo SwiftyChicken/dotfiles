@@ -18,18 +18,15 @@ shift "$((OPTIND-1))"
 case $1 in
 	*youtube*watch*)
 		dunstify -r 5864642 "󰗃  YouTube" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#ff0041"
-		setsid -f youtube-viewer --no-interactive "$1" > /dev/null 2>&1 || setsid -f mpv "$1" > /dev/null 2>&1 &
+		start-mpv.sh -y $1
 		;;
 	*twitch*videos*)
 		dunstify -r 5864642 "󰕃  Twitch" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#b736de"
-		setsid -f streamlink --twitch-low-latency $1 best > /dev/null 2>&1 || setsid -f mpv --profile=low-latency "$1" > /dev/null 2>&1 &
+		start-mpv.sh -c $1
 		;;
 	*twitch*)
 		dunstify -r 5864642 "󰕃  Twitch" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#b736de"
-		setsid -f streamlink --twitch-low-latency $1 best > /dev/null 2>&1 &
-		streamer=$(echo $1 | cut -d'/' -f4)
-		bspc desktop '^3' -l tiled
-		bspc desktop -f '^3' && surf "www.twitch.tv/$streamer/chat" > /dev/null 2>&1 && bspc desktop '^3' -l monocle
+		start-mpv.sh -t $1
 		;;
 	*torrent|magnet*)
 		dunstify -u critical "Torrent" " Still a work in progress... :("
@@ -39,9 +36,9 @@ case $1 in
 		supported="$(egrep -iw "$link" $XDG_DATA_HOME/youtube-dl/supported)"
 		if [ ! -z "$supported" ]; then
 			dunstify -r 5864642 "󰄙  MPV" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#ff004b"
-			[ -z "$t" ] && mpv $1 || mpv --profile=low-latency $1 || dunstify -u critical -r 5864642 "MPV" "<b>ERROR:</b> Sorry, mpv failed.  🥺"
+		start-mpv.sh $1
 		else
-			qutebrowser ":open $t $1"
+			setsid -f qutebrowser ":open $t $1" &
 		fi
 		;;
 	esac

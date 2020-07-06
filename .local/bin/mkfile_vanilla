@@ -1,0 +1,115 @@
+#!/bin/sh
+
+# DESCRIPTION:
+# Makes a file with a the designated template, location and the correct configuration.
+# Based on the name of the file.
+
+## CHECK ARGUMENTS
+[ "$(echo $1 | tr '.' ' ' | wc -w)" -eq 0 ] && echo -e "${red}${bold}error:${normal} Did you cut your fingers off midway because I don't see any filename..." && exit 1
+[ "$(echo $1 | tr '.' ' ' | wc -w)" -eq 1 ] && f="$1.txt" || f="$1"
+
+## VARIABLES
+red="\e[1;31m"
+green="\e[1;32m"
+magenta="\e[1;35m"
+blue="\e[1;34m"
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+file_name=${f%%.*}
+file_ext=${f#*.}
+
+# template name convention: {file_extension}.tp
+template_folder="$HOME/.local/share/template"
+
+## FUNCTIONS
+function extensionNotFound () {
+	echo -e "${red}${bold}error:${normal} The extension ${blue}${bold}$1${normal} has not been configured yet. You can configure it with the following command: ${magenta}mkfile $1.tp${normal}" && exit 127
+}
+
+function templateSetup () {
+	extension=${f%.*}
+	[ -f "$template_folder/$extension.tp" ] && echo -e "${red}${bold}error:${normal} The ${blue}${bold}$extension.tp${normal} template already exists." && exit 1
+	
+	# Edit mkfile Script
+	if ! grep "$extension)" $0 > /dev/null; then
+		while true; do
+			echo -e "What will the default folder for ${blue}${bold}$extension${normal} files be (Default value: \".\")? "
+			printf "> "
+                 	read folder
+			folder="$(echo "$folder"| sed "s|^\([^\/~].*\)$|$HOME\/\1|" | sed "s|~|$HOME|" |sed "s|\/$||" )"
+			[ -z "$folder" ] && folder="."
+			[ -d "$folder" ] \
+				&& break \
+				|| echo -e "${red}${bold}error:${normal} no such directory: ${green}$folder${normal}"
+         	done
+
+		cmd=""
+		echo -e "\nDo you want to excute a specifiec command?\n(help for list of availabel variables or leave empty if not and enter)"
+		while true; do
+			printf "> "
+                 	read input
+			case $input in
+				help)  	printf "..."
+                                 	;;
+				"")	break
+					;;
+				*)	input="$(echo "$input" | sed -e 's/\//\\\//g')"
+					[ -z "$cmd" ] && cmd="$input" || cmd="$cmd\n\t\t$input"
+					;;
+                 	esac
+         	done
+		sed_start="$(grep -nr "## MAIN PROGRAM" $0| tail -1 |cut -d':' -f1)"
+		sed -i "$sed_start,$ s/#<!ext!>)/$extension)/" $0
+		sed -i "$sed_start,$ s/<!folder!>/$folder/" $0 
+		sed -i "$sed_start,$ s/#<!command!>/<!command!>/" $0
+		sed -i "$sed_start,$ s/<!command!>/$cmd/" $0
+		sed -i "$sed_start,$ s/#folder=/folder=/" $0
+		sed -i "$sed_start,$ s/#makeFile/makeFile/" $0
+		# Create new indentation for future templates
+		sed -i "$sed_start,$ s/#;;/;;\n\t#<!ext!>)\n\t\t#folder=\"<!folder!>\"\n\t\t#makeFile\n\t\t#<!command!>\n\t\t#;;/" $0
+	fi
+
+	createTemplate $extension
+}
+
+function createTemplate () {
+	file_name=$1
+	while true; do
+		printf "\nDo you want to edit the new template \"${green}$file_name.tp${normal}\"? [Y/n] "
+    		read yn
+    		case $yn in
+        		[Yy]) 	$EDITOR $template_folder/$file_name.tp
+				break
+				;;
+        		[Nn]) 	touch $template_folder/$file_name.tp
+				exit
+				;;
+			   *) 	echo -e "${bold}Sure, you can waste my time... 🙂${normal}\n"
+				;;
+    		esac
+	done
+}
+
+function makeFile () {
+	[ ! -f $template_folder/$file_ext.tp ] \
+		&&  echo -e "${red}${bold}error:${normal} Sorry, the template ${blue}${bold}$file_ext.tp${normal} has somehow been deleted or lost from the ${green}$template_folder${normal} folder. You can create a new one with the following command: ${magenta}mkfile $file_ext.tp${normal}" \
+		&& exit 2
+	cp $template_folder/$file_ext.tp $folder/$file_name.$file_ext
+}
+
+## MAIN PROGRAM
+case $file_ext in 
+	*.tp|tp)	
+		folder="$template_folder"
+		templateSetup $file_name
+		;;
+	#<!ext!>)
+		#folder="<!folder!>"
+		#makeFile
+		#<!command!>
+		#;;
+	*) 
+		extensionNotFound $file_ext
+		;;
+esac

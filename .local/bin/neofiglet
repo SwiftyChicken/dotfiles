@@ -1,0 +1,79 @@
+#!/bin/sh
+
+## DESCRIPTION:
+#  Add additional functionality for figlet:
+#  - Give figlet a border
+
+## COLORS
+red="\e[1;31m"
+green="\e[1;32m"
+magenta="\e[1;35m"
+blue="\e[1;34m"
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+## HANDLE FLAGS
+app=$(echo $0|rev |cut -d'/' -f1| rev)
+
+# Flag Variables
+_help="false"
+_border="false"
+_center="false"
+_flags=""
+
+while getopts ":hbc" OPTIONS; do
+  case $OPTIONS in
+	h)	
+		_help="true"
+	    	;;
+	b)	_border="true"
+		;;
+	c)	_center="true"
+		;;
+	*) 	_flags="-$OPTARG $_flags"
+		;;
+     esac
+done
+
+shift "$((OPTIND-1))"
+
+## CHECK ARGUMENTS
+
+## VARIABLES
+message="$@"
+output="$(mktemp)"
+if [[ "$_help" == "false" ]]; then
+	[[ "$_border" == "false" ]] && [[ "$_center" == "true" ]] \
+		&& figlet $_flags -c $message > $output \
+		|| figlet $_flags $message > $output
+fi
+
+## FUNCTIONS
+function help () {
+	echo -e "Additional figlet flags:"
+	echo -e "--------------------------------------"
+	echo -e "${magenta}-b${normal}\t shows a border for figlet"
+	echo -e "--------------------------------------"
+	echo -e "other flags should be looked up in the figlet manual"
+}
+
+function border () {
+	[[ "$_center" == "true" ]] && center="\t\t\t\t" || center=""
+	length="$(cat $output| wc -L)"
+	seperator=$(printf "%-${length}s" "=")
+	echo -e "$center#==${seperator// /=}==#"
+	cat $output | sed "s/^\(.*\)$/$center#  \1  #/"
+	echo -e  "$center#==${seperator// /=}==#"
+}
+
+## MAIN PROGRAM
+if [[ "$_help" == "true" ]];then
+	help
+
+else
+	[[ "$_border" == "true" ]] && border || cat $output
+fi
+
+rm $output
+
+exit 0
