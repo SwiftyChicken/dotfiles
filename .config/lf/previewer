@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+
+TMP_FILE="$HOME/.cache/lf/err.png"
+
+function hash_filename {
+    TMP_FILE="$HOME/.cache/lf/$(echo ${1%.*} | sed -e 's|/|\!|g')@$2.$3"
+}
+
+function draw_clear {
+    >"${UEBERZUG_FIFO}" declare -A -p cmd=( \
+        [action]=remove [identifier]="$1" )
+}
+
+function draw_image {
+    >"${UEBERZUG_FIFO}" declare -A -p cmd=( \
+        [action]=add [identifier]="$6" \
+	[x]="$4" [y]="$5" [width]="$3" [height]="$2" \
+	[scaler]=fit_contain [scaling_position_x]=0.5 [scaling_position_y]=0.5 \
+	[path]="$1" )
+}
+
+function make_image {
+    if [ "${TMP_FILE}" -ot "$1" ]; then
+	convert "$1" -resize "$(expr ${TEXT_WIDTH} \* $3)"x "${TMP_FILE}"
+    fi
+}
+
+function make_video {
+    if [ "${TMP_FILE}" -ot "$1" ]; then
+	ffmpegthumbnailer -t 10% -q 3 -s "$(expr ${TEXT_WIDTH} \* $3)" \
+			  -c jpeg -i "$1" -o "${TMP_FILE}"
+    fi
+}
+
+function make_pdf {
+    if [ "${TMP_FILE}" -ot "$1" ]; then
+	pdftoppm -png -f 1 -l 1 -jpeg -tiffcompression jpeg \
+		 -scale-to-x "$(expr ${TEXT_WIDTH} \* $3)" -scale-to-y -1 \
+		 -singlefile "$1" "${TMP_FILE%.png}"
+    fi
+}
+
+case $(file -b --mime-type "$1") in
+    text/*)
+	draw_clear "$6"
+	cat "$1"
+	;;
+    image/*)
+	hash_filename "$1" "$3" "${1##*.}"
+	make_image "$1" "$2" "$3"
+	draw_image "${TMP_FILE}" "$2" "$3" "$4" "$5" "$6"
+	;;
+    video/*)
+	hash_filename "$1" "$3" "jpg"
+	make_video "$1" "$2" "$3"
+	draw_image "${TMP_FILE}" "$2" "$3" "$4" "$5" "$6"
+	;;
+    application/pdf)
+	hash_filename "$1" "$3" "png"
+	make_pdf "$1" "$2" "$3"
+	draw_image "${TMP_FILE}" "$2" "$3" "$4" "$5" "$6"
+	;;
+    application/gzip|application/x-xz)
+	draw_clear "$6"
+	tar tf "$1"
+	;;
+    application/zip)
+	draw_clear "$6"
+	unzip -Z -1 "$1"
+	;;
+    application/x-sharedlib)
+	draw_clear "$6"
+	readelf -h "$1"
+	;;
+    *)
+	draw_clear "$6"
+	;;
+esac
+
+exit 0

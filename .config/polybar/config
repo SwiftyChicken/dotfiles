@@ -1,0 +1,638 @@
+          ;=====================================;
+          ; ____       _       _                ;
+          ;|  _ \ ___ | |_   _| |__   __ _ _ __ ;
+          ;| |_) / _ \| | | | | '_ \ / _` | '__|;
+          ;|  __/ (_) | | |_| | |_) | (_| | |   ;
+          ;|_|   \___/|_|\__, |_.__/ \__,_|_|   ;
+          ;              |___/                  ;
+          ;=====================================;
+
+[colors]
+background = #1c2c43
+background-alt = #0e1827
+foreground = #FEFEFE
+foreground-alt = #9ac4ff
+primary = #fff
+secondary = #a9b3c2
+background-level= #cec8d8ff
+alert = #c8144c
+
+[bar/level]
+width = 19%
+height = 4.3%
+offset-x = 40.5%
+offset-y = 5%
+radius = 22
+fixed-center = true
+bottom = false
+
+background = ${colors.background-level}
+foreground = ${colors.background}
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 1
+ 
+font-0 = Hack Nerd Font:pixelsize=14:style=Medium Condensed;5
+font-1 = Material Design Icons Desktop:pixelsize=20;5
+font-2 = Hack Nerd Font:pixelsize=20:style=Medium Condensed;7
+ 
+modules-center = xbacklight pulseaudio
+
+override-redirect = true
+enable-ipc = true
+
+[bar/control]
+width = 8%
+height = 4.3%
+offset-x = 0%:10
+offset-y = 0.65%
+radius = 22
+fixed-center = true
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+border-color = #000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 2
+module-margin-right = 2
+ 
+font-0 = BreezeSans:pixelsize=14:style=Medium Condensed;4
+font-1 = Material Design Icons Desktop:pixelsize=20;5
+font-2 = BreezeSans:pixelsize=10:style=Bold Condensed;3
+ 
+modules-center = search screenshot file-man 
+
+wm-restack = bspwm
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = default
+
+[bar/workspace]
+width = 23.5%
+height = 4.85%
+offset-x = 8%:30
+offset-y = 0%
+radius = 0
+fixed-center = true
+bottom = true
+
+background = #00000000
+foreground = ${colors.foreground}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+ 
+font-0 = Material Design Icons Desktop:pixelsize=26;1
+font-1 = BreezeSans:pixelsize=28:style=Regular Condensed;-2
+font-2 = Material Design Icons Desktop:pixelsize=18;-10
+ 
+modules-left = bspwm
+
+wm-restack = bspwm
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = default
+
+[bar/music]
+width = 30%
+height = 4.3%
+offset-x = 35%
+offset-y = 6%:1
+radius = 22
+fixed-center = true
+bottom = true
+
+background = #00191414
+foreground = #fff
+
+border-size = 0
+border-color = #000
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 0
+ 
+font-0 = BreezeSans:pixelsize=16:style=Medium Condensed;2
+font-1 = Font Awesome 5 Pro:pixelsize=20:style=Solid;3
+font-2 = Font Awesome 5 Brands:pixelsize=21;3
+font-3 = SourceHanSansJP:pixelsize=14:style=Medium;2
+font-4 = Font Awesome 5 Pro:pixelsize=18:style=Solid;3
+font-5 = Hack Nerd Font:pixelsize=31:style=Medium Condensed;7
+ 
+modules-center = right song left
+
+override-redirect = true
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+
+[bar/player]
+width = 11%
+height = 4.3%
+offset-x = 44.5%
+offset-y = 0.65%
+radius = 22 
+fixed-center = true
+bottom = true
+
+background = ${colors.background-alt}
+foreground = ${colors.foreground-alt}
+
+border-size = 0
+
+padding-left = 6
+padding-right = 6
+
+module-margin-left = 2
+module-margin-right = 3
+ 
+font-0 = BreezeSans:pixelsize=16:style=Medium Condensed;2
+font-1 = Font Awesome 5 Pro:pixelsize=20:style=Regular;3
+font-2 = Font Awesome 5 Brands:pixelsize=21;3
+font-3 = SourceHanSansJP:pixelsize=14:style=Medium;2
+font-4 = Font Awesome 5 Pro:pixelsize=18:style=Solid;3
+ 
+modules-left = info
+modules-center = prev toggle next
+
+wm-restack = bspwm
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = default
+
+[bar/close]
+width = 2.35%
+height = 4.1%
+offset-x = 65.3%:-40
+offset-y = 0.75%
+radius = 22
+fixed-center = true
+bottom = true
+
+background = ${colors.background-alt}
+foreground = ${colors.primary}
+
+border-size = 0
+border-color = #000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+ 
+font-0 = Material Design Icons Desktop:pixelsize=22;5
+font-1 = BreezeSans:pixelsize=18:style=Medium Condensed;2
+ 
+modules-center = close-menu 
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = default
+
+click-left = ~/.config/polybar/scripts/close.sh &
+
+[bar/notify]
+width = 14%
+height = 4.3%
+offset-x = 67.65%:-30
+offset-y = 0.65%
+radius = 22
+fixed-center = true
+bottom = true
+
+background = ${colors.background-alt}
+foreground = ${colors.foreground-alt}
+
+border-size = 0
+border-color = #000
+
+padding = 0
+
+module-margin-left = 2
+module-margin-right = 3
+ 
+font-0 = BreezeSans:pixelsize=10:style=Bold;-10
+font-1 = Material Design Icons Desktop:pixelsize=22;5
+font-2 = BreezeSans:pixelsize=10:style=Light Condensed;10
+font-3 = Material Design Icons Desktop:pixelsize=10;10
+font-4 = Material Design Icons Desktop:pixelsize=10;-8
+font-5 = icomoon:pixelsize=17;4
+
+modules-center = cpu update news mtorrent
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = default
+
+[bar/open]
+width = 2.35%
+height = 4.1%
+offset-x = 79.3%:-30
+offset-y = 0.75%
+radius = 22
+fixed-center = true
+bottom = true
+
+background = ${colors.background-alt}
+foreground = ${colors.primary}
+
+border-size = 0
+border-color = #000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+ 
+font-0 = Material Design Icons Desktop:pixelsize=22;5
+font-1 = BreezeSans:pixelsize=18:style=Medium Condensed;2
+ 
+modules-center = open-menu 
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = default
+
+click-left = ~/.config/polybar/scripts/open.sh &
+
+[bar/status]
+width = 16%
+height = 4.3%
+offset-x = 81.65%:-20
+offset-y = 0.65%
+radius = 22
+fixed-center = true
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+border-color = #000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+ 
+font-0 = BreezeSans:pixelsize=14:style=Medium Condensed;4
+font-1 = Material Design Icons Desktop:pixelsize=21;5
+font-2 = BreezeSans:pixelsize=10:style=Bold Condensed;3
+ 
+modules-center = wlan battery bluetooth date 
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = default
+
+[bar/power]
+width = 2.35%
+height = 4.1%
+offset-x = 97.7%:-10
+offset-y = 0.75%
+radius = 22
+fixed-center = true
+bottom = true
+
+background = ${colors.alert}
+foreground = #fff
+
+border-size = 0
+border-color = #000
+
+padding-left = 5
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+ 
+font-0 = Material Design Icons Desktop:pixelsize=23;6
+ 
+modules-center = power-menu 
+
+wm-restack = bspwm
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = default
+
+click-left = ~/.config/polybar/scripts/power-menu.sh &
+
+[module/bspwm]
+type = internal/bspwm
+
+reverse-scroll = false
+enable-scroll = false
+
+ws-icon-0 = I;%{F#fefefe}%{A3:alacritty &:}󰆍%{A}%{F-}
+ws-icon-1 = II;%{F#00c0ff}%{A3:qutebrowser &:}󰇧%{A}%{F-}
+ws-icon-2 = III;%{F#ff0900}%{A3:grep " T " /tmp/mpv-wpf.txt | tail -1 | cut -d' ' -f2| xargs -L1 -I[] xdotool key --window "[]" p &:}󰄘%{A}%{F-}
+ws-icon-3 = IV;%{F#ffca00}%{A3:start-newsboat.sh &:}󰇰%{A}%{F-}
+ws-icon-4 = V;%{F#0048ff}%{A3:start-vim.sh -c &:}󰹻%{A}%{F-}
+ws-icon-5 = VI;%{F#c46a4b}%{A3:zathura &:}󰉨%{A}%{F-}
+ws-icon-6 = VII;%{F#ff93aa}%{A3:gimp &:}󰿁%{A}%{F-}
+ws-icon-7 = VIII;%{F#FF8C00}%{A3:retroarch &:}󰊠%{A}%{F-}
+ws-icon-8 = IX;%{F#d448ff}%{A3:discord &:}󰆉%{A}%{F-}
+ws-icon-9 = X;%{F#05d183}%{A3:start-spotify || playerctl -p spotify play-pause &:}󰫔%{A}%{F-}
+ws-icon-default =%{F#9e43ba}%{A3:<!!>:}󰗹%{A}%{F-}
+
+format = "<label-state>" 
+
+label-focused ="{%{A1:bspc node -f next.local.!floating:}%{A2:xdo close:}%icon%%{A}%{A}} "
+label-focused-padding = 0
+
+label-occupied ="%icon% "
+label-occupied-padding = 0
+
+label-urgent ="%icon%%{F#ff004b}%{T3}%{O-12}󰀨 %{T-}%{F-}"
+labeel-foreground= ${color.alert}
+label-urgent-padding = 0
+
+label-empty =
+label-empty-padding = 0
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label><bar>
+label = "󰃠 "
+label-foreground = ${colors.background}
+
+bar-width = 10
+bar-indicator = "%{T3}%{T-}"
+bar-indicator-foreground = ${colors.background}
+bar-indicator-font = 2
+bar-fill = ━
+bar-fill-font = 2
+bar-fill-foreground = ${colors.background}
+bar-empty = ━
+bar-empty-font = 2
+bar-empty-foreground = #607290
+
+[module/wlan]
+type = internal/network
+interface = wlp58s0
+interval = 3.0
+
+format-connected =<ramp-signal>
+label-connected = %essid%
+
+label-disconnected = 󰤭
+label-disconnected-foreground = #6c809e
+
+ramp-signal-0 = %{F#ff004b}󰤫%{F-}
+ramp-signal-1 = %{F#ffd200}󰤟%{F-}
+ramp-signal-2 = 󰤢
+ramp-signal-3 = 󰤥
+ramp-signal-4 = 󰤨
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume><bar-volume>
+label-volume = "󰎇 "
+label-volume-foreground = ${root.foreground}
+
+label-muted = 󰎊 Muted
+label-muted-foreground = #607290
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.background}
+bar-volume-foreground-1 = ${colors.background}
+bar-volume-foreground-2 = ${colors.background}
+bar-volume-foreground-3 = ${colors.background}
+bar-volume-foreground-4 = #fb8720
+bar-volume-foreground-5 = #fb5a20
+bar-volume-foreground-6 = #fb2020
+bar-volume-gradient = false
+bar-volume-indicator = "%{T3}%{T-}"
+bar-volume-indicator-font = 2
+bar-volume-fill = ━
+bar-volume-fill-font = 2
+bar-volume-empty = ━
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = #607290
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = %{T3}<label-charging>%{T-}<animation-charging> 
+
+format-discharging = %{T3}<label-discharging>%{T-}<ramp-capacity>
+
+format-full = %{T3}100%%{T-}󰂄
+format-full-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 󱊤
+animation-charging-1 = 󱊥
+animation-charging-2 = 󱊦
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 900
+
+ramp-capacity-0 = %{F#ff004b}󰂃%{F-}
+ramp-capacity-1 = %{F#ff5300}󰁺%{F-}
+ramp-capacity-2 = %{F#ff8000}󰁻%{F-}
+ramp-capacity-3 = %{F#ffd200}󰁼%{F-}
+ramp-capacity-4 = 󰁽
+ramp-capacity-5 = 󰁾
+ramp-capacity-6 = 󰁿
+ramp-capacity-7 = 󰂀
+ramp-capacity-8 = 󰂁
+ramp-capacity-9 = 󰂂
+ramp-capacity-10 = 󰁹 
+ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-framerate = 750
+
+[module/search]
+type = custom/script
+exec = echo "󰍉"
+click-left = ~/.config/polybar/scripts/search.sh &
+
+[module/file-man]
+type = custom/script
+exec = echo "󰉋"
+click-left = toggle-lf.sh &
+
+[module/screenshot]
+type = custom/script
+exec = echo "󰨤"
+
+click-right = scrot "$(date +%s).png" -e 'mv "$f" ~/Pictures/Screenshots/ && dunstify -r "991030" "Say cheese..." "$f" -a scrot' &
+
+click-left = image=$(date +%s).png && maim -s -s -b 5.0 -p -5 -c 1,0,0.294 "$HOME/Pictures/Screenshots/$image" && dunstify -r "991030" "Say cheese..." "$image" -a scrot &
+
+[module/prev]
+type = custom/script
+exec = echo "%{T5}%{T-}" &
+format = "%{F#e5efff}<label>%{F-}"
+interval = 600
+tail = true
+
+click-left = playerctl --player=spotify previous &
+
+[module/info]
+type = custom/script
+exec = echo "" &
+interval = 600
+tail = true
+
+click-left = ~/.config/polybar/scripts/info.sh 2>/dev/null &
+click-right = bspc desktop -f '^10'
+
+[module/toggle]
+type = custom/script
+exec = [[ "$(playerctl -p spotify status 2>/dev/null)" == "Playing" ]] && echo "" || echo ""
+interval = 0.2
+
+tail = true
+click-left = playerctl --player=spotify play-pause &
+
+[module/right]
+type = custom/text
+content-background = #00000000
+content-foreground = #df191414
+content = ""
+
+[module/song]
+type = custom/script
+exec = ~/.config/polybar/scripts/song.sh 2>/dev/null || echo "No player found"
+format = "<label>  "
+format-prefix = "%{F#1db954}   %{F-}"
+format-background = #df191414
+interval = 600
+
+tail = true
+click-left = bspc desktop -f ^10 &
+
+[module/left]
+type = custom/text
+content-background = #00000000
+content-foreground = #df191414
+content =""
+
+[module/next]
+type = custom/script
+exec = echo "%{T5}%{T-}" &
+format = "%{F#e5efff}<label>%{F-}"
+interval = 600
+
+tail = true
+click-left = playerctl --player=spotify next &
+
+[module/close-menu]
+type = custom/script
+exec = echo "%{O2}󰅂" &
+interval = 600
+
+tail = true
+
+[module/cpu]
+type = custom/script
+exec = ~/.config/polybar/scripts/cpu.sh 2> /dev/null || echo "%{T5}%{F#dae1ec}󰓦%{T4}%{O-13}󰓦%{T-}%{F-}" 
+format-prefix = " "
+format-foreground = ${colors.secondary}
+
+interval = 1
+tail = true
+
+click-left = alacritty -e gotop &
+
+[module/update]
+type = custom/script
+exec = ~/.config/polybar/scripts/update.sh 2> /dev/null || echo "󰏗%{T5}%{F#dae1ec}󰓦%{T4}%{O-13}󰓦%{T-}%{F-}"
+format-foreground = ${colors.secondary}
+interval = 1
+
+tail =true
+
+[module/news]
+type = custom/script
+exec = ~/.config/polybar/scripts/news.sh 2> /dev/null || echo "󰋻%{T5}%{F#dae1ec}󰓦%{T4}%{O-13}󰓦%{T-}%{F-}"
+format-foreground = ${colors.secondary}
+interval = 1
+
+tail = true
+
+[module/mtorrent]
+type = custom/script
+exec = echo "󱋌     " || echo "󱋖     " 
+format-foreground = ${colors.secondary}
+interval = 1
+
+tail = true
+
+[module/open-menu]
+type = custom/script
+exec = echo "%{O-3}󰅁"
+interval = 600
+
+tail = true
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/scripts/bluetooth-status.sh &
+format-foreground = ${colors.foreground-alt}
+interval = 0.5
+
+tail = true
+click-left = ~/.config/polybar/scripts/bluetooth-status.sh -t &
+
+[module/date]
+type = custom/script
+exec =  date '+%a %e %b %H:%M' 
+interval = 600
+tail=true
+
+click-left = ~/.config/polybar/scripts/calendar.sh &
+
+[module/power-menu]
+type = custom/script
+exec = echo "󰐥 "
+
+[settings]
+screenchange-reload = false
+pseudo-transparency = false
+
+[global/wm]
+margin-top = 3
+margin-bottom = 5
+
+; vim:ft=dosini

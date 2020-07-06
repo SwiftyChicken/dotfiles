@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+>"${UEBERZUG_FIFO}" declare -A -p cmd=( \
+    [action]=remove [identifier]="$1" )
