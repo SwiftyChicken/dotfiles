@@ -1,5 +1,0 @@
-videoproc_audiodev = "default:CARD=PCH"
-videoproc_capture_mode = "alternate"
-videoproc_frame_times = "Off"
-videoproc_output_mode = "progressive"
-videoproc_videodev = "/dev/video0"

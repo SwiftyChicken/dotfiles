@@ -1,6 +1,0 @@
-ffmpeg_color_space = "auto"
-ffmpeg_fft_multisample = "1x"
-ffmpeg_fft_resolution = "1280x720"
-ffmpeg_hw_decoder = "off"
-ffmpeg_sw_decoder_threads = "auto"
-ffmpeg_temporal_interp = "disabled"

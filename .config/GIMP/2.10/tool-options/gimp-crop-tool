@@ -1,8 +1,0 @@
-# GIMP gimp-crop-tool options
-
-(aspect-denominator 1080)
-(aspect-numerator 1750)
-(fixed-rule-active yes)
-(highlight no)
-
-# end of gimp-crop-tool options

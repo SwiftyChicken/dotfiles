@@ -1,5 +1,0 @@
-2020/07/04-14:17:54.479 13a592 Reusing MANIFEST /home/swifty/.config/chess-nativefier-b30d50/IndexedDB/https_www.chess.com_0.indexeddb.leveldb/MANIFEST-000001
-2020/07/04-14:17:59.108 13bb90 Level-0 table #5: started
-2020/07/04-14:17:59.115 13bb90 Level-0 table #5: 336 bytes OK
-2020/07/04-14:17:59.126 13bb90 Delete type=0 #3
-2020/07/04-14:17:59.126 13bb90 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
