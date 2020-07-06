@@ -94,34 +94,49 @@ function make_note () {
 } #
 
 function annotate () {
-echo "\begin{minipage}{\textwidth}
+sed -i "/\\end{document}/d" "$note"
+
+echo "% <!!> %begin%
+\begin{minipage}{\textwidth}
 \begin{center}------------------------------------------------------------------------------------------\end{center}
 \begin{justify}
-\textit{"
+\textit{" >> "$note"
 
 clipboard=$(mktemp)
 xclip -out -selection clipboard > $clipboard
-correct_notation $clipboard
+# Delete new line
+tr "\n" " " < $clipboard| tee $clipboard
 
+# Join splitted words
+sed -i "s/\([^ ]*\)- \([^ ]*\)/\1\2/" $clipboard
+# Add quotes
+sed -i "1 s/^\(.\)/``\1/" $clipboard
+sed -i "$ s/\(.\)$/\1''/" $clipboard
+# Indent new line after each phrase
+sed -i "s/\. /\. \n/" $clipboard
+# Correct notation for LaTeX
+correct_notation $clipboard
+cat $clipboard >> "$note"
 rm $clipboard
 
-echo "}
+echo "
+}
 \end{justify}
 \begin{center}---------------------------------------------------------\end{center}
 \end{minipage}
 \begin{equation}\label{1}
-	\sum_{n=1}^{\infty }e^{n}+sin(\pi)
+	<!!>
 \end{equation}
 \textsf{\footnotesize{
 	\begin{center}
-		\fancy{Sat 4 Jun 19:37}\\
+		\fancy{<time>}\\
 	\end{center}
-$>$\hspace{0.3cm} This is some commentary on the quote above. (\ref{1})\\
-$>$\hspace{0.3cm} This is a second line of commentary...\\
+$>$\hspace{0.3cm} <!!>
 }}
 \bigbreak
+%end%
 
-"
+\end{document}" >> "$note"
 } #
 
 function correct_notation () {
