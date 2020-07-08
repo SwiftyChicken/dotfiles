@@ -3,6 +3,11 @@
 		## ZOOMER SHELL ##
 		##################
 
+# Git
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
 # Enable colors and change prompt:
 autoload -U colors && colors
 
@@ -55,7 +60,27 @@ nice_exit_code() {
 	echo "$sig_name"
 }
 
-RPS1='%(?.%F{green}%{󰦕%G%}.%F{red}%{$(nice_exit_code)%G%}%f)'
+nice_git_info () {
+	local mesg="$(echo "$1"| sed "s/^.*\[\(.*\)\].*$/\1/")"
+	case $mesg in
+		master)	mesg="%{%F{blue}󰘬%G%}%f"
+			;;
+		*)	mesg=" %F{magenta}[%f$mesg%F{magenta}] %{󰓁%G%}%f"
+			;;
+	esac
+	echo "$mesg"
+}
+
+info () {
+	local mesg=$vcs_info_msg_0_
+	[ ! -z "$mesg" ] \
+		&& echo "$(nice_git_info $mesg)" \
+		|| echo "%(?.%F{green}%{󰦕%G%}.%F{red}%{$(nice_exit_code)%G%}%f)"
+	
+
+}
+
+RPS1='$(info)'
 
 # Luke Smith prompt theme
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%1~%{$fg[red]%}]%{$fg[white]%}%B$ %b%f"
