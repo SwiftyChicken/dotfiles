@@ -23,16 +23,16 @@ done
 shift "$((OPTIND-1))"
 
 [ ! -z "$t" ] \
-	&& (setsid -f alacritty --config-file $HOME/.config/alacritty/vim.yml -t "$title" --class vim,Note -e bash -c "sleep 0.1 && nvim $1" > /dev/null 2>&1) \
+	&& (setsid -f alacritty --config-file $HOME/.config/alacritty/vim.yml -t "$title" --class vim,Note -e bash -c "sleep 0.1 && nvim '$1'" > /dev/null 2>&1) \
 	&& exit 0
 
 [ ! -z "$w" ] \
-	&& (setsid -f alacritty --config-file $HOME/.config/alacritty/vim.yml -t "$title" --class vim,Vim -e bash -c "sleep 0.1 && nvim $1" > /dev/null 2>&1) \
+	&& (setsid -f alacritty --config-file $HOME/.config/alacritty/vim.yml -t "$title" --class vim,Vim -e bash -c "sleep 0.1 && nvim '$1'" > /dev/null 2>&1) \
 	&& exit 0
 
 [ ! -z "$c" ] \
 	&& setsid -f alacritty --config-file $HOME/.config/alacritty/vim.yml -t "$title" --class vim,Vim -e bash -c "sleep 0.1 && nvim -c ':call ToggleNetrw()'" > /dev/null 2>&1 \
 	&& exit 0
 
-alacritty --config-file $HOME/.config/alacritty/vim.yml -t "$title" --class vim,Vim -e bash -c "sleep 0.1 && nvim $1"
+alacritty --config-file $HOME/.config/alacritty/vim.yml -t "$title" --class vim,Vim -e bash -c "sleep 0.1 && nvim '$1'"
 exit 0
