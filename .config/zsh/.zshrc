@@ -14,7 +14,7 @@ autoload -U colors && colors
 setopt prompt_subst
 
 nice_exit_code() {
-	local exit_status="${1:-$(print -P %?)}";
+	local exit_status="$1";
 	# nothing to do here
 	[[ -z $exit_status || $exit_status == 0 ]] && return;
 
@@ -76,10 +76,11 @@ nice_git_info () {
 }
 
 info () {
+	local error="${1:-$(print -P %?)}"
 	local mesg=$vcs_info_msg_0_
 	[ ! -z "$mesg" ] \
-		&& echo "$(nice_git_info $mesg)" \
-		|| echo "%(?..%F{red}%{$(nice_exit_code)%G%}%f)"
+		&& echo "$(nice_git_info $mesg $error)" \
+		|| echo "%(?..%F{red}%{$(nice_exit_code $error)%G%}%f)"
 	
 
 }
