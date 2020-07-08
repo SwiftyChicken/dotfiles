@@ -110,7 +110,7 @@ tr "\n" " " < $clipboard| tee $clipboard
 # Join splitted words
 sed -i "s/\([^ ]*\)- \([^ ]*\)/\1\2/" $clipboard
 # Add quotes
-sed -i "1 s/^\(.\)/``\1/" $clipboard
+sed -i "1 s/^\(.\)/\`\`\1/" $clipboard
 sed -i "$ s/\(.\)$/\1''/" $clipboard
 # Indent new line after each phrase
 sed -i "s/\. /\. \n/" $clipboard
@@ -135,19 +135,20 @@ $>$\hspace{0.3cm} <!!>
 }}
 \bigbreak
 %end%
-
 \end{document}" >> "$note"
 } #
 
 function correct_notation () {
 	local file="$1"
 	sed -i -e "s/\([{}]\)/\\\\\1/g" $file
-	sed -i -e "s/∈/\\\in/g" $file
-	sed -i -e "s/∋/\\\ni/g" $file
-	sed -i -e "s/⊂/\\\subset/g" $file
-	sed -i -e "s/⊆/\\\subseteq/g" $file
-	sed -i -e "s/ ̸=/ \\\ne/g" $file
-	sed -i -e "s/⫋/\\\subsetneqq/g" $file
+	sed -i -e "s/∈/$\\\in$/g" $file
+	sed -i -e "s/∋/$\\\ni$/g" $file
+	sed -i -e "s/⊂/$\\\subset$/g" $file
+	sed -i -e "s/⊆/$\\\subseteq$/g" $file
+	sed -i -e "s/ ̸=/ $\\\ne$/g" $file
+	sed -i -e "s/∩/$\\\cap$/g" $file
+	sed -i -e "s/→/$\\\to$/g" $file
+	sed -i -e "s/[ϵε]/$\\\varepsilon$/g" $file
 } #
 
 function add_note () {
