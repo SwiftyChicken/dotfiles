@@ -35,7 +35,7 @@ case $1 in
 		link=$(echo "$1" | tr './:' '|'|sed "s/|\+/\|/g"|sed "s/|$//")
 		supported="$(egrep -iw "$link" $XDG_DATA_HOME/youtube-dl/supported)"
 		if [ ! -z "$supported" ]; then
-			dunstify -r 5864642 "󰄙  MPV" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#ff004b"
+			dunstify -r 5864642 "󰄙  MPV" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#525cf5"
 		start-mpv.sh $1
 		else
 			setsid -f qutebrowser ":open $t $1" &

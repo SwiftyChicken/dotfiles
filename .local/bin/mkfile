@@ -168,7 +168,7 @@ case $ext in
 		templateSetup $name
 		;;
 	txt)
-		folder="/home/swifty/Documents/TextFiles"
+		folder="/home/swifty/Documents/Text"
 		makeFile
 		neofiglet -cb "$(echo $name | tr 'a-z' 'A-Z')" > $folder/$name.$ext
 		echo -e "\n<!!>" >> $folder/$name.$ext

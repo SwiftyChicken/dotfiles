@@ -67,10 +67,10 @@ nnoremap <Space><Space> /<??><Enter>"_c4l
 inoremap <C-Space> <Esc>/<!!><Enter>"_c4l
 nnoremap <C-s> :%s//gI<Left><Left><Left>
 " Shortcutting split navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 """"""""""""""""""""""""""""""""""""""""
 "	        AIRLINE		       "
 """"""""""""""""""""""""""""""""""""""""
@@ -82,7 +82,7 @@ let g:airline_theme = 'minimalist'
 "	   LATEX PREVIEWER	       "
 """"""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.tex nmap <C-e> :e! <CR>
-autocmd BufNewFile,BufRead *.tex nmap <C-a> :w! <CR>:!pdflatex % <CR>
+autocmd BufNewFile,BufRead *.tex nmap <C-a> :w! <CR>:!latex="%" && pdflatex -output-directory ${latex\%/*} % <CR>
 autocmd BufNewFile,BufRead *.tex nmap <C-p> :LLPStartPreview <CR>
 autocmd BufNewFile,BufRead *.tex setl updatetime=1
 autocmd BufNewFile,BufRead *.tex nnoremap ;b o\begin{<replace>}<CR>\end{<replace>}<Esc>Vk:s/<replace>//<Left>

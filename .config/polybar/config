@@ -15,7 +15,7 @@ foreground-alt = #9ac4ff
 primary = #fff
 secondary = #a9b3c2
 background-level= #cec8d8ff
-alert = #c8144c
+alert = #ff004b
 
 [bar/level]
 width = 19%
@@ -590,6 +590,7 @@ format-foreground = ${colors.secondary}
 interval = 1
 
 tail = true
+click-left = start-newsboat.sh &
 
 [module/mtorrent]
 type = custom/script
