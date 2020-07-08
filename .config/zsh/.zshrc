@@ -62,20 +62,24 @@ nice_exit_code() {
 
 nice_git_info () {
 	local mesg="$(echo "$1"| sed "s/^.*\[\(.*\)\].*$/\1/")"
+	local icon=""
+	local color="white"
 	case $mesg in
-		master)	mesg="%{%F{blue}󰘬%G%}%f"
+		master)	color="blue"
+			icon="%{󰘬%G%}%f"
 			;;
-		*)	mesg=" %F{magenta}[%f$mesg%F{magenta}] %{󰓁%G%}%f"
+		*)	color="magenta"
+			icon="%{󰓁%G%}%f"
 			;;
 	esac
-	echo "$mesg"
+	echo "%F{$color}[%f$mesg%F{$color}] $icon"
 }
 
 info () {
 	local mesg=$vcs_info_msg_0_
 	[ ! -z "$mesg" ] \
 		&& echo "$(nice_git_info $mesg)" \
-		|| echo "%(?.%F{green}%{󰦕%G%}.%F{red}%{$(nice_exit_code)%G%}%f)"
+		|| echo "%(?..%F{red}%{$(nice_exit_code)%G%}%f)"
 	
 
 }
@@ -87,7 +91,7 @@ RPS1='$(info)'
 
 # Minimalist prompt
 PS1="
-%B%(?.%F{green}%~.%F{red}%~)%f%{$fg[white]%} $ %b"
+%B%(?.%F{blue}%~.%F{red}%~)%f λ %b"
 
 # History configuration:
 HISTFILE=~/.config/zsh/zish_history
