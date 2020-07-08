@@ -4,11 +4,14 @@
 </p>
 <p align="center">
 <span style="font-size:3em;">
-󰗚  <sub><sup>WIKI</sub></sup>&nbsp;&nbsp;&nbsp;&nbsp;
-󰄄  <sub><sup>GALLERY</sub></sup>&nbsp;&nbsp;&nbsp;
-󱑤  <sub><sup>GUIDE</sub></sup>
+  <img style="height: 55px; width: auto" src="/home/swifty/Pictures/ReadMe/Wiki.png" />
+	&nbsp;
+  <img style="height: 54px; width: auto" src="/home/swifty/Pictures/ReadMe/Gallery.png" />
+	&nbsp;
+  <img style="height: 55px; width: auto" src="/home/swifty/Pictures/ReadMe/Guide.png" />
 </span>
 </p>
  
 # <center>Screenshots
+
 
