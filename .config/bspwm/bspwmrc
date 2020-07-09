@@ -43,7 +43,6 @@ bspc rule -a cool-retro-term state=pseudo_tiled
 bspc rule -a Surf state=tiled
 
 bspc desktop '^3' -l monocle
-bspc desktop '^5' -l monocle
 
 # SCRATCHPADS
 
