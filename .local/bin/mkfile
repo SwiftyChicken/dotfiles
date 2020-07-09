@@ -59,7 +59,7 @@ done
 shift "$((OPTIND-1))"
 
 ## CHECK ARGUMENTS
-[ "$(echo $1 | tr '.' ' ' | wc -w)" -eq 0 ] && [[ "$_skip" == "false" ]] && echo -e "${red}${bold}error:${normal} Did you cut your fingers off midway because I don't see any filename...">&2 && exit 1
+[ $# -eq 0 ] && [[ "$_skip" == "false" ]] && echo -e "${red}${bold}error:${normal} Did you cut your fingers off midway because I don't see any filename...">&2 && exit 1
 [ "$(echo $1 | tr '.' ' ' | wc -w)" -eq 1 ] && f="$1.txt" || f="$1"
 
 ## VARIABLES
@@ -70,18 +70,18 @@ name=${f%%.*}
 function help () {
 	echo "Comming soon..."
 	exit 0
-}
+} #
 
 function list () {
 	echo -e "${bold}Available extensions:${normal}"
 	echo -e "${bold}---------------------${normal}"
 	ls -1 -F $template_folder | grep "[^/]$"| sed "s/\(.*\).tp$/${blue} \1 ${normal}/" | xargs -L1 -I{} echo -e "\{}"
 	exit 0
-}
+} #
 
 function extensionNotFound () {
 	echo -e "${red}${bold}error:${normal} The extension ${blue}${bold}$1${normal} has not been configured yet. You can configure it with the following command: ${magenta}mkfile $1.tp${normal}">&2 && exit 127
-}
+} #
 
 function templateSetup () {
 	extension=${f%.*}
@@ -127,7 +127,7 @@ function templateSetup () {
 	fi
 
 	createTemplate $extension
-}
+} #
 
 function createTemplate () {
 	name=$1
@@ -145,7 +145,7 @@ function createTemplate () {
 				;;
     		esac
 	done
-}
+} #
 
 function makeFile () {
 	[ ! -f $template_folder/$ext.tp ] \
@@ -155,7 +155,7 @@ function makeFile () {
 		&& echo -e "${red}${bold}error:${normal} The file ${blue}${bold}$name.$ext${normal} already exists in the ${green}$folder${normal} folder. You can force it with the ${magenta}${bold}-f${normal} flag.">&2 \
 		&& exit 1
 	cp "$template_folder/$ext.tp" "$folder/$name.$ext"
-}
+} #
 
 
 ## MAIN PROGRAM
