@@ -7,7 +7,7 @@ dwndir="$HOME/Downloads"
 picdir="$HOME/Pictures/"
 tmplist=$(mktemp)
 
-organizer () {
+function organizer () {
 	ext=$(echo $1 | tr '[A-Z]' '[a-z]')
 	type=$2
 	path="$4"
@@ -29,7 +29,7 @@ organizer () {
 			;;
 		*) echo "$type $ext $file" | tr '[a-z]' '[A-Z]'
 	esac	
-}
+} #
 
 find $dwndir -maxdepth 1 -type f > $tmplist
 while read line; do

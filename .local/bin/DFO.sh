@@ -26,5 +26,5 @@ done
 # Watch if new file is added to ~/Downloads and organise it.
 inotifywait -m "$HOME/Downloads" -e moved_to | while read dir action file; do
 	    sleep 1
-	    timer-orgDwn.sh
+	    organise.sh
     done
