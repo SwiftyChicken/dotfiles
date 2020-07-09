@@ -81,27 +81,14 @@ let g:airline_theme = 'minimalist'
 """"""""""""""""""""""""""""""""""""""""
 "	   LATEX PREVIEWER	       "
 """"""""""""""""""""""""""""""""""""""""
-autocmd BufNewFile,BufRead *.tex nmap <C-e> :e! <CR>
-autocmd BufNewFile,BufRead *.tex nmap <C-a> :w! <CR>:!latex="%" && pdflatex -output-directory ${latex\%/*} % <CR>
-autocmd BufNewFile,BufRead *.tex nmap <C-p> :LLPStartPreview <CR>
-autocmd BufNewFile,BufRead *.tex setl updatetime=1
-autocmd BufNewFile,BufRead *.tex nnoremap ;b o\begin{<replace>}<CR>\end{<replace>}<Esc>Vk:s/<replace>//<Left>
-autocmd BufNewFile,BufRead *.tex vnoremap a$ c$<C-r>"$<Esc>
-autocmd BufNewFile,BufRead *.tex vnoremap a" c``<C-r>"''<Esc>
-autocmd BufNewFile,BufRead *.tex vnoremap ai c\textit{<C-r>"}<Esc>
-autocmd BufNewFile,BufRead *.tex vnoremap ab c\textbf{<C-r>"}<Esc>
+autocmd BufNewFile,BufRead *.tex source ~/.config/nvim/modes/latex.vim
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
 
 """"""""""""""""""""""""""""""""""""""""
 "	   TO DO LIST	     	       "
 """"""""""""""""""""""""""""""""""""""""
-autocmd BufNewFile,BufRead *.todo inoremap <Enter> <Enter>[ ] 
-autocmd BufNewFile,BufRead *.todo inoremap <Tab>l <Esc>I<Tab><Esc>A
-autocmd BufNewFile,BufRead *.todo inoremap <Tab>h <Esc>I<BackSpace><Esc>A
-autocmd BufNewFile,BufRead *.todo inoremap <Esc> <Esc>:%s/\[ \] $/[ ] <!!>/<CR>
-autocmd BufNewFile,BufRead *.todo nnoremap <Enter> V:s/\[ \]/[x]/<CR>
-autocmd BufNewFile,BufRead *.todo nnoremap <BackSpace> V:s/\[x\]/[ ]/<CR>
+autocmd BufNewFile,BufRead *.todo source ~/.config/nvim/modes/todo.vim
 
 """"""""""""""""""""""""""""""""""""""""
 "	  MARKDOWN PREVIEWER	       "
