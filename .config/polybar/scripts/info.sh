@@ -12,7 +12,7 @@ else
 
 	count=0
 
-	while xdotool search --name "polybar-music_eDP1" && [ "$count" -lt "3" ] ; do
+	while xdotool search --name "polybar-music_eDP1" && [ "$count" -lt "15" ] ; do
 		sleep 1
 		count=$[$count+1]
 	done
