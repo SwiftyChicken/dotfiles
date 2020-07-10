@@ -9,7 +9,7 @@ if [ "$class" = "scratchpad" ] ; then
         xdotool windowmove $wid 10 720
 
 elif [ "$class" = "Surf" ] ; then
-	xdotool windowsize $wid 1835 950
+	xdotool windowsize $wid 1835 955
 
 elif [ "$class" = "lf" ] ; then
         xdotool windowmove $wid 10 600
