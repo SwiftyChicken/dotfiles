@@ -24,6 +24,6 @@ date +''
 
 #n30f -d -x 720 -y 36 $HOME/.config/popups/calendar/bg.png &
 # current month, highlight header and today
-cal -m | sed -r -e "1 s/.*/^fg($month_fg)&^fg()/" -e "2 s/.*/^fg($weekday_fg)&^fg()/"  -e "0,/(^| )($TODAY)($|)/s//\1^bg($today_fg)^fg($main_bg)\2^fg()^bg()\3/" -e "s/^(.*)$/  \1/" )| dzen2 -fn "Ubuntu Mono:size=18" -x 1550 -y -70 -w 310 -h 25 -l $LINES -tw 0  -p -e 'onstart=uncollapse,hide;button1=exit;' -fg "$main_fg" -bg "$main_bg"
+cal -m | sed -r -e "1 s/.*/^fg($month_fg)&^fg()/" -e "2 s/.*/^fg($weekday_fg)&^fg()/"  -e "0,/(^| )($TODAY)($|)/s//\1^bg($today_fg)^fg($main_bg)\2^fg()^bg()\3/" -e "s/^(.*)$/  \1/" )| dzen2 -fn "UbuntuMono Nerd Font:size=18" -x 1550 -y -70 -w 310 -h 25 -l $LINES -tw 0  -p -e 'onstart=uncollapse,hide;button1=exit;' -fg "$main_fg" -bg "$main_bg"
 
 #pkill n30f
