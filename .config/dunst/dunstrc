@@ -207,7 +207,7 @@
 
 [spotify]
     body = *Spotify*
-    format = "%b\n[ <span font_desc='Ubuntu Mono 20'><i>%s</i></span> ]"
+    format = "%b\n[ <span font_desc='UbuntuMono Nerd Font 20'><i>%s</i></span> ]"
     background = "#191414"
 
 [bluetooth]

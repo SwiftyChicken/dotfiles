@@ -35,9 +35,9 @@ padding-right = 2
 module-margin-left = 0
 module-margin-right = 1
  
-font-0 = Hack Nerd Font:pixelsize=14:style=Medium Condensed;5
+font-0 = UbuntuMono Nerd Font:pixelsize=14:style=Medium Condensed;5
 font-1 = Material Design Icons Desktop:pixelsize=20;5
-font-2 = Hack Nerd Font:pixelsize=20:style=Medium Condensed;7
+font-2 = UbuntuMono Nerd Font:pixelsize=20:style=Medium Condensed;7
  
 modules-center = xbacklight pulseaudio
 
@@ -137,7 +137,7 @@ font-1 = Font Awesome 5 Pro:pixelsize=20:style=Solid;3
 font-2 = Font Awesome 5 Brands:pixelsize=21;3
 font-3 = SourceHanSansJP:pixelsize=14:style=Medium;2
 font-4 = Font Awesome 5 Pro:pixelsize=18:style=Solid;3
-font-5 = Hack Nerd Font:pixelsize=31:style=Medium Condensed;7
+font-5 = UbuntuMono Nerd Font Mono:pixelsize=36:style=Medium Condensed;7
  
 modules-center = right song left
 
@@ -362,7 +362,7 @@ ws-icon-0 = I;%{F#fefefe}%{A3:alacritty &:}󰆍%{A}%{F-}
 ws-icon-1 = II;%{F#00c0ff}%{A3:qutebrowser &:}󰇧%{A}%{F-}
 ws-icon-2 = III;%{F#ff0900}%{A3:grep " T " /tmp/mpv-wpf.txt | tail -1 | cut -d' ' -f2| xargs -L1 -I[] xdotool key --window "[]" p &:}󰄘%{A}%{F-}
 ws-icon-3 = IV;%{F#ffca00}%{A3:start-newsboat.sh &:}󰇰%{A}%{F-}
-ws-icon-4 = V;%{F#0048ff}%{A3:start-vim.sh -c &:}󰹻%{A}%{F-}
+ws-icon-4 = V;%{F#003eff}%{A3:start-vim.sh -c &:}󰹻%{A}%{F-}
 ws-icon-5 = VI;%{F#c46a4b}%{A3:zathura &:}󰉨%{A}%{F-}
 ws-icon-6 = VII;%{F#ff93aa}%{A3:gimp &:}󰿁%{A}%{F-}
 ws-icon-7 = VIII;%{F#FF8C00}%{A3:retroarch &:}󰊠%{A}%{F-}
@@ -392,14 +392,14 @@ format = <label><bar>
 label = "󰃠 "
 label-foreground = ${colors.background}
 
-bar-width = 10
+bar-width = 13
 bar-indicator = "%{T3}%{T-}"
 bar-indicator-foreground = ${colors.background}
 bar-indicator-font = 2
-bar-fill = ━
+bar-fill = 
 bar-fill-font = 2
 bar-fill-foreground = ${colors.background}
-bar-empty = ━
+bar-empty = 
 bar-empty-font = 2
 bar-empty-foreground = #607290
 
@@ -431,7 +431,7 @@ label-volume-foreground = ${root.foreground}
 label-muted = 󰎊 Muted
 label-muted-foreground = #607290
 
-bar-volume-width = 10
+bar-volume-width = 13
 bar-volume-foreground-0 = ${colors.background}
 bar-volume-foreground-1 = ${colors.background}
 bar-volume-foreground-2 = ${colors.background}
@@ -442,9 +442,9 @@ bar-volume-foreground-6 = #fb2020
 bar-volume-gradient = false
 bar-volume-indicator = "%{T3}%{T-}"
 bar-volume-indicator-font = 2
-bar-volume-fill = ━
+bar-volume-fill = 
 bar-volume-fill-font = 2
-bar-volume-empty = ━
+bar-volume-empty = 
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = #607290
 
@@ -529,7 +529,7 @@ click-left = playerctl --player=spotify play-pause &
 type = custom/text
 content-background = #00000000
 content-foreground = #df191414
-content = ""
+content = ""
 
 [module/song]
 type = custom/script
@@ -546,7 +546,7 @@ click-left = bspc desktop -f ^10 &
 type = custom/text
 content-background = #00000000
 content-foreground = #df191414
-content =""
+content =""
 
 [module/next]
 type = custom/script
@@ -573,7 +573,7 @@ format-foreground = ${colors.secondary}
 interval = 1
 tail = true
 
-click-left = alacritty -e gotop &
+click-left = pgrep gotop && bspc desktop -f ^1 || alacritty -e gotop &
 
 [module/update]
 type = custom/script

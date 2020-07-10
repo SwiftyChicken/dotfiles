@@ -25,7 +25,7 @@ title=$(sed '2q;d' $temp| sed -e "s/[-[(]....*[])]*//g"| sed "s/ *$//"| sed "s/^
 
 curl "$(sed '3q;d' $temp| sed "s/open\.spotify\.com/i.scdn.co/")" > /tmp/spt.jpeg \
 	|| cp $HOME/.config/dunst/scripts/error.png /tmp/spt.jpeg \
-	&& dunstify -r "991361" -i /tmp/spt.jpeg "$title" "<span foreground='#1DB954' font_desc='Ubuntu Mono 32'>󰓇<span font_desc='Ubuntu Mono 14'> </span><b>Spotify</b> </span><span font_desc='Ubuntu Mono 4'>\n \n</span><span font_desc='Ubuntu Mono 22'><b>$artist</b></span>"
+	&& dunstify -r "991361" -i /tmp/spt.jpeg "$title" "<span foreground='#1DB954' font_desc='UbuntuMono Nerd Font 32'>󰓇<span font_desc='UbuntuMono Nerd Font 14'> </span><b>Spotify</b> </span><span font_desc='UbuntuMono Nerd Font 4'>\n \n</span><span font_desc='UbuntuMono Nerd Font 22'><b>$artist</b></span>"
 
 rm $temp
 
