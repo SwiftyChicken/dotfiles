@@ -23,8 +23,8 @@ alias rm='rm -I'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ls='ls --color=auto'
-alias vim='start-vim.sh'
-alias vi='start-vim.sh'
+alias vim='start-vim.sh -w'
+alias vi='start-vim.sh -w'
 alias config='/usr/bin/git --git-dir=$HOME/Documents/Repos/dotfiles/ --work-tree=$HOME'
 alias checkupdates='\
 echo "${bold}Checking Pacman...${normal}" \

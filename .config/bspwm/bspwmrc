@@ -54,7 +54,7 @@ sid=$(wmctrl -lx | grep scratch.scratchpad| cut -d' ' -f1| head -1) \
 
 cid=$(wmctrl -lx | grep calc.scratchpad| cut -d' ' -f1| head -1) \
 && [ -z "$(echo $cid)" ] \
-	&& alacritty -t calculator --class calc,scratchpad -d 35 10 -e bash -c "echo "" && calc -d" \
+	&& alacritty -t calculator --class calc,scratchpad -d 35 10 -e bash -c "calc -d" \
 	& sleep 1 \
 	&& cid=$(wmctrl -lx | grep calc.scratchpad| cut -d' ' -f1| head -1) \
 	&& echo "$cid" > /tmp/calcID ;

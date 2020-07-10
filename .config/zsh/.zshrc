@@ -91,9 +91,16 @@ RPS1='$(info)'
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%1~%{$fg[red]%}]%{$fg[white]%}%B$ %b%f"
 
 # Minimalist prompt
-PS1="
-%B%(?.%F{blue}%f%{$bg[blue]%} %~ %{$reset_color%}%F{blue}%f.%F{red}%f%{$bg[red]%} %~ %{$reset_color%}%F{red}%f)%b "
+PS1="%B%(?.%F{blue}%f%{$bg[blue]%}%{$fg[white]%} %~ %{$reset_color%}%F{blue}%f.%F{red}%f%{$bg[red]%} %~ %{$reset_color%}%F{red}%f)%b %B%F{white}%f%{$bg[white]%}%{$fg[black]%}λ%{$reset_color%}%F{white}%f%b "
 
+function precmd {
+	cmd="$(history | tail -1|sed 's/^ [0-9]*  *//')"
+	if [[ "$NEW_LINE" = true ]] && [[ $cmd != "clear"* ]] && [[ $cmd != "reset" ]] then
+		print ""
+    	else
+        	NEW_LINE=true
+    	fi
+}
 # History configuration:
 HISTFILE=~/.config/zsh/zish_history
 HISTSIZE=1000
