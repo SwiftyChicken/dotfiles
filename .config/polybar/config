@@ -138,6 +138,7 @@ font-2 = Font Awesome 5 Brands:pixelsize=21;3
 font-3 = SourceHanSansJP:pixelsize=14:style=Medium;2
 font-4 = Font Awesome 5 Pro:pixelsize=18:style=Solid;3
 font-5 = UbuntuMono Nerd Font Mono:pixelsize=36:style=Medium Condensed;7
+font-6 = BreezeSans:pixelsize=14:style=Medium;2
  
 modules-center = right song left
 
@@ -573,7 +574,7 @@ format-foreground = ${colors.secondary}
 interval = 1
 tail = true
 
-click-left = pgrep gotop && bspc desktop -f ^1 || alacritty -e gotop &
+click-left = pgrep gotop && xdotool search --name "gotop" windowactivate || alacritty -t gotop -e gotop &
 
 [module/update]
 type = custom/script
