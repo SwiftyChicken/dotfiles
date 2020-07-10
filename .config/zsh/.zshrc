@@ -91,7 +91,7 @@ RPS1='$(info)'
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%1~%{$fg[red]%}]%{$fg[white]%}%B$ %b%f"
 
 # Minimalist prompt
-PS1="%B%(?.%F{blue}%f%{$bg[blue]%}%{$fg[white]%} %~ %{$reset_color%}%F{blue}%f.%F{red}%f%{$bg[red]%} %~ %{$reset_color%}%F{red}%f)%b %B%F{white}%f%{$bg[white]%}%{$fg[black]%}λ%{$reset_color%}%F{white}%f%b "
+PS1="%B%(?.%F{008}%f%K{008}%F{007} %~ %k%F{008}%f.%F{001}%f%K{001}%F{016} %~ %k%F{001}%f)%b %B%F{007}%f%K{007}%F{016}λ%k%F{007}%f%b "
 
 function precmd {
 	cmd="$(history | tail -1|sed 's/^ [0-9]*  *//')"
@@ -160,5 +160,9 @@ man() {
     command man "$@"
 }
 
+# greeter
+[ $COLUMNS -gt 70 ] && hanka.sh
+
 # Load aliases
 source $HOME/.config/aliasrc
+
