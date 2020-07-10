@@ -92,7 +92,7 @@ RPS1='$(info)'
 
 # Minimalist prompt
 PS1="
-%B%(?.%F{blue}%~.%F{red}%~)%f λ %b"
+%B%(?.%F{blue}%f%{$bg[blue]%} %~ %{$reset_color%}%F{blue}%f.%F{red}%f%{$bg[red]%} %~ %{$reset_color%}%F{red}%f)%b "
 
 # History configuration:
 HISTFILE=~/.config/zsh/zish_history
