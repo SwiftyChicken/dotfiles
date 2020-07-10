@@ -30,17 +30,16 @@ bspc rule -a Vim desktop='^5' follow=on state=pseudo_tiled
 bspc rule -a Zathura desktop='^6' follow=on state=pseudo_tiled
 bspc rule -a Sxiv desktop='^6' follow=off 
 bspc rule -a Gimp desktop='^7' state=floating 
-bspc rule -a minecraft-launcher desktop='^8'
 bspc rule -a discord desktop='^9' follow=off  
 bspc rule -a Spotify desktop='^10' follow=off state=floating
-bspc rule -a Pcmanfm state=floating
+
 bspc rule -a mpv focus=off state=floating
-bspc rule -a Screenkey manage=off
 bspc rule -a scratchpad locked=on sticky=on state=floating hidden=on
-bspc rule -a taskbook locked=on sticky=on state=floating hidden=on
 bspc rule -a lf locked=on sticky=on state=floating hidden=on
+
+bspc rule -a Surf state=pseudo_tiled
+bspc rule -a Pcmanfm state=floating
 bspc rule -a cool-retro-term state=pseudo_tiled
-bspc rule -a Surf state=tiled
 
 bspc desktop '^3' -l monocle
 

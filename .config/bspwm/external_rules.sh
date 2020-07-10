@@ -8,8 +8,8 @@ instance=$3
 if [ "$class" = "scratchpad" ] ; then
         xdotool windowmove $wid 10 720
 
-elif [ "$class" = "taskbook" ] ; then
-        xdotool windowmove $wid 350 10
+elif [ "$class" = "Surf" ] ; then
+	xdotool windowsize $wid 1835 950
 
 elif [ "$class" = "lf" ] ; then
         xdotool windowmove $wid 10 600
