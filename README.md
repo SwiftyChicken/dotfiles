@@ -3,11 +3,11 @@
 </p>
 <p align="center">
 <span style="font-size:3em;">
-  <img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png" />
+    <a href="https://github.com/SwiftyChicken/dotfiles/wiki"><img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png" /></a>
 	&nbsp;&nbsp;
-  <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png" />
+   <a href="https://github.com/SwiftyChicken/dotfiles/wiki"><img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png" /></a>
 	&nbsp;&nbsp;
-  <img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png" />
+  <a href="#Installation"><img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png" /></a>
 </span>
 </p>
  
@@ -36,6 +36,9 @@
   <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_3.png" />
   <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_4.png" />
 </p>
+
+# <center>Installation</center>
+<b>...</b>
 
 # <center>Keybindings</center>
 <b>...</b>
