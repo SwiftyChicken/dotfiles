@@ -54,6 +54,7 @@ This might help when trying to find missing dependencies. I will a proper list l
 	- [ ] Polybar modules
 	- [ ] Scripts
 	- [ ] Gallary
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 ||||||| parent of f635e50... Update README.md
@@ -111,3 +112,36 @@ This might help when trying to find missing dependencies. I will a proper list l
 		               (`(`(---"-`)
 </pre>
 >>>>>>> f635e50... Update README.md
+||||||| parent of 9102211... Delete old README
+
+<<<<<<< HEAD
+=======
+<pre>
+  _______________________________
+/    Thanks for passing by :)     \
+\ Dotfiles manual is comming soon!/
+  ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨ 
+	  \ \	     .".".".
+	    \\	   (`       `)               _.-=-.
+	      \	    '._.--.-;             .-`  -'  '.
+		   .-'`.o )  \           /  .-_.--'  `\
+		  `;---) \    ;         /  / ;' _-_.-' `
+		    `;"`  ;    \        ; .  .'   _-' \
+		     (    )    |        |  / .-.-'    -`
+		      '-.-'     \       | .' ` '.-'-\`
+		       /_./\_.|\_\      ;  ' .'-'.-.
+		       /         '-._    \` /  _;-,
+		      |         .-=-.;-._ \  -'-,
+		      \        /      `";`-`,-"`)
+		       \       \     '-- `\.\
+		        '.      '._ '-- '--'/
+		          `-._     `'----'`;
+		              `"""--.____,/
+		                     \\  \
+		                     // /`
+		                 ___// /__
+		               (`(`(---"-`)
+</pre>
+>>>>>>> origin/master
+=======
+>>>>>>> 9102211... Delete old README
