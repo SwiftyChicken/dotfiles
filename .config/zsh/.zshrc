@@ -161,7 +161,7 @@ man() {
 }
 
 # greeter
-[ $COLUMNS -gt 70 ] && hanka.sh
+hanka.sh
 
 # Load aliases
 source $HOME/.config/aliasrc

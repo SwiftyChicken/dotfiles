@@ -15,6 +15,7 @@ nrm="\e[0m"
  ####################################
 
 alias calc='calc -d'
+alias clear='clear && hanka.sh'
 alias tb='taskbook'
 alias a='taskbook -t'
 alias c='taskbook -c'
