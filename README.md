@@ -1,13 +1,13 @@
 <p align="center">
-  <img width="30%" src="/home/swifty/Pictures/ReadMe/sweet.png" />
+  <img width="30%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/sweet.png" />
 </p>
 <p align="center">
 <span style="font-size:3em;">
-  <img style="height: 55px; width: auto" src="/home/swifty/Pictures/ReadMe/Wiki.png" />
+  <img style="height: 55px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png" />
 	&nbsp;
-  <img style="height: 54px; width: auto" src="/home/swifty/Pictures/ReadMe/Gallery.png" />
+  <img style="height: 54px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png" />
 	&nbsp;
-  <img style="height: 55px; width: auto" src="/home/swifty/Pictures/ReadMe/Guide.png" />
+  <img style="height: 55px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png" />
 </span>
 </p>
  
@@ -31,10 +31,10 @@
 
 # <center>Screenshots</center>
 <p align="center">
-  <img width="49%" src="/home/swifty/Pictures/ReadMe/Screenshot-update_1.png" />
-  <img width="49%" src="/home/swifty/Pictures/ReadMe/Screenshot-update_2.png" />
-  <img width="49%" src="/home/swifty/Pictures/ReadMe/Screenshot-update_3.png" />
-  <img width="49%" src="/home/swifty/Pictures/ReadMe/Screenshot-update_4.png" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_1.png" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_2.png" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_3.png" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_4.png" />
 </p>
 
 # <center>Keybindings</center>
