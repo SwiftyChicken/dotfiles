@@ -80,9 +80,9 @@ cursor-click = pointer
 cursor-scroll = default
 
 [bar/workspace]
-width = 23.5%
+width = 24%
 height = 4.85%
-offset-x = 8%:30
+offset-x = 8%:10
 offset-y = 0%
 radius = 0
 fixed-center = true
@@ -91,7 +91,7 @@ bottom = true
 background = #00000000
 foreground = ${colors.foreground}
 
-padding-left = 0
+padding-left = 2
 padding-right = 0
 
 module-margin-left = 0
