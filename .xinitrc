@@ -14,5 +14,6 @@ bspswallow &
 SPTN.sh &
 MO.sh &
 DFO.sh &
+alacritty &
 exec bspwm
 
