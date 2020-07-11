@@ -40,9 +40,6 @@
 # <center>Installation</center>
 <b>...</b>
 
-# <center>Keybindings</center>
-<b>...</b>
-
 # <center>Activities</center>
 <b> I will add more stuff here, later...  
 For now you can also see what packages I have installed on this [list](https://github.com/SwiftyChicken/dotfiles/blob/master/.config/pkglist.txt).
