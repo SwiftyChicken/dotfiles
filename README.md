@@ -1,13 +1,13 @@
 <p align="center">
-  <img width="30%" src="/home/swifty/Pictures/ReadMe/sweet.png" />
+  <img width="30%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/sweet.png?raw=true" />
 </p>
 <p align="center">
 <span style="font-size:3em;">
-  <img style="height: 55px; width: auto" src="/home/swifty/Pictures/ReadMe/Wiki.png" />
-	&nbsp;
-  <img style="height: 54px; width: auto" src="/home/swifty/Pictures/ReadMe/Gallery.png" />
-	&nbsp;
-  <img style="height: 55px; width: auto" src="/home/swifty/Pictures/ReadMe/Guide.png" />
+    <a href="https://github.com/SwiftyChicken/dotfiles/wiki?raw=true"><img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png?raw=true" /></a>
+	&nbsp;&nbsp;
+   <a href="https://github.com/SwiftyChicken/dotfiles/wiki"><img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png?raw=true" /></a>
+	&nbsp;&nbsp;
+  <a href="#Installation"><img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png?raw=true" /></a>
 </span>
 </p>
  
@@ -31,18 +31,18 @@
 
 # <center>Screenshots</center>
 <p align="center">
-  <img width="49%" src="/home/swifty/Pictures/ReadMe/Screenshot-update_1.png" />
-  <img width="49%" src="/home/swifty/Pictures/ReadMe/Screenshot-update_2.png" />
-  <img width="49%" src="/home/swifty/Pictures/ReadMe/Screenshot-update_3.png" />
-  <img width="49%" src="/home/swifty/Pictures/ReadMe/Screenshot-update_4.png" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_1.png?raw=true" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_2.png?raw=true" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_3.png?raw=true" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_4.png?raw=true" />
 </p>
 
-# <center>Keybindings</center>
+# <center>Installation</center>
 <b>...</b>
 
 # <center>Activities</center>
 <b> I will add more stuff here, later...  
-For now you can also see what packages I have installed on this [list](/home/swifty/.config/pkglist.txt).
+For now you can also see what packages I have installed on this [list](https://github.com/SwiftyChicken/dotfiles/blob/master/.config/pkglist.txt).
 This might help when trying to find missing dependencies. I will a proper list later.  
 </b>
 
@@ -53,5 +53,4 @@ This might help when trying to find missing dependencies. I will a proper list l
 - [ ] Wiki
 	- [ ] Polybar modules
 	- [ ] Scripts
-	- [ ] Gallary
-
+	- [ ] Gallary  
