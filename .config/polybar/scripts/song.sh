@@ -18,7 +18,7 @@ function scroll () {
 
 		wait
 	else
-		echo "$prefix $temp $suffix"
+		echo "$prefix%{T8} $temp %{T-}$suffix"
 	fi
 } #
 
@@ -27,7 +27,7 @@ function get_artist () {
 } #
 
 function get_title () {
-	echo "$(playerctl -p spotify metadata --format "{{title}}" |sed -e "s/^[[(]....*[])] *//g"| sed -e "s/[-[(]....*[])]*//g" | sed "s/ *$//"| sed 's/'\''/\\'\''/g')"
+	echo "$(playerctl -p spotify metadata --format "{{title}}" | sed 's/'\''/\\'\''/g')"
 } #
 
 [ ! -z "$(playerctl -p spotify status 2>/dev/null)" ] \

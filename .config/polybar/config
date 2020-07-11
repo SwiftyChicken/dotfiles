@@ -139,6 +139,7 @@ font-3 = SourceHanSansJP:pixelsize=14:style=Medium;2
 font-4 = Font Awesome 5 Pro:pixelsize=18:style=Solid;3
 font-5 = UbuntuMono Nerd Font Mono:pixelsize=36:style=Medium Condensed;7
 font-6 = Noto Sans Mono:pixelsize=14:style=Medium;2
+font-7 = BreezeSans:pixelsize=14:style=Medium Condensed;2
  
 modules-center = right song left
 
