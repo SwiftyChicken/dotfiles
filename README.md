@@ -61,7 +61,7 @@ This might help when trying to find missing dependencies. I will a proper list l
 <pre>
   _______________________________
 /    Thanks for passing by :)     \
-\ Dotfiles info are comming soon!  /
+\ Dotfiles manual is comming soon!/
   ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨ 
 	  \ \	     .".".".
 	    \\	   (`       `)               _.-=-.
