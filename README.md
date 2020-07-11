@@ -42,7 +42,7 @@
 
 # <center>Activities</center>
 <b> I will add more stuff here, later...  
-For now you can also see what packages I have installed on this [list](/home/swifty/.config/pkglist.txt).
+For now you can also see what packages I have installed on this [list](https://github.com/SwiftyChicken/dotfiles/blob/master/.config/pkglist.txt).
 This might help when trying to find missing dependencies. I will a proper list later.  
 </b>
 
