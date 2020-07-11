@@ -1,0 +1,44 @@
+#show-read-feeds no
+#auto-reload yes
+#reload-time 5
+
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+
+color listnormal white default
+color listfocus black white bold
+color listnormal_unread yellow default
+color listfocus_unread black yellow bold
+color info white blue bold
+color article white default bold
+
+highlight all "---.*---" yellow
+highlight feedlist ".*(0/0))" black
+highlight article "(^Feed:.*|^Title:.*|^Author:.*)" black green default bold
+highlight article "(^Link:|^Date:)" white black standout bold
+highlight article "https?://[^ ]+" black green standout bold
+highlight article "^(Title):.*$" black blue default bold
+highlight article "\\[[0-9][0-9]*\\]" magenta default bold
+highlight article "\\[image\\ [0-9]+\\]" yellow default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
+highlight article ":.*\\(link\\)$" green default
+highlight article ":.*\\(image\\)$" blue default
+highlight article ":.*\\(embedded flash\\)$" magenta default
+
+browser "nohup urlhandler -t %u > /dev/null 2>&1 &"
