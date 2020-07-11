@@ -24,7 +24,9 @@ settings:
         K: tab-next
         V: enter-mode caret
         f: hint links spawn --detach urlhandler {hint-url}
-        gi: hint inputs --first
+        gI: spawn --detach urlhandler -t {url:pretty}
+        gi: spawn --detach urlhandler {url:pretty}
+        go: set-cmd-text :open -w {url:pretty}
         gv: spawn --detach urlhandler {url:pretty}
         i: enter-mode insert
         j: scroll-px 0 200
