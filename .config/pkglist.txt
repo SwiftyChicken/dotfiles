@@ -161,7 +161,6 @@ ttf-breeze-sans
 typespeed
 ueberzug
 unzip
-vim
 wget
 which
 wireless_tools
