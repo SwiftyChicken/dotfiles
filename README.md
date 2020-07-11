@@ -3,11 +3,11 @@
 </p>
 <p align="center">
 <span style="font-size:3em;">
-    <a href="https://github.com/SwiftyChicken/dotfiles/wiki"><img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png" /></a>
+    <a href="https://github.com/SwiftyChicken/dotfiles/wiki"><img style="height: 41px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png" /></a>
 	&nbsp;&nbsp;
-   <a href="https://github.com/SwiftyChicken/dotfiles/wiki"><img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png" /></a>
+   <a href="https://github.com/SwiftyChicken/dotfiles/wiki"><img style="height: 40px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png" /></a>
 	&nbsp;&nbsp;
-  <a href="#Installation"><img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png" /></a>
+  <a href="#Installation"><img style="height: 40px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png" /></a>
 </span>
 </p>
  
