@@ -3,11 +3,11 @@
 </p>
 <p align="center">
 <span style="font-size:3em;">
-  <img style="height: 55px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png" />
-	&nbsp;
-  <img style="height: 54px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png" />
-	&nbsp;
-  <img style="height: 55px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png" />
+  <img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png" />
+	&nbsp;&nbsp;
+  <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png" />
+	&nbsp;&nbsp;
+  <img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png" />
 </span>
 </p>
  
