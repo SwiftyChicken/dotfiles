@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## ORIGINAL SOURCE: 
-# https://github.com/konapun/dotfiles/blob/master/zsh/custom/greet.zsh
+# https://github.com/bliau03/dotfiles/blob/master/.local/bin/bluebook.sh
 
 BLUE='\033[2;36m'
 WHITE='\033[0;37m'
