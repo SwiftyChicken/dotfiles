@@ -27,6 +27,10 @@ function error () {
 	exit 1
 } #
 
+while grep "^[0-9]\+$" /tmp/mpv-wpf.txt; do
+	sleep 0.1
+done
+
 echo "$number" >> /tmp/mpv-wpf.txt
 
 case $site in
