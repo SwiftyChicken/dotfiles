@@ -173,7 +173,7 @@ XF86MonBrightnessDown
 
 # Qutebrowser
 {mod5,super} + {_,shift + } q
-	{_,_}{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled} & bspc desktop -f '^{2}'
+	{_,_}{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled}
 
 # Spotify
 {mod5,super} + s

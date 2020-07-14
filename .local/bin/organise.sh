@@ -34,7 +34,7 @@ function organizer () {
 find $dwndir -maxdepth 1 -type f > $tmplist
 while read line; do
 	file="$(echo $line | rev | cut -d'/' -f1 | rev)"
-	[ -z "$(echo $file | grep -iE ".download$|^org.chrome.Chromium")" ] \
+	[ -z "$(echo $file | grep -iE ".download$|^org.chrome.Chromium|.part$")" ] \
 		&& organizer $(file -b "$line"| cut -d',' -f1) "$line" "$file" "$(identify "$line"| head -1 | sed -e "1 s/^.* \([0-9]\{3,4\}\s\?x\s\?[0-9]\{3,4\}\) .*$/\1/" )"
 done < $tmplist
 

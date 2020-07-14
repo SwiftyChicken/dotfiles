@@ -84,11 +84,12 @@ function extensionNotFound () {
 } #
 
 function templateSetup () {
-	extension=${f%.*}
+	local extension=${f%.*}
+	local sed_start="$(grep -nr "## MAIN PROGRAM" $0| tail -1 |cut -d':' -f1)"
 	[ -f "$template_folder/$extension.tp" ] && echo -e "${red}${bold}error:${normal} The ${blue}${bold}$extension.tp${normal} template already exists.">&2 && exit 1
 	
 	# Edit mkfile Script
-	if ! grep "$extension)" $0 > /dev/null; then
+	if ! sed -n "$sed_start,$ p" $0 | grep "$extension)" > /dev/null; then
 		while true; do
 			echo -e "What will the default folder be, for ${blue}${bold}$extension${normal} files? (Default value: \".\") "
 			printf "> "
@@ -115,7 +116,6 @@ function templateSetup () {
 					;;
                  	esac
          	done
-		sed_start="$(grep -nr "## MAIN PROGRAM" $0| tail -1 |cut -d':' -f1)"
 		sed -i "$sed_start,$ s/#<!ext!>)/$extension)/" $0
 		sed -i "$sed_start,$ s|<!folder!>|$folder|" $0 
 		sed -i "$sed_start,$ s/#<!command!>/<!command!>/" $0
@@ -184,6 +184,11 @@ case $ext in
 		neofiglet -b $name : To Do > $folder/$name.$ext
 		sed -i "s/^\(.*\)$/\t\1/" $folder/$name.$ext
 		echo -e "\n[ ] <!!>" >> $folder/$name.$ext
+		;;
+	c)
+		folder="/home/swifty/Documents/Programming/C"
+		makeFile
+		
 		;;
 	#<!ext!>)
 		#folder="<!folder!>"

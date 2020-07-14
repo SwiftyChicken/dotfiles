@@ -1,5 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""
-"		PLUGINS		       "
+"""""""""""""""""""""""""""""""""""""""" "		PLUGINS		       "
 """"""""""""""""""""""""""""""""""""""""
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -79,17 +78,16 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline_theme = 'minimalist'
 
 """"""""""""""""""""""""""""""""""""""""
-"	   LATEX PREVIEWER	       "
+"	   SPECIFIC CONFIGS 	       "
 """"""""""""""""""""""""""""""""""""""""
 au FileType tex source ~/.config/nvim/FileType/latex.vim
 au FileType tex setlocal comments=b:$>$\\hspace{0.3cm}
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
 
-""""""""""""""""""""""""""""""""""""""""
-"	   TO DO LIST	     	       "
-""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.todo source ~/.config/nvim/FileType/todo.vim
+
+au FileType c source ~/.config/nvim/FileType/c.vim
 
 """"""""""""""""""""""""""""""""""""""""
 "	  MARKDOWN PREVIEWER	       "
