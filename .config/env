@@ -207,6 +207,7 @@ ex=󱁻:\
 *.gitignore=󰊢 :\
 *.zshrc=󰒔 :\
 *.download=󰇚 :\
+*.part=󰇚 :\
 *.yml=󰒔 :\
 *.tex=󰈛 :\
 *.tp=󱉬 :\
@@ -214,4 +215,5 @@ ex=󱁻:\
 *.todo=󰝖 :\
 *.ttf=󰙩 :\
 *.otf=󰙩 :\
+*.torrent=󰅢 :\
 "
