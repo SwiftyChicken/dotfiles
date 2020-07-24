@@ -9,7 +9,7 @@ mail=$(head -n1 $file)
 rss=$(tail -n1 $file)
 
 
-if pidof newsboat > /dev/null; then
+if pidof newsboat > /dev/null || pidof neomutt > /dev/null; then
 	icon="󰏑     " && mail="" && rss=""
 else
 	[ "$(echo "$mail+$rss" | bc)" -eq "0" ] && icon="󰚇     " && mail="" && rss="" || icon="󱉲"	
@@ -23,7 +23,7 @@ mail=$(echo $mail | sed "s/^\(.\)$/\1  /")
 
 [[ "$ex" == "false" ]] && echo " $icon%{T1}%{F#dae1ec}$mail%{T3}%{O-11}$rss%{T-}%{F-}" &
 
-mail=$(echo "0")
+mail="$(ls ~/.local/share/mail/live/Inbox/new/|wc -l)"
 rss=$(newsboat -x print-unread 2> /dev/null || tail -n1 $file)
 echo "$mail" > $file
 echo "${rss%% *}">> $file
