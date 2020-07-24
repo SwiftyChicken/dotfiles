@@ -362,7 +362,7 @@ enable-scroll = false
 
 ws-icon-0 = I;%{F#fefefe}%{A3:alacritty &:}󰆍%{A}%{F-}
 ws-icon-1 = II;%{F#00c0ff}%{A3:qutebrowser &:}󰇧%{A}%{F-}
-ws-icon-2 = III;%{F#ff0900}%{A3:grep " T " /tmp/mpv-wpf.txt | tail -1 | cut -d' ' -f2| xargs -L1 -I[] xdotool key --window "[]" p &:}󰄘%{A}%{F-}
+ws-icon-2 = III;%{F#ff004b}%{A3:grep " T " /tmp/mpv-wpf.txt | tail -1 | cut -d' ' -f2| xargs -L1 -I[] xdotool key --window "[]" p &:}󰄘%{A}%{F-}
 ws-icon-3 = IV;%{F#ffca00}%{A3:start-newsboat.sh &:}󰇰%{A}%{F-}
 ws-icon-4 = V;%{F#003eff}%{A3:start-vim.sh -c &:}󰹻%{A}%{F-}
 ws-icon-5 = VI;%{F#c46a4b}%{A3:zathura &:}󰉨%{A}%{F-}
@@ -621,7 +621,7 @@ click-left = ~/.config/polybar/scripts/bluetooth-status.sh -t &
 [module/date]
 type = custom/script
 exec =  date '+%a %e %b %H:%M' 
-interval = 600
+interval = 60
 tail=true
 
 click-left = ~/.config/polybar/scripts/calendar.sh &
