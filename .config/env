@@ -14,7 +14,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-export PATH="$PATH:$HOME/.local/bin:$XDG_DATA_HOME/chess-linux-x64"
 
 # CONFIG:
 export VIMINIT="source $HOME/.config/nvim/init.vim"
@@ -34,6 +33,9 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 export XCURSOR_SIZE="32"
 export QT_QPA_PLATFORMTHEME=gtk3
+
+# PATH
+export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin:$XDG_DATA_HOME/chess-linux-x64"
 
 # LF ICONS:
 export LF_ICONS="\
