@@ -14,7 +14,7 @@ function scroll () {
 			--before-text "$prefix%{T7}" \
 			--after-text "%{T-}$suffix" \
 			--scroll-padding "     " \
-			--update-check true "echo '$(get_title)'" &
+			--update-check true "echo '$(get_scroll)'" &
 
 		wait
 	else
@@ -26,8 +26,13 @@ function get_artist () {
 	echo "$(playerctl -p spotify metadata --format "{{ artist }}"| sed -e "s/[[(]....*[])]*//g" | sed "s/ *$//"| sed "s/^\(.\{20\}[^ ]*\)\(.*\)$/\1[\2]/"| sed "s/\[ *\]$//"| sed "s/\[.*\]$/.../")"
 } #
 
+function get_scroll () {
+	tmp="$(get_title)"
+	echo "$(echo "$tmp" | sed 's/'\''/\\'\''/g')"
+} #
+
 function get_title () {
-	echo "$(playerctl -p spotify metadata --format "{{title}}" | sed 's/'\''/\\'\''/g')"
+	echo "$(playerctl -p spotify metadata --format "{{title}}"|sed 's/'\'\''/'\"'/g' )"
 } #
 
 [ ! -z "$(playerctl -p spotify status 2>/dev/null)" ] \

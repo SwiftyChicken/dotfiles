@@ -14,6 +14,10 @@ elif [ "$class" = "Surf" ] ; then
 elif [ "$class" = "lf" ] ; then
         xdotool windowmove $wid 10 600
 
+elif [ "$class" = "Dragon-drag-and-drop" ] ; then
+	xdo raise -a "Dragon-drag-and-drop"
+        xdotool windowmove $wid 10 40
+
 elif [ "$class" = "mpv" ] ; then
 	sed -i "$ s/^\([0-9]\+\)$/$wid \1/" /tmp/mpv-wpf.txt
 	xdotool windowsize $wid 450 250

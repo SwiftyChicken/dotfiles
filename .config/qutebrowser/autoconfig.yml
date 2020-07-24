@@ -25,8 +25,9 @@ settings:
         V: enter-mode caret
         f: hint links spawn --detach urlhandler {hint-url}
         gI: spawn --detach urlhandler -t {url:pretty}
+        gO: set-cmd-text :open -w -r {url:pretty}
         gi: spawn --detach urlhandler {url:pretty}
-        go: set-cmd-text :open -w {url:pretty}
+        go: set-cmd-text :open {url:pretty}
         gv: spawn --detach urlhandler {url:pretty}
         i: enter-mode insert
         j: scroll-px 0 200
@@ -73,13 +74,13 @@ settings:
     - -c
     - normal {line}G{column0}l
   fonts.contextmenu:
-    global: BreezeSans
+    global: ' BreezeSans'
   fonts.default_family:
     global: BreezeSans
   fonts.default_size:
     global: 13pt
   input.mouse.rocker_gestures:
-    global: true
+    global: false
   scrolling.smooth:
     global: true
   spellcheck.languages:

@@ -76,6 +76,7 @@ function list () {
 	echo -e "${bold}Available extensions:${normal}"
 	echo -e "${bold}---------------------${normal}"
 	ls -1 -F $template_folder | grep "[^/]$"| sed "s/\(.*\).tp$/${blue} \1 ${normal}/" | xargs -L1 -I{} echo -e "\{}"
+	echo -e "${blue} tp ${normal}"
 	exit 0
 } #
 

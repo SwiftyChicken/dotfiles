@@ -33,7 +33,10 @@ case $1 in
 		&& tail -1 $WPF | cut -d' ' -f1| xargs -L1 -I{} bspc node {} -t floating \
 		|| sed -i "/$pid/Id" $WPF
 		socket=$(tail -1 $WPF | cut -d' ' -f4)
-		[ ! -z "$pause" ] && echo '{ "command": ["set_property", "pause", false] }' | socat - /tmp/mpvs.$socket
+		new_pid=$(tail -1 $WPF | cut -d' ' -f2)
+		[ ! -z "$pause" ] && echo '{ "command": ["set_property", "pause", false] }' | socat - /tmp/mpvs.$socket \
+			&& [ -z "$(grep "$new_pid F" $WPF)" ] \
+			&& bspc node -f $new_pid
 		;;
 
 	-f)	bspc node $pid -g sticky=on

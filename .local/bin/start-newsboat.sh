@@ -10,7 +10,7 @@ while pidof newsboat && [ "$count" -lt "$stop" ] ; do
 	count=$[$count+1]
 done
 	
-[ "$count" -ge "$stop" ] && xdo close -N newsboat
+[ "$count" -ge "$stop" ] && xdo kill -N newsboat
 
 [ ! -z "$(bspc wm -g| grep ":OIV:")" ] && bspc desktop -f last.occupied && bspc node -f newest.local.!floating
 

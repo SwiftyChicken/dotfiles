@@ -35,4 +35,5 @@ shift "$((OPTIND-1))"
 	&& exit 0
 
 alacritty --config-file $HOME/.config/alacritty/vim.yml -t "$title" --class vim,Vim -e bash -c "sleep 0.1 && nvim '$1'"
+bspc node -f last
 exit 0

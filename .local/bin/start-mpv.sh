@@ -24,10 +24,11 @@ mpvsocket="/tmp/mpvs.$number"
 
 function error () {
 	dunstify -r 5864642 -u critical "MPV" "Sorry, mpv ran\ninto a problem..."
+	grep "^[0-9]\+$" /tmp/mpv-wpf.txt && sed -i "/^[0-9]\+$/d" /tmp/mpv-wpf.txt
 	exit 1
 } #
 
-while grep "^[0-9]\+$" /tmp/mpv-wpf.txt; do
+while grep "^[0-9]\+$" /tmp/mpv-wpf.txt > /dev/null 2>&1; do
 	sleep 0.1
 done
 
@@ -39,8 +40,8 @@ case $site in
 
 	     twitch)  	nohup streamlink -p "mpv --input-ipc-server=$mpvsocket" --twitch-low-latency $1 best > /dev/null 2>&1 || error
 			streamer=$(echo $1 | cut -d'/' -f4)
-			bspc desktop '^3' -l tiled
-			bspc desktop -f '^3' && surf "www.twitch.tv/$streamer/chat" > /dev/null 2>&1 && bspc desktop '^3' -l monocle
+			# bspc desktop '^3' -l tiled
+			# bspc desktop -f '^3' && surf "www.twitch.tv/$streamer/chat" > /dev/null 2>&1 && bspc desktop '^3' -l monocle
 		      	;;
 
 	     stream)  	nohup mpv --input-ipc-server=$mpvsocket "$1" > /dev/null 2>&1 || error
@@ -49,4 +50,4 @@ case $site in
 		  *)  	nohup mpv --input-ipc-server=$mpvsocket --profile=low-latency "$1" > /dev/null 2>&1 || error
 			;;
 esac 
-	
+
