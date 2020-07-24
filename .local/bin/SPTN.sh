@@ -26,4 +26,5 @@ done
 # Watch if spotify change its track
 playerctl -F metadata mpris:trackid 2> /dev/null|while read -r line; do
 	$HOME/.config/dunst/scripts/spotify.sh &
+	pidof -x ~/.config/polybar/scripts/info.sh && ~/.config/polybar/scripts/info.sh && ~/.config/polybar/scripts/info.sh &
 done
