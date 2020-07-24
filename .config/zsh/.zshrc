@@ -110,6 +110,25 @@ setopt autocd notify
 
 # Vim mode
 bindkey -v
+export KEYTIMEOUT=1
+
+# ci", ci', ci`, di", etc
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+    bindkey -M $m $c select-quoted
+  done
+done
+
+# ci{, ci(, ci<, di{, etc
+autoload -U select-bracketed
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+    bindkey -M $m $c select-bracketed
+  done
+done
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -142,12 +161,25 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit -d ~/.cache/zsh/zcompdump_$ZSH_VERSION
 _comp_options+=(globdots)	# Includes hidden files
+# Auto complete with case insenstivity
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Load zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949ab7"
+bindkey '^ ' autosuggest-accept
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'left' vi-backward-char
+bindkey -M menuselect 'down' vi-down-line-or-history
+bindkey -M menuselect 'up' vi-up-line-or-history
+bindkey -M menuselect 'right' vi-forward-char
+# Fix backspace bug when switching modes
+bindkey "^?" backward-delete-char
 
 # Man colours enabled
 man() {
@@ -161,8 +193,33 @@ man() {
 }
 
 # greeter
-hanka.sh
+# hanka.sh
 
 # Load aliases
 source $HOME/.config/aliasrc
 
+# Load zsh-syntax-highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+ZSH_HIGHLIGHT_STYLES[default]=none
+ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=001,bold
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=014,bold
+ZSH_HIGHLIGHT_STYLES[alias]=fg=012,bold
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=004,bold
+ZSH_HIGHLIGHT_STYLES[function]=fg=006,bold
+ZSH_HIGHLIGHT_STYLES[command]=fg=004,bold
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=magenta,bold
+ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=200,bold
+ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
+ZSH_HIGHLIGHT_STYLES[path]=fg=010,underline
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
+ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=129,bold
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=006
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=006
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=200
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=011
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=003
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=013,bold
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=013,bold
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]=fg=009
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]=fg=009,bold
+ZSH_HIGHLIGHT_STYLES[assign]=fg=009,bold
