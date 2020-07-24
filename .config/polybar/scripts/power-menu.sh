@@ -31,10 +31,10 @@ xmodmap -e "keycode 45 = k"
 
 case $chosen in
     $shutdown)
-	systemctl poweroff
+	sudo poweroff
         ;;
     $reboot)
-	systemctl reboot
+	sudo reboot
         ;;
     $lock)
         betterlockscreen -l &
