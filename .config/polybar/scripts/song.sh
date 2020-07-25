@@ -3,22 +3,21 @@
 function scroll () {
 	prefix="$1"
 	scrolling="$2"
-	temp="$(echo "$scrolling"| sed "s/^\(.\{20\}\)\(.*\)$/\1[\2]/"| sed "s/\[ *\]$//"| sed "s/\[.*\]$//")"
 	suffix="$3"
 	if [ "$(echo -n $scrolling |wc -c)" -gt 20 ]; then
+		temp="$(echo "$scrolling"| sed "s/^\(.\{20\}\)\(.*\)$/\1[\2]/"| sed "s/\[ *\]$//"| sed "s/\[.*\]$//")"
 		echo "$prefix%{T7}$temp%{T-}$suffix"
 		sleep 0.5
-
 		zscroll -l 20 \
         		--delay 0.2 \
 			--before-text "$prefix%{T7}" \
 			--after-text "%{T-}$suffix" \
 			--scroll-padding "     " \
-			--update-check true "echo '$(get_scroll)'" &
+			--update-check true "echo $(get_scroll)" &
 
 		wait
 	else
-		echo "$prefix%{T8} $temp %{T-}$suffix"
+		echo "$prefix%{T8} $scrolling %{T-}$suffix"
 	fi
 } #
 
@@ -28,7 +27,7 @@ function get_artist () {
 
 function get_scroll () {
 	tmp="$(get_title)"
-	echo "$(echo "$tmp" | sed 's/'\''/\\'\''/g')"
+	echo "$(echo "$tmp" | sed 's/'\''/\\'\''/g' | sed 's/'\"'/\\'\"'/g')"
 } #
 
 function get_title () {
