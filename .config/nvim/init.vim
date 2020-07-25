@@ -1,4 +1,5 @@
-"""""""""""""""""""""""""""""""""""""""" "		PLUGINS		       "
+"""""""""""""""""""""""""""""""""""""""" 
+"		PLUGINS		       "
 """"""""""""""""""""""""""""""""""""""""
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
