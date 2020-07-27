@@ -12,10 +12,12 @@ bspc config split_ratio          	0.52
 bspc config borderless_monocle   	true
 bspc config gapless_monocle      	true
 bspc config focus_follows_pointer 	true
+bspc config pointer_follows_focus 	true
 bspc config single_monocle	 	true
 bspc config focused_border_color 	\#FEFEFE
 bspc config normal_border_color 	\#111824
-bspc config initial_polarity 		first_child
+spc config initial_polarity 		first_child
+bspc config automatic_scheme 		longest_side
 
 bspc config pointer_modifier 		control
 bspc config pointer_action1 		move
