@@ -9,7 +9,7 @@ set filesep "\n"  # default already
 
 map R :bulk-rename
 map D $rm $fx
-map b $ln -sf "$f" $HOME/.config/bspwm/wallpaper && feh --no-fehbg --bg-fill "$HOME/.config/bspwm/wallpaper" 2>/dev/null
+map b $file "$f" |grep -qE 'image|bitmap' && ln -sf "$f" $HOME/.config/bspwm/wallpaper && feh --no-fehbg --bg-fill "$HOME/.config/bspwm/wallpaper" 2>/dev/null
 map o $xdg-open "$f" 2> /dev/null &
 map e $$EDITOR -w "$f" 2> /dev/null &
 map t $dragon-drag-and-drop -a -x $fx 2> /dev/null &
