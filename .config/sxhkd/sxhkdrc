@@ -22,10 +22,6 @@ alt + {_,shift + }d
 alt + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
 # swap the current node and the biggest node
 alt + g
 	bspc node -s biggest.local
@@ -50,10 +46,6 @@ alt + ctrl + {m,x,y,z}
 alt + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
 # focus the next/previous node in the current desktop
 alt + {_,shift + }c
 	bspc node -f {next,prev}.local.!floating
@@ -69,39 +61,13 @@ alt + {i,o}
 alt + shift + {i,o}
 	bspc desktop -f {prev,next} && bspc node -f newest.local.!floating
 
-# focus the last node/desktop
+# focus the last desktop
 alt + Tab
 	bspc desktop -f last.occupied && bspc node -f newest.local.!floating
-
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
 
 # focus or send to the given desktop
 alt + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
 	bspc {desktop -f,node -d} '^{1-9,10}' && bspc node -f newest.local.!floating
-
-#
-# preselect
-#
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -160,54 +126,54 @@ XF86MonBrightnessDown
 ################################################
 
 # Alacritty
-{mod5,super} + Return
+{mod5 +,alt + a;} Return
 	alacritty
 
 # Launcher
-{mod5,super} + @space
+{mod5 +,alt + a;}  @space
 	launcher.sh
 
 # Power Menu
-{mod5,super} + Escape
+{mod5 +,alt + a;}  Escape
 	$HOME/.config/polybar/scripts/power-menu.sh
 
 # Qutebrowser
-{mod5,super} + {_,shift + } q
+{mod5 +,alt + a;}  {_,shift + } q
 	{_,_}{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled}
 
 # Spotify
-{mod5,super} + s
+{mod5 +,alt + a;}  s
 	start-spotify
 
 # Gimp
-{mod5,super} + g
+{mod5 +,alt + a;}  g
 	gimp
 
 # Newsboat: RSS feed
-{mod5,super} + n
+{mod5 +,alt + a;}  n
 	start-newsboat.sh &
 
 # Discord
-{mod5,super} + d
+{mod5 +,alt + a;}  d
 	discord
 
 # Vim - Editor
-{mod5,super} + e
+{mod5 +,alt + a;}  e
 	start-vim.sh -c
 
 # Scratchpad
-{mod5,super} + a
+{mod5 +,alt + a;}  a
 	sid=$(cat /tmp/scratchID);\
 	cid=$(cat /tmp/calcID);\
 	wmctrl -ir $sid -b toggle,hidden && wmctrl -ir $cid -b add,hidden; wmctrl -ia $sid	
 
 # Calc
-{mod5,super} + c
+{mod5 +,alt + a;}  c
 	cid=$(cat /tmp/calcID);\
 	sid=$(cat /tmp/scratchID);\
 	wmctrl -ir $cid -b toggle,hidden && wmctrl -ir $sid -b add,hidden; wmctrl -ia $cid
 
 # Lf: File manager
-{mod5,super} + l
+{mod5 +,alt + a;}  l
 	toggle-lf.sh
 
