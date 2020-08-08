@@ -23,7 +23,7 @@
 * **Bar:** Polybar
 * **Spotify theme:** [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Dribbblish)
 * **Browser:** Qutebrowser
-* **Search bar/App launcher:** Dmenu
+* **Search bar/App launcher:** Dmenu2
 * **File Manager:** lf ([Provessor fork](https://github.com/Provessor/lf))
 * **PDF reader:** Zathura
 * **Text Fonts:** mix of [BreezeSans](https://developer.tizen.org/design/platform/styles/typography) and [UbuntuMono Nerd Font](https://www.nerdfonts.com/)
