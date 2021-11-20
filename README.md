@@ -1,7 +1,4 @@
 <p align="center">
-  <img width="30%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/sweet.png?raw=true" />
-</p>
-<p align="center">
 <span style="font-size:3em;">
     <a href="https://github.com/SwiftyChicken/dotfiles/wiki?raw=true"><img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png?raw=true" /></a>
 	&nbsp;&nbsp;
