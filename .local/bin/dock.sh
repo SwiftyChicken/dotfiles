@@ -11,7 +11,6 @@ polybar level &
 polybar control &
 polybar workspace &
 pgrep spotify && polybar player &
-polybar open &
 polybar status &
 polybar power &
 
