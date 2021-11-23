@@ -1,0 +1,67 @@
+[module/wlan]
+type = internal/network
+interface = wlp58s0
+interval = 3.0
+
+format-connected =<ramp-signal>
+label-connected = %essid%
+
+label-disconnected = 󰤭
+label-disconnected-foreground = #6c809e
+
+ramp-signal-0 = %{F#ff004b}󰤫%{F-}
+ramp-signal-1 = %{F#ffd200}󰤟%{F-}
+ramp-signal-2 = 󰤢
+ramp-signal-3 = 󰤥
+ramp-signal-4 = 󰤨
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = %{T3}<label-charging>%{T-}<animation-charging> 
+
+format-discharging = %{T3}<label-discharging>%{T-}<ramp-capacity>
+
+format-full = %{T3}100%%{T-}󰂄
+format-full-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 󱊤
+animation-charging-1 = 󱊥
+animation-charging-2 = 󱊦
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 900
+
+ramp-capacity-0 = %{F#ff004b}󰂃%{F-}
+ramp-capacity-1 = %{F#ff5300}󰁺%{F-}
+ramp-capacity-2 = %{F#ff8000}󰁻%{F-}
+ramp-capacity-3 = %{F#ffd200}󰁼%{F-}
+ramp-capacity-4 = 󰁽
+ramp-capacity-5 = 󰁾
+ramp-capacity-6 = 󰁿
+ramp-capacity-7 = 󰂀
+ramp-capacity-8 = 󰂁
+ramp-capacity-9 = 󰂂
+ramp-capacity-10 = 󰁹 
+ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-framerate = 750
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/scripts/bluetooth-status.sh &
+format-foreground = ${colors.foreground-alt}
+interval = 0.5
+
+tail = true
+click-left = ~/.config/polybar/scripts/bluetooth-status.sh -t &
+
+[module/date]
+type = custom/script
+exec =  date '+%a %e %b %H:%M' 
+interval = 60
+tail=true
+
+click-left = ~/.config/polybar/scripts/calendar.sh &

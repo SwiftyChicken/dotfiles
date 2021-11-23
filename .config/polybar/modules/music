@@ -1,0 +1,22 @@
+[module/right]
+type = custom/text
+content-background = #00000000
+content-foreground = #df191414
+content = ""
+
+[module/song]
+type = custom/script
+exec = ~/.config/polybar/scripts/song.sh 2>/dev/null || echo "No player found"
+format = "<label>  "
+format-prefix = "%{F#1db954}   %{F-}"
+format-background = #df191414
+interval = 600
+
+tail = true
+click-left = bspc desktop -f ^10 &
+
+[module/left]
+type = custom/text
+content-background = #00000000
+content-foreground = #df191414
+content =""

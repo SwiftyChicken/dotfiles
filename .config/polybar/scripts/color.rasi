@@ -1,6 +1,7 @@
 * {
   accent:           #ff004b;
   background:       #0e1827;
+  background-alt:   #0e182700;
   background-light: #2c3b52;
   foreground:       #99b7e2;
   foreground-alt:   #fefefe;
@@ -91,7 +92,7 @@ element-icon {
 element.active,
 element.selected.urgent {
   background-color: @on;
-  text-color: @background;
+  text-color: @background-alt;
   border-color: @on;
 }
 
@@ -102,7 +103,7 @@ element.selected.urgent {
 element.urgent,
 element.selected.active {
   background-color: @off;
-  text-color: @background;
+  text-color: @background-alt;
   border-color: @off;
 }
 

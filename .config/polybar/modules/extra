@@ -1,0 +1,49 @@
+[module/close-menu]
+type = custom/script
+exec = echo "%{O2}󰅂" &
+interval = 600
+
+tail = true
+
+[module/open-menu]
+type = custom/script
+exec = echo "%{O-3}󰅁"
+interval = 600
+
+tail = true
+
+[module/cpu]
+type = custom/script
+exec = ~/.config/polybar/scripts/cpu.sh 2> /dev/null || echo "%{T5}%{F#dae1ec}󰓦%{T4}%{O-13}󰓦%{T-}%{F-}" 
+format-prefix = " "
+format-foreground = ${colors.secondary}
+
+interval = 1
+tail = true
+
+click-left = pgrep gotop && xdotool search --name "gotop" windowactivate || alacritty -t gotop -e gotop &
+
+[module/update]
+type = custom/script
+exec = ~/.config/polybar/scripts/update.sh 2> /dev/null || echo "󰏗%{T5}%{F#dae1ec}󰓦%{T4}%{O-13}󰓦%{T-}%{F-}"
+format-foreground = ${colors.secondary}
+interval = 1
+
+tail =true
+
+[module/news]
+type = custom/script
+exec = ~/.config/polybar/scripts/news.sh 2> /dev/null || echo "󰋻%{T5}%{F#dae1ec}󰓦%{T4}%{O-13}󰓦%{T-}%{F-}"
+format-foreground = ${colors.secondary}
+interval = 1
+
+tail = true
+click-left = start-newsboat.sh &
+
+[module/mtorrent]
+type = custom/script
+exec = echo "󱋌     " || echo "󱋖     " 
+format-foreground = ${colors.secondary}
+interval = 1
+
+tail = true

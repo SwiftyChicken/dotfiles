@@ -1,0 +1,45 @@
+[module/xbacklight]
+type = internal/backlight
+card = intel_backlight
+
+format = <label><bar>
+label = "󰃠 "
+label-foreground = ${colors.background}
+
+bar-width = 13
+bar-indicator = "%{T3}%{T-}"
+bar-indicator-foreground = ${colors.background}
+bar-indicator-font = 2
+bar-fill = 
+bar-fill-font = 2
+bar-fill-foreground = ${colors.background}
+bar-empty = 
+bar-empty-font = 2
+bar-empty-foreground = #607290
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume><bar-volume>
+label-volume = "󰎇 "
+label-volume-foreground = ${root.foreground}
+
+label-muted = 󰎊 Muted
+label-muted-foreground = #607290
+
+bar-volume-width = 13
+bar-volume-foreground-0 = ${colors.background}
+bar-volume-foreground-1 = ${colors.background}
+bar-volume-foreground-2 = ${colors.background}
+bar-volume-foreground-3 = ${colors.background}
+bar-volume-foreground-4 = #fb8720
+bar-volume-foreground-5 = #fb5a20
+bar-volume-foreground-6 = #fb2020
+bar-volume-gradient = false
+bar-volume-indicator = "%{T3}%{T-}"
+bar-volume-indicator-font = 2
+bar-volume-fill = 
+bar-volume-fill-font = 2
+bar-volume-empty = 
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = #607290

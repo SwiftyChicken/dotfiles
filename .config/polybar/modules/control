@@ -1,0 +1,17 @@
+[module/search]
+type = custom/script
+exec = echo "󰍉"
+click-left = ~/.config/polybar/scripts/search.sh &
+
+[module/file-man]
+type = custom/script
+exec = echo "󰉋"
+click-left = toggle-lf.sh &
+
+[module/screenshot]
+type = custom/script
+exec = echo "󰨤"
+
+click-right = scrot "$(date +%s).png" -e 'mv "$f" ~/Pictures/Screenshots/ && dunstify -r "991030" "Say cheese..." "$f" -a scrot' &
+
+click-left = image=$(date +%s).png && maim -s -s -b 5.0 -p -5 -c 1,0,0.294 "$HOME/Pictures/Screenshots/$image" && dunstify -r "991030" "Say cheese..." "$image" -a scrot &

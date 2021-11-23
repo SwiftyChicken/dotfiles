@@ -1,5 +1,8 @@
 #!/bin/sh
 
+[ -z "$(find /tmp -maxdepth 1 -name "polybar*")" ] && \
+polybar level & \
+while [ -z "$(find /tmp -maxdepth 1 -name "polybar*")" ]; do sleep 1; done
 
 # Replace if already running
 running=$(pidof -x $0)
