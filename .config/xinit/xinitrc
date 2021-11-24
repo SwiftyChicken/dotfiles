@@ -17,7 +17,7 @@ DFO.sh &
 
 # Startup applicaitons
 start-spotify &
-alacritty --hold -e zsh -c "berserk.sh && zsh" &
+alacritty --hold -e zsh -c "hanka.sh && zsh" &
 
 # Display/Window manager
 exec bspwm
