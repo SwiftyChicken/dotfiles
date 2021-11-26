@@ -22,15 +22,8 @@ nice_exit_code() {
 	# is this a signal name (error code = signal + 128) ?
 	case $exit_status in
 		128)  sig_name=󰗖 ;;
-		129)  sig_name=HUP ;;
 		130)  sig_name=󰚌 ;;
-		131)  sig_name=QUIT ;;
-		132)  sig_name=ILL ;;
-		134)  sig_name=ABRT ;;
-		136)  sig_name=FPE ;;
-		137)  sig_name=KILL ;;
 		139)  sig_name=󰯇 ;;
-		141)  sig_name=PIPE ;;
 		143)  sig_name=󰯆 ;;
 	esac
 
@@ -50,9 +43,6 @@ nice_exit_code() {
 		6)  sig_name=󰨹 ;;
 		16)  sig_name=󰺅 ;;
 		19)  sig_name=󰅜 ;;
-		20)  sig_name=TSTP ;;
-		21)  sig_name=TTIN ;;
-		22)  sig_name=TTOU ;;
 		2*)  sig_name=󰋮  ;;
 	esac
 
