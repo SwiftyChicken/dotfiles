@@ -56,7 +56,7 @@ nice_exit_code() {
 		2*)  sig_name=󰋮  ;;
 	esac
 
-	echo "$sig_name"
+	echo "$([[ -z "$sig_name" ]] && echo "[%f${$(echo 000):(+${#exit_status})}${exit_status}%F{red}] 󰠗 %G%G%G%G%G%G"||echo $sig_name)"
 }
 
 nice_git_info () {
@@ -66,6 +66,9 @@ nice_git_info () {
 	case $mesg in
 		master)	color="blue"
 			icon="%{󰘬%G%}%f"
+			;;
+		main)	color="yellow"
+			icon="%{󰘬 %G%G󰌾%G%}%f"
 			;;
 		*)	color="magenta"
 			icon="%{󰓁%G%}%f"
@@ -78,7 +81,7 @@ info () {
 	local error="${1:-$(print -P %?)}"
 	local mesg=$vcs_info_msg_0_
 	[ ! -z "$mesg" ] \
-		&& echo "$(nice_git_info $mesg $error)" \
+		&& echo "$(nice_git_info $mesg $error)%(?..  %F{red}%{$(nice_exit_code $error)%G%}%f)" \
 		|| echo "%(?..%F{red}%{$(nice_exit_code $error)%G%}%f)"
 	
 
@@ -90,7 +93,7 @@ RPS1='$(info)'
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%1~%{$fg[red]%}]%{$fg[white]%}%B$ %b%f"
 
 # Minimalist prompt
-PS1="%B%(?.%F{008}%f%K{008}%F{007} %(5~|%-1~/…/%2~|%5~) %k%F{008}%f.%F{001}%f%K{001}%F{016} %(5~|%-1~/…/%2~|%5~) %k%F{001}%f)%b %B%F{007}%f%K{007}%F{016}λ%k%F{007}%f%b "
+PS1="%B%(?.%F{008}%f%K{008}%F{007} %(3~|%-1~/…/%2~|%3~) %k%F{008}%f.%F{001}%f%K{001}%F{016} %(5~|%-1~/…/%2~|%5~) %k%F{001}%f)%b %B%F{007}%f%K{007}%F{016}λ%k%F{007}%f%b "
 
 function precmd {
 	cmd="$(history | tail -1|sed 's/^ [0-9]*  *//')"
@@ -168,6 +171,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949ab7"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey '^ ' autosuggest-accept
+#bindkey '^I' autosuggest-accept
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -191,9 +195,6 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
-
-# greeter
-# hanka.sh
 
 # Load aliases
 source $HOME/.config/aliasrc
@@ -223,3 +224,8 @@ ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=013,bold
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-quoted]=fg=009
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter-unquoted]=fg=009,bold
 ZSH_HIGHLIGHT_STYLES[assign]=fg=009,bold
+
+
+
+# greeter
+echo
