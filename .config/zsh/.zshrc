@@ -64,14 +64,14 @@ nice_git_info () {
 			icon="%{󰓁%G%}%f"
 			;;
 	esac
-	echo "%F{$color}[%f$mesg%F{$color}] $icon"
+	echo "%F{$color}[%f$mesg%F{$color}]%(?. $icon.)"
 }
 
 info () {
 	local error="${1:-$(print -P %?)}"
 	local mesg=$vcs_info_msg_0_
 	[ ! -z "$mesg" ] \
-		&& echo "$(nice_git_info $mesg $error)%(?..  %F{red}%{$(nice_exit_code $error)%G%}%f)" \
+		&& echo "$(nice_git_info $mesg $error)%(?.. %F{red}%{$(nice_exit_code $error)%G%}%f)" \
 		|| echo "%(?..%F{red}%{$(nice_exit_code $error)%G%}%f)"
 	
 
