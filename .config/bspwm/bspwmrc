@@ -1,6 +1,6 @@
 #! /bin/sh
 
-feh --no-fehbg --bg-fill "$HOME/.config/bspwm/wallpaper"
+xwallpaper --zoom "$HOME/.config/bspwm/wallpaper"
 source $HOME/.config/env
 
 bspc monitor -d I II III IV V VI VII VIII IX X
@@ -14,8 +14,6 @@ bspc config gapless_monocle      	true
 bspc config focus_follows_pointer 	true
 bspc config pointer_follows_focus 	true
 bspc config single_monocle	 	true
-bspc config focused_border_color 	\#FEFEFE
-bspc config normal_border_color 	\#111824
 bspc config initial_polarity 		first_child
 bspc config automatic_scheme 		longest_side
 
@@ -27,17 +25,19 @@ bspc config external_rules_command $HOME/.config/bspwm/external_rules.sh
 
 bspc rule -a Alacritty desktop='^1' follow=on state=pseudo_tiled
 bspc rule -a qutebrowser desktop='^2' 
+bspc rule -a Chromium desktop='^2' 
 bspc rule -a newsboat desktop='^4' follow=on state=pseudo_tiled
-bspc rule -a Vim desktop='^5' follow=on state=pseudo_tiled
+bspc rule -a Vim desktop='^5' follow=on 
+bspc rule -a Emacs desktop='^5' follow=on state=tiled
+bspc rule -a DrRacket desktop='^5' follow=off 
 bspc rule -a Zathura desktop='^6' follow=on state=pseudo_tiled
 bspc rule -a Sxiv desktop='^6' follow=off 
 bspc rule -a Gimp desktop='^7' state=floating 
 bspc rule -a discord desktop='^9' follow=off  
-bspc rule -a Spotify desktop='^10' follow=off state=pseudo_tiled
 
 bspc rule -a mpv focus=off state=floating
-bspc rule -a scratchpad locked=on sticky=on state=floating hidden=on
-bspc rule -a lf locked=on sticky=on state=floating hidden=on
+bspc rule -a scratchpad rectangle=550x310+10+700 locked=on sticky=on state=floating hidden=on
+bspc rule -a lf rectangle=960x460+10+550 locked=on sticky=on state=floating hidden=on
 
 bspc rule -a Surf state=pseudo_tiled
 bspc rule -a Dragon-drag-and-drop locked=on sticky=on 
@@ -45,26 +45,19 @@ bspc rule -a cool-retro-term state=pseudo_tiled
 
 bspc desktop '^3' -l monocle
 
-# SCRATCHPADS
+# SCRATCHPAD
 
 sid=$(wmctrl -lx | grep scratch.scratchpad| cut -d' ' -f1| head -1) \
 && [ -z "$(echo $sid)" ] \
-	&& alacritty -t scratchpad --class scratch,scratchpad -d 35 10\
+	&& alacritty -t scratchpad --class scratch,scratchpad \
 	& sleep 1 \
 	&& sid=$(wmctrl -lx | grep scratch.scratchpad| cut -d' ' -f1| head -1) \
 	&& echo "$sid" > /tmp/scratchID ;
 
-cid=$(wmctrl -lx | grep calc.scratchpad| cut -d' ' -f1| head -1) \
-&& [ -z "$(echo $cid)" ] \
-	&& alacritty -t calculator --class calc,scratchpad -d 35 10 -e bash -c "calc -d" \
-	& sleep 1 \
-	&& cid=$(wmctrl -lx | grep calc.scratchpad| cut -d' ' -f1| head -1) \
-	&& echo "$cid" > /tmp/calcID ;
-
 # LF
 lid=$(wmctrl -lx | grep lf.lf| cut -d' ' -f1| head -1) \
 && [ -z "$(echo $lid)" ] \
-	&& alacritty --config-file .config/alacritty/lf.yml -t lf --class lf,lf -d 75 16 -e startlf \
+	&& alacritty --config-file .config/alacritty/lf.yml -t lf --class lf,lf -e lf-ueberzug \
 	& sleep 1 \
 	&& lid=$(wmctrl -lx | grep lf.lf| cut -d' ' -f1| head -1) \
 	&& echo "$lid" > /tmp/lfID;
