@@ -5,21 +5,33 @@
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
+" interactive terminal
+Plug 'gingerhot/conque-term-vim'
+
+" Autocomplete
+Plug 'ycm-core/YouCompleteMe'
+"
 " Themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Rigellute/rigel'
 Plug 'rakr/vim-one'
+
 " Icons
 Plug 'ryanoasis/vim-devicons'
+
 " Syntax highlighting
 Plug 'ap/vim-css-color'
 Plug 'sheerun/vim-polyglot'
+
 " Latex
+Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview'
-", { 'for': 'text' }
+Plug 'godlygeek/tabular'
+
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " Initialize plugin system
 call plug#end()
 
@@ -27,9 +39,13 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""
 "	    BASIC SETTING	       "
 """"""""""""""""""""""""""""""""""""""""
+set showmatch
+autocmd VimEnter * DoMatchParen
 scriptencoding utf-8 
 set encoding=utf-8
+set spell spelllang=nl,en
 set number relativenumber
+set splitbelow
 set ignorecase
 set smartcase
 set noswapfile
@@ -48,6 +64,7 @@ colorscheme one
 """"""""""""""""""""""""""""""""""""""""
 set foldmethod=marker   
 autocmd FileType sh set foldmarker=\ ()\ {,}\ #
+autocmd FileType racket set foldmarker=;;,);
 autocmd BufNewFile,BufRead *.tex set foldmarker=%begin%,%end%
 set foldnestmax=1
 "set nofoldenable
@@ -56,21 +73,49 @@ set foldlevel=0
 "	    MAP CHARACTER	       "
 """"""""""""""""""""""""""""""""""""""""
 nnoremap <C-q> :q <CR> 
+tnoremap <Esc> <C-\><C-n><C-w>k
+tnoremap <C-q> <C-\><C-n>:q <CR>
 nnoremap gl $
-nnoremap gh 0
+nnoremap gh ^
 nnoremap gk H
 nnoremap gj L
-nnoremap M a<!!><Esc>
-nnoremap m a<??><Esc>
-nnoremap <C-Space> /<!!><Enter>"_c4l
+nnoremap M a<??><Esc>
+nnoremap m a<++><Esc>
+nnoremap <C-Space> ebb/<++><Enter>"_c4l
 nnoremap <Space><Space> /<??><Enter>"_c4l
-inoremap <C-Space> <Esc>/<!!><Enter>"_c4l
+inoremap <C-Space> <Esc>ebb/<++><Enter>"_c4l
+nnoremap <C-d> :,s/ *<++> *//g<CR>
+inoremap <C-d> <Esc>:,s/ *<++> *//g<CR>
 nnoremap <C-s> :%s//gI<Left><Left><Left>
 " Shortcutting split navigation
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+""""""""""""""""""""""""""""""""""""""""
+"	        TERMINAL MODE		       "
+""""""""""""""""""""""""""""""""""""""""
+autocmd BufWinEnter,WinEnter term://* startinsert
+autocmd BufLeave term://* stopinsert
+
+""""""""""""""""""""""""""""""""""""""""
+"	        AUTOCOMPLETE		       "
+""""""""""""""""""""""""""""""""""""""""
+let g:ycm_auto_trigger = 1
+let g:ycm_filetype_whitelist = {'*': 1, 'ycm_nofiletype': 1}
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+" don't select the first item
+set completeopt=menu,menuone,noselect
+set completeopt-=preview
+" supress annoy messages.
+set shortmess+=c
+
+""""""""""""""""""""""""""""""""""""""""
+"	        TAGS		       "
+""""""""""""""""""""""""""""""""""""""""
+set tags+=~/.config/nvim/tags/racket.tag
+
 """"""""""""""""""""""""""""""""""""""""
 "	        AIRLINE		       "
 """"""""""""""""""""""""""""""""""""""""
@@ -88,10 +133,12 @@ let g:livepreview_cursorhold_recompile = 0
 
 autocmd BufNewFile,BufRead *.todo source ~/.config/nvim/FileType/todo.vim
 
+au FileType racket source ~/.config/nvim/FileType/racket.vim
+
 au FileType c source ~/.config/nvim/FileType/c.vim
 
 """"""""""""""""""""""""""""""""""""""""
-"	  MARKDOWN PREVIEWER	       "
+"	  MARKDOWN PREVIEWER	               "
 """"""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.md nmap <C-p> <Plug>MarkdownPreviewToggle
 
