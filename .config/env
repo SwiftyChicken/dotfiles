@@ -5,7 +5,7 @@
  ####################################
 
 # DEFAULT PROGRAMS:
-export EDITOR="start-vim.sh"
+export EDITOR="nvim"
 export BROWSER="qutebrowser"
 export TERM="alacritty"
 
@@ -13,13 +13,16 @@ export TERM="alacritty"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 
 # CONFIG:
+export HISTFILE="$XDG_STATE_HOME"/bash/history
 export VIMINIT="source $HOME/.config/nvim/init.vim"
 export ZDOTDIR="$HOME/.config/zsh"
-export XAUTHORITY=$HOME/.config/ly/lyxauth
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export XAUTHORITY="/run/user/$UID"
+export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+#export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 # CACHE:
 export UMPV_SOCKET="$HOME/.cache/umpv/"
@@ -35,7 +38,7 @@ export XCURSOR_SIZE="32"
 export QT_QPA_PLATFORMTHEME=gtk3
 
 # PATH
-export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin:$XDG_DATA_HOME/chess-linux-x64"
+export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin"
 
 # LF ICONS:
 export LF_ICONS="\
@@ -218,4 +221,5 @@ ex=󱁻:\
 *.ttf=󰙩 :\
 *.otf=󰙩 :\
 *.torrent=󰅢 :\
+*.rkt=λ :\
 "
