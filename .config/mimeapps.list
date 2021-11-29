@@ -1,0 +1,10 @@
+[Default Applications]
+image/jpeg=sxiv.desktop
+image/png=sxiv.desktop
+text/plain=custom-nvim.desktop
+text/x-shellscript=custom-nvim.desktop
+text/html=custom-nvim.desktop
+video/x-matroska=custom-mpv.desktop
+video/mp4=custom-mpv.desktop
+application/pdf=zathura.desktop
+x-scheme-handler/msteams=teams.desktop
