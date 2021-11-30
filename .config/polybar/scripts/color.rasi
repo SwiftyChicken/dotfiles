@@ -1,18 +1,16 @@
 * {
-  accent:           #ff004b;
-  background:       #0e1827;
-  background-alt:   #0e182700;
-  background-light: #2c3b52;
+  accent:           #f21b46;
+  background:       #101a2c;
+  background-text:  #00000000;
+  background-alt:   #2c3b52;
   foreground:       #99b7e2;
-  foreground-alt:   #fefefe;
+  foreground-alt:   #dedede;
   on:               #66bb6a;
   off:              #ef5350;
 }
 
 * {
   /* General */
-  text-font:                            "Material Design Icons Desktop  32";
-  icon-font:                            "BreezeSans 0";
   
   option-6-listview-spacing:            6px;
   menu-window-padding:                  5px 5px;
@@ -20,8 +18,8 @@
 }
 
 #window {
-  width: 3.1%;
-  height: 26%;
+  width: 2.8%;
+  height: 23.7%;
   anchor: east;
   location: east;
   x-offset: -10px;
@@ -51,7 +49,14 @@
   orientation: horizontal;
   border: 0px;
   border-radius: 100%;
-  background-color: @background-light;
+  background-color: @background-alt;
+}
+
+element-text{
+  background-color: @background-text;
+  text-color: inherit;
+  font:                            "Material Design Icons Desktop  32";
+  margin: -3px -5px 3px -3px;
 }
 
 element-icon {
@@ -59,7 +64,7 @@ element-icon {
     border: 0px;
 }
 
-#element.selected {
+element.selected {
   background-color: @accent;
   text-color: @foreground-alt;
 }
@@ -73,40 +78,33 @@ element-icon {
   children: [ horibox ];
 }
 
-#listview {
+listview {
   spacing: @option-6-listview-spacing;
   lines: 6;
 }
 
-#element {
+element {
   font: @icon-font;
   border: @menu-element-border;
   padding: @menu-element-padding;
-  border-color: @background-light;
-}
-
-#element.selected {
-  border-color: @accent;
+  border-color: @background-alt;
 }
 
 element.active,
 element.selected.urgent {
-  background-color: @on;
-  text-color: @background-alt;
+  background-color: @off;
+  text-color: @foreground-alt;
   border-color: @on;
 }
 
 element.selected.urgent {
   border-color: @accent;
+  text-color: @foreground-alt;
 }
 
 element.urgent,
 element.selected.active {
   background-color: @off;
-  text-color: @background-alt;
-  border-color: @off;
-}
-
-element.selected.active {
   border-color: @accent;
+  text-color: @foreground-alt;
 }
