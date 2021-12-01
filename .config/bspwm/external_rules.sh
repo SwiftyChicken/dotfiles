@@ -1,18 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 wid=$1
 class=$2
 title=$(xtitle $wid)
 instance=$3
 
-if [ "$class" = "scratchpad" ] ; then
-        xdotool windowmove $wid 10 720
-
-elif [ "$class" = "Surf" ] ; then
+if [ "$class" = "Surf" ] ; then
 	xdotool windowsize $wid 1835 955
-
-elif [ "$class" = "lf" ] ; then
-        xdotool windowmove $wid 10 600
 
 elif [ "$class" = "Dragon-drag-and-drop" ] ; then
 	xdo raise -a "Dragon-drag-and-drop"
@@ -31,10 +25,25 @@ elif [ "$title" = "GNU Image Manipulation Program" ] ; then
         xdotool windowmove $wid 250 75
 	xdo lower -r $wid
 
-elif [ "$title" = "Spotify Premium" ] ; then
-	xdotool windowsize $wid 1650 900
-        xdotool windowmove $wid 200 80
-	xdo lower -r $wid
-
-	990  98
 fi
+
+# Fix Spotify
+case "$class" in
+    (foo)
+        bar;;
+    ("")
+        unset -v _NET_WM_PID;
+        . /dev/fd/0 2>/dev/null <<IN
+        : \"\${$(
+            xprop \
+                -id "$wid" \
+                -notype \
+                -f _NET_WM_PID 32c '=$0' \
+                _NET_WM_PID;
+        )}\";
+IN
+        case "$(ps -p "${_NET_WM_PID:?}" -o comm= 2>/dev/null)" in
+            (spotify)
+                echo desktop=^10 state=pseudo_tiled rectangle=1650x900+200+80;;
+        esac;;
+esac;
