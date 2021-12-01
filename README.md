@@ -1,10 +1,16 @@
 <p align="center">
 <span style="font-size:3em;">
-    <a href="https://github.com/SwiftyChicken/dotfiles/wiki?raw=true"><img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png?raw=true" /></a>
+    <a href="https://github.com/SwiftyChicken/dotfiles/wiki?raw=true">
+    <img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png?raw=true" />
+    </a>
 	&nbsp;&nbsp;
-   <a href="https://github.com/SwiftyChicken/dotfiles/wiki"><img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png?raw=true" /></a>
+   <a href="https://github.com/SwiftyChicken/dotfiles/wiki">
+   <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png?raw=true" />
+   </a>
 	&nbsp;&nbsp;
-  <a href="#Installation"><img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png?raw=true" /></a>
+  <a href="#Installation">
+  <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png?raw=true" />
+  </a>
 </span>
 </p>
  
@@ -35,19 +41,5 @@
 </p>
 
 # <center>Installation</center>
-<b>...</b>
-
-# <center>Activities</center>
-<b> I will add more stuff here, later...  
-For now you can also see what packages I have installed on this [list](https://github.com/SwiftyChicken/dotfiles/blob/master/.config/pkglist.txt).
-This might help when trying to find missing dependencies. I will a proper list later.  
-</b>
-
-#### To Do list:
-- [ ] keybindings
-- [ ] Installation guide
-	- [ ] proper dependencies list
-- [ ] Wiki
-	- [ ] Polybar modules
-	- [ ] Scripts
-	- [ ] Gallary  
+For the installation of my whole rice setup,
+I would refer you to the [wiki](https://github.com/SwiftyChicken/dotfiles/wiki?raw=true) of the repo.
