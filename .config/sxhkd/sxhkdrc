@@ -1,7 +1,7 @@
 ################################################
 #               WM CONTROLS                    #
 ################################################
-,
+
 # make sxhkd reload its configuration files:
 alt + shift + r
 	pkill -USR1 -x sxhkd && dunstify -r 500 "SXHKD" "config reloaded"
@@ -48,26 +48,26 @@ alt + {_,shift + }{h,j,k,l}
 
 # focus the next/previous node in the current desktop
 alt + {_,shift + }c
-	bspc node -f {next,prev}.local.!floating
+	bspc node -f {next,prev}.local.!hidden.!floating
 
 # focus the next/previous node in the current desktop
 alt + {_,shift + }v
-	bspc node -f {next,prev}.local.floating
+	bspc node -f {next,prev}.local.!hidden.floating
 
 # focus the next/previous desktop in the current monitor
 alt + {i,o}
-	bspc desktop -f {prev,next}.occupied && bspc node -f newest.local.!floating
+	bspc desktop -f {prev,next}.occupied && bspc node -f newest.local.!hidden.!floating
 
 alt + shift + {i,o}
-	bspc desktop -f {prev,next} && bspc node -f newest.local.!floating
+	bspc desktop -f {prev,next} && bspc node -f newest.local.!hidden.!floating
 
 # focus the last desktop
 alt + Tab
-	bspc desktop -f last.occupied && bspc node -f newest.local.!floating
+	bspc desktop -f last.occupied && bspc node -f newest.local.!hidden.!floating
 
 # focus or send to the given desktop
 alt + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla,agrave}
-	bspc {desktop -f,node -d} '^{1-9,10}' && bspc node -f newest.local.!floating
+	bspc {desktop -f,node -d} '^{1-9,10}' && bspc node -f newest.local.!hidden.!floating
 
 #
 # move/resize
@@ -126,54 +126,35 @@ XF86MonBrightnessDown
 ################################################
 
 # Alacritty
-{mod5 +,alt + a;} Return
+mod5 + Return
 	alacritty
 
 # Launcher
-{mod5 +,alt + a;}  @space
+mod5  @space
 	launcher.sh
 
-# Power Menu
-{mod5 +,alt + a;}  Escape
-	$HOME/.config/polybar/scripts/power-menu.sh
-
 # Qutebrowser
-{mod5 +,alt + a;}  {_,shift + } q
-	{_,_}{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled}
-
-# Spotify
-{mod5 +,alt + a;}  s
-	start-spotify
-
-# Gimp
-{mod5 +,alt + a;}  g
-	gimp
-
-# Newsboat: RSS feed
-{mod5 +,alt + a;}  n
-	start-newsboat.sh &
+mod5 +  {_,shift + } q
+	{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled}
 
 # Discord
-{mod5 +,alt + a;}  d
+mod5 + d
 	discord
 
+# Spotify
+mod5 + s
+	start-spotify
+
 # Vim - Editor
-{mod5 +,alt + a;}  e
+mod5 + e
 	start-vim.sh -c
 
 # Scratchpad
-{mod5 +,alt + a;}  a
+mod5 + a
 	sid=$(cat /tmp/scratchID);\
 	cid=$(cat /tmp/calcID);\
 	wmctrl -ir $sid -b toggle,hidden && wmctrl -ir $cid -b add,hidden; wmctrl -ia $sid	
 
-# Calc
-{mod5 +,alt + a;}  c
-	cid=$(cat /tmp/calcID);\
-	sid=$(cat /tmp/scratchID);\
-	wmctrl -ir $cid -b toggle,hidden && wmctrl -ir $sid -b add,hidden; wmctrl -ia $cid
-
 # Lf: File manager
-{mod5 +,alt + a;}  l
+mod5 + l
 	toggle-lf.sh
-
