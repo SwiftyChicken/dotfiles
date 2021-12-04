@@ -16,13 +16,20 @@ map b $file "$f" |grep -qE 'image|bitmap' && ln -sf "$f" $HOME/.config/bspwm/wal
 map o $xdg-open "$f" 2> /dev/null &
 map e $$EDITOR -w "$f" 2> /dev/null &
 map t $dragon-drag-and-drop -a -x $fx 2> /dev/null &
+map <enter> echo $file
 
 # Go to ... dir
 map gc :cd ~/.config/
-map gb :cd ~/.local/bin/
-map gd :cd ~/Documents/
-map gD :cd ~/Downloads/
-map gp :cd ~/Pictures/
+map glb :cd ~/.local/bin/
+map gls :cd ~/.local/share/
+map gll :cd ~/.local/lib/
+map gL :cd ~/.local/
+map gdc :cd ~/Documents/
+map gdu :cd ~/Documents/University/CW1/
+map gdg :cd ~/Documents/GitHub/
+map gdw :cd ~/Downloads/
+map gP :cd ~/Pictures/
+map gpw :cd ~/Pictures/Wallpaper/Favourite/
 map gv :cd ~/Videos/
 map gm :cd ~/Music/
 map gG :cd ~/Games/
