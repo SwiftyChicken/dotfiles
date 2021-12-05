@@ -1,5 +1,5 @@
 command! BufOnly execute '%bdelete!|edit #|normal `"'
-command! BufTerm execute "new! term://racket -I r5rs -if <(sed /^\\#lang/d '%')"
+command! BufTerm execute "new! term://start-racket.sh '%'"
 nnoremap <C-a> :w<CR>:BufOnly<CR>:BufTerm<CR>
 inoremap " ""<++><left><left><left><left><left>
 inoremap ( ()<++><left><left><left><left><left>
