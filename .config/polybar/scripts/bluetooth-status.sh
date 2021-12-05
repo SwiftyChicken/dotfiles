@@ -1,6 +1,6 @@
 #!/bin/sh
 
-! command -v bluetoothctl &> /dev/null && echo "%{F#6c809e}󰂯%{F-}" && exit 0
+! command -v bluetoothctl &> /dev/null && echo "   " && exit 0
 
 # Flagshandler
 app=$(echo $0|rev |cut -d'/' -f1| rev)
