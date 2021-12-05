@@ -7,7 +7,7 @@ alt + shift + r
 	pkill -USR1 -x sxhkd && dunstify -r 500 "SXHKD" "config reloaded"
 
 #
-# bspwm hotkeys
+# BSPWM HOTKEYS
 #
 
 # quit/restart bspwm
@@ -27,7 +27,7 @@ alt + g
 	bspc node -s biggest.local
 
 #
-# state/flags
+# STATE/FLAGS
 #
 
 # set the window state
@@ -39,7 +39,7 @@ alt + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
 #
-# focus/swap
+# FOCUS/SWAP
 #
 
 # focus the node in the given direction
@@ -70,16 +70,16 @@ alt + {_,shift + }{ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave
 	bspc {desktop -f,node -d} '^{1-9,10}' && bspc node -f newest.local.!hidden.!floating
 
 #
-# move/resize
+# MOVE/RESIZE
 #
 
-# expand a window by moving one of its side outward
-alt + mod5 + {h,j,k,l}
+# resize window by increasing outwards
+alt + ctrl + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# contract a window by moving one of its side inward
-alt + mod5 + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+# resize window by decreasing inwards
+alt + ctrl + shift + {h,j,k,l}
+	bspc node -z {left 20 0,bottom 0 -20,top 0 20 ,right -20 0}
 
 # move a floating window
 alt + {Left,Down,Up,Right}
@@ -126,35 +126,39 @@ XF86MonBrightnessDown
 ################################################
 
 # Alacritty
-mod5 + Return
+{mod5,super} + Return
 	alacritty
 
 # Launcher
-mod5  @space
+{mod5,super} + @space
 	launcher.sh
 
+# Power menu
+{mod5,super} + Escape
+	~/.config/polybar/scripts/power-menu.sh
+
 # Qutebrowser
-mod5 +  {_,shift + } q
-	{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled}
+{mod5,super} +  {_,shift + } q
+	{_,_}{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled}
 
 # Discord
-mod5 + d
+{mod5,super} + d
 	discord
 
 # Spotify
-mod5 + s
+{mod5,super} + s
 	start-spotify
 
 # Vim - Editor
-mod5 + e
+{mod5,super} + e
 	start-vim.sh -c
 
 # Scratchpad
-mod5 + a
+{mod5,super} + a
 	sid=$(cat /tmp/scratchID);\
 	cid=$(cat /tmp/calcID);\
 	wmctrl -ir $sid -b toggle,hidden && wmctrl -ir $cid -b add,hidden; wmctrl -ia $sid	
 
 # Lf: File manager
-mod5 + l
+{mod5,super} + l
 	toggle-lf.sh
