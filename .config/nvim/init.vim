@@ -137,6 +137,8 @@ au FileType racket source ~/.config/nvim/FileType/racket.vim
 
 au FileType c source ~/.config/nvim/FileType/c.vim
 
+au FileType markdown source ~/.config/nvim/FileType/markdown.vim
+
 """"""""""""""""""""""""""""""""""""""""
 "	  MARKDOWN PREVIEWER	               "
 """"""""""""""""""""""""""""""""""""""""
