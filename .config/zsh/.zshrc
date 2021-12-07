@@ -101,47 +101,15 @@ SAVEHIST=1000
 setopt autocd notify
 
 # Vim mode
-bindkey -v
-export KEYTIMEOUT=1
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+ZVM_VI_HIGHLIGHT_FOREGROUND=white             # Color name
+ZVM_VI_HIGHLIGHT_BACKGROUND=#606263
 
-# ci", ci', ci`, di", etc
-autoload -U select-quoted
-zle -N select-quoted
-for m in visual viopp; do
-  for c in {a,i}{\',\",\`}; do
-    bindkey -M $m $c select-quoted
-  done
-done
-
-# ci{, ci(, ci<, di{, etc
-autoload -U select-bracketed
-zle -N select-bracketed
-for m in visual viopp; do
-  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
-    bindkey -M $m $c select-bracketed
-  done
-done
-
-# Change cursor shape for different vi modes.
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
+zvm_vi_yank () {
+	zvm_yank
+	printf %s "${CUTBUFFER}" | xclip -sel c
+	zvm_exit_visual_mode
 }
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
