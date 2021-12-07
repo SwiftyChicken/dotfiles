@@ -44,7 +44,7 @@ case $1 in
 		sed -i "s/$pid T /$pid F /I" $WPF
 		socket=$(grep -i " F " $WPF | cut -d' ' -f4)
 		echo '{ "command": ["set_property", "pause", false] }' | socat - /tmp/mpvs.$socket
-		grep -i " C " $WPF | cut -d' ' -f1 |xargs -L1 -I{} bspc node {} -t tiled -g sticky=off -d '^3'
+		grep -i " C " $WPF | cut -d' ' -f1 |xargs -L1 -I{} bspc node {} -t tiled -g sticky=off -d '^5'
 		grep -i " [TC] " $WPF | cut -d' ' -f4 | while read socket; do 
 			echo '{ "command": ["set_property", "pause", true] }' | socat - /tmp/mpvs.$socket
 		done
@@ -53,7 +53,7 @@ case $1 in
 		[ ! -z "$(bspc wm -g| grep ":OIII:")" ] && bspc desktop -f last.occupied && bspc node -f newest.local.!floating
 		;;
 
-	-t)	[ ! -z "$(grep -i " F " $WPF)" ] && bspc node $pid -g sticky=off -d '^3' --follow
+	-t)	[ ! -z "$(grep -i " F " $WPF)" ] && bspc node $pid -g sticky=off -d '^5' --follow
 		sed -i "s/$pid [FC] /$pid T /I" $WPF
 		;;
 
