@@ -27,7 +27,7 @@
 * **Spotify theme:** [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Dribbblish)
 * **Browser:** Qutebrowser
 * **Search bar/App launcher:** Dmenu2
-* **File Manager:** lf ([Provessor fork](https://github.com/Provessor/lf))
+* **File Manager:** lf with [uberzug wrapper script](https://github.com/slavistan/lf-gadgets/tree/master/lf-ueberzug)
 * **PDF reader:** Zathura
 * **Text Fonts:** mix of [BreezeSans](https://developer.tizen.org/design/platform/styles/typography) and [UbuntuMono Nerd Font](https://www.nerdfonts.com/)
 * **Icon Fonts:** mix of [Font Awsome 5](https://fontawesome.com/how-to-use/on-the-desktop/setup/getting-started) and [Material Design Icons](https://github.com/Templarian/MaterialDesign-Font)
