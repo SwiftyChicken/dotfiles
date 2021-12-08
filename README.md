@@ -4,11 +4,11 @@
     <img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png?raw=true" />
     </a>
 	&nbsp;&nbsp;
-   <a href="https://github.com/SwiftyChicken/dotfiles/wiki">
+   <a href="https://github.com/SwiftyChicken/dotfiles/wiki/Extra:-Gallery">
    <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png?raw=true" />
    </a>
 	&nbsp;&nbsp;
-  <a href="#Installation">
+  <a href="https://github.com/SwiftyChicken/dotfiles/wiki#installation">
   <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png?raw=true" />
   </a>
 </span>
