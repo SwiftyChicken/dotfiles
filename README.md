@@ -42,4 +42,4 @@
 
 # <center>Installation</center>
 For the installation of my whole rice setup,
-I would refer you to the [wiki](https://github.com/SwiftyChicken/dotfiles/wiki?raw=true) of the repo.
+I would refer you to the [wiki](https://github.com/SwiftyChicken/dotfiles/wiki#installation) of the repo.
