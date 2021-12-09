@@ -1,3 +1,3 @@
 #!/bin/bash
-: "${XINITRC:=$HOME/.config/xinit/X11}"
+: "${XINITRC:=$HOME/.config/X11/xinitrc}"
 exec "${XINITRC}"
