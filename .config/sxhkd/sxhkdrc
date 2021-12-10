@@ -129,39 +129,39 @@ XF86MonBrightnessDown
 ################################################
 
 # Alacritty
-{mod5,super} + Return
+mod5 + Return
 	alacritty
 
 # Launcher
-{mod5,super} + @space
+mod5 + @space
 	launcher.sh
 
 # Power menu
-{mod5,super} + Escape
+mod5 + Escape
 	~/.config/polybar/scripts/power-menu.sh
 
 # Qutebrowser
-{mod5,super} +  {_,shift + } q
+mod5 +  {_,shift + } q
 	{_,_}{qutebrowser ,bspc desktop -l monocle; qutebrowser --temp-basedir --set content.private_browsing true --config-py "$HOME/.config/qutebrowser/config.py"; bspc desktop -l tiled}
 
 # Discord
-{mod5,super} + d
+mod5 + d
 	discord
 
 # Spotify
-{mod5,super} + s
+mod5 + s
 	start-spotify
 
 # Vim - Editor
-{mod5,super} + e
+mod5 + e
 	start-vim.sh -c
 
 # Scratchpad
-{mod5,super} + a
+mod5 + a
 	sid=$(cat /tmp/scratchID);\
 	cid=$(cat /tmp/calcID);\
 	wmctrl -ir $sid -b toggle,hidden && wmctrl -ir $cid -b add,hidden; wmctrl -ia $sid	
 
 # Lf: File manager
-{mod5,super} + l
+mod5 + l
 	toggle-lf.sh

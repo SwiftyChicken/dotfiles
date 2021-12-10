@@ -1,0 +1,36 @@
+132c132
+< mod5 + Return
+---
+> super + Return
+136c136
+< mod5 + @space
+---
+> super + @space
+140c140
+< mod5 + Escape
+---
+> super + Escape
+144c144
+< mod5 +  {_,shift + } q
+---
+> super +  {_,shift + } q
+148c148
+< mod5 + d
+---
+> super + d
+152c152
+< mod5 + s
+---
+> super + s
+156c156
+< mod5 + e
+---
+> super + e
+160c160
+< mod5 + a
+---
+> super + a
+166c166
+< mod5 + l
+---
+> super + l
