@@ -1,0 +1,16 @@
+6c6,8
+< exec sxhkd &
+---
+> setxkbmap be && exec sxhkd &
+> picom --experimental-backends --backend glx -b &
+> dunst &
+9a12,15
+> remaps &
+> dock.sh &
+> SPTN.sh &
+> MO.sh &
+12c18,19
+< alacritty &
+---
+> start-spotify &
+> alacritty --hold -e zsh -c "hanka.sh && zsh" &

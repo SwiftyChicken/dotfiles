@@ -1,0 +1,4 @@
+6c6
+< exec sxhkd &
+---
+> setxkbmap be && exec sxhkd &
