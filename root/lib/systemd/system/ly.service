@@ -1,0 +1,17 @@
+[Unit]
+Description=TUI display manager
+After=systemd-user-sessions.service plymouth-quit-wait.service
+After=getty@tty2.service
+
+[Service]
+Type=idle
+ExecStartPre=/usr/bin/setfont ter-122b
+ExecStartPre=/usr/bin/printf '%%b' '\e]P01C2C43\e]P7FFFFFF\ec'
+ExecStart=/usr/bin/ly
+StandardInput=tty
+TTYPath=/dev/tty2
+TTYReset=yes
+TTYVHangup=yes
+
+[Install]
+Alias=display-manager.service
