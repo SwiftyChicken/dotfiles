@@ -1,6 +1,12 @@
 #!/bin/sh
 
 while ! pgrep polybar;do sleep 1; done \
-&& (polybar player &) \
-&& spotify
-pkill spotify; xdo kill -a 'polybar-player_eDP-1' 
+&& polybar player &
+PLAYER=$!
+spotify &
+SPOTIFY=$!
+
+wait $SPOTIFY
+
+kill -- -$PLAYER || xdo kill -a "polybar-player_eDP-1"
+kill -- -$SPOTIFY || pkill spotify
