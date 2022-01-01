@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+cleanup() {
+	lf-ueberzug-cleaner
+	kill "$ueberzugpid"
+	pkill -f "tail -f $LF_UEBERZUG_TEMPDIR/fifo" # kill tail zombie
+	rm -rf "$LF_UEBERZUG_TEMPDIR"
+}
+
+trap cleanup INT HUP
+
+LF_UEBERZUG_TEMPDIR="$(mktemp -d -t lf-ueberzug-XXXXXX)"
+export LF_UEBERZUG_TEMPDIR
+mkfifo "$LF_UEBERZUG_TEMPDIR/fifo"
+tail -f "$LF_UEBERZUG_TEMPDIR/fifo" | ueberzug layer --silent &
+ueberzugpid=$!
+lf -command "source '${XDG_CONFIG_HOME:-$HOME/.config}/lf-ueberzug/lfrc-ueberzug'" "$@"
+cleanup
