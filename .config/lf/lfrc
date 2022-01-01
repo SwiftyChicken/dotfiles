@@ -13,10 +13,10 @@ set filesep "\n"  # default already
 map R :bulk-rename
 map D $rm $fx
 map b $file "$f" |grep -qE 'image|bitmap' && ln -sf "$f" $HOME/.config/bspwm/wallpaper && xwallpaper --zoom "$HOME/.config/bspwm/wallpaper" 2>/dev/null
-map o $xdg-open "$f" 2> /dev/null &
 map e $$EDITOR -w "$f" 2> /dev/null &
 map t $dragon-drag-and-drop -a -x $fx 2> /dev/null &
-map <enter> echo $file
+map o open
+map <enter> open
 
 # Go to ... dir
 map gc :cd ~/.config/
@@ -28,7 +28,8 @@ map gdc :cd ~/Documents/
 map gdu :cd ~/Documents/University/CW1/
 map gdg :cd ~/Documents/GitHub/
 map gdw :cd ~/Downloads/
-map gP :cd ~/Pictures/
+map gpp :cd ~/Pictures/
+map gps :cd ~/Pictures/Screenshots/
 map gpw :cd ~/Pictures/Wallpaper/Favourite/
 map gv :cd ~/Videos/
 map gm :cd ~/Music/
