@@ -18,18 +18,17 @@ settings:
   bindings.commands:
     global:
       normal:
-        F: hint links spawn --detach urlhandler -t {hint-url}
+        F: hint all tab
         I: hint inputs --first
         J: tab-prev
         K: tab-next
         V: enter-mode caret
-        f: hint links spawn --detach urlhandler {hint-url}
-        gI: spawn --detach urlhandler -t {url:pretty}
+        f: hint
         gO: set-cmd-text :open -w -r {url:pretty}
-        gi: spawn --detach urlhandler {url:pretty}
+        gi: hint inputs --first
         go: set-cmd-text :open {url:pretty}
         gv: spawn --detach urlhandler {url:pretty}
-        i: enter-mode insert
+        i: mode-enter insert
         j: scroll-px 0 200
         k: scroll-px 0 -200
   colors.completion.scrollbar.bg:
@@ -48,10 +47,14 @@ settings:
     global: 128
   colors.webpage.darkmode.threshold.text:
     global: 128
-  colors.webpage.prefers_color_scheme_dark:
-    global: false
+  colors.webpage.preferred_color_scheme:
+    global: auto
+  content.blocking.enabled:
+    global: true
   content.default_encoding:
     global: utf-8
+  content.geolocation:
+    https://www.google.com: false
   content.headers.accept_language:
     global: en-US,en;q=0.5
   content.headers.custom:
@@ -60,10 +63,13 @@ settings:
   content.headers.user_agent:
     global: Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko)
       {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}
-  content.notifications:
+  content.notifications.enabled:
     https://na.op.gg: false
     https://www.chess.com: false
     https://www.reddit.com: false
+  content.register_protocol_handler:
+    https://outlook.office.com?mailtouri=%25s: false
+    https://outlook.office365.com?mailtouri=%25s: false
   content.user_stylesheets:
     global: null
   editor.command:
@@ -73,6 +79,8 @@ settings:
     - '{file}'
     - -c
     - normal {line}G{column0}l
+  fileselect.handler:
+    global: external
   fonts.contextmenu:
     global: ' BreezeSans'
   fonts.default_family:
@@ -99,3 +107,5 @@ settings:
       top: 6
   tabs.title.format:
     global: '{audio} {current_title}'
+  zoom.default:
+    global: 125%

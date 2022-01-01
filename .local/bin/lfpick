@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+alacritty --config-file .config/alacritty/qb-lf.yml -t qb-lf --class qb-lf,qb-lf -e lf-ueberzug -selection-path "$@"

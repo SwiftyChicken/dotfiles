@@ -7,6 +7,12 @@ config.load_autoconfig()
 c.fonts.default_family = 'UbuntuMono Nerd Font'
 c.fonts.default_size = '14pt'
 
+### File Selection with LF
+config.set("fileselect.handler", "external")
+config.set("fileselect.folder.command", ['lfpick', '{}'])
+config.set("fileselect.single_file.command", ['lfpick', '{}'])
+config.set("fileselect.multiple_files.command", ['lfpick', '{}'])
+
 ### Open Videos in mpv if possible
 # config.bind('f', 'hint links spawn --detach urlhandler {hint-url}')
 # config.bind('F', 'hint links spawn --detach urlhandler -t {hint-url}')
