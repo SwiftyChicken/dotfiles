@@ -15,14 +15,14 @@ elif [ "$class" = "Dragon-drag-and-drop" ] ; then
 elif [ "$class" = "mpv" ] ; then
 	sed -i "$ s/^\([0-9]\+\)$/$wid \1/" /tmp/mpv-wpf.txt
 	xdotool windowsize $wid 450 250
-        xdotool windowmove $wid 1450 720
+  xdotool windowmove $wid 1450 720
 
 elif [ "$class" = "Zathura" ] ; then
 	xdotool windowsize $wid 1160 1080
 
 elif [ "$title" = "GNU Image Manipulation Program" ] ; then
 	xdotool windowsize $wid 1450 900
-        xdotool windowmove $wid 250 75
+  xdotool windowmove $wid 225 50
 	xdo lower -r $wid
 
 fi
