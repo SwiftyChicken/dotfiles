@@ -41,8 +41,8 @@ case $chosen in
         ;;
     $suspend)
         amixer set Master mute
-	betterlockscreen -l & 
-	sleep 0.5
+	      betterlockscreen -l & 
+	      sleep 0.5
         systemctl suspend
         ;;
     $logout)
