@@ -24,6 +24,5 @@ RESET=$(tput sgr0)
   echo -e "${RED}          OQ^*                 ^;                                 ^@@Q,            "
   echo -e "${RED}          >c¨                                                     ,k*¨             "
   echo -e "${TITLE}${BOLD}                                ベ    ル    セ   ル    ク${RESET}"
-  echo ""
 exit 0
 

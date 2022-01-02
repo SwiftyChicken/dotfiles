@@ -21,4 +21,3 @@ echo -e "     ${WHITE}   #     #  #     #     #  #        ${BLUE}#     #  #     
 echo -e "     ${WHITE}   #     #  #     #     #  #        ${BLUE}#     #   #     #    #     #   #   # ${RESET}"
 echo -e "     ${WHITE}   ######   ####   #####   ######   ${BLUE}######     #####      #####    #    #${RESET}"
 echo -e "     ${TITLE2}             ${RESET}[${TITLE1} B   E   Y   O   N   D   S   E   A   R   C   H ${RESET}]${TITLE2}             ${RESET}"
-echo ""

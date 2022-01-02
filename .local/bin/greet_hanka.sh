@@ -22,5 +22,4 @@ RESET=$(tput sgr0)
   echo -e "       ${RED}####    #### ####       #######  ######## ####   ##### ####       ####"
   echo -e "       ${RED}####    ########         ######   ####### ####    ########         ####"
   echo -e "    ${TITLE}${BOLD}       R       O       B       O       T       I       C       S            ${RESET}"
-  echo ""
 exit 0

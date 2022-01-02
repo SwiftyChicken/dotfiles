@@ -23,5 +23,4 @@ RESET=$(tput sgr0)
   echo -e "       ${RED}   ########### ######## ###### ########  ############ ######  ###### "        
   echo -e "       ${RED}   ########### ######## ######  #######   ##########  ######  ###### ${RESET}"         
   echo -e "         ${TITLE2}${BOLD}  G  N  U       O  P  E  R  A  T  I  N  G       S  Y  S  T  E  M   ${RESET}"
-  echo ""
 exit 0
