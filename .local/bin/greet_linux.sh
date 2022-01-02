@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## ORIGINAL SOURCE: 
+## Inspired by SOURCE: 
 # https://github.com/konapun/dotfiles/blob/master/zsh/custom/greet.zsh
 
 columns=$(tput cols)
