@@ -20,6 +20,34 @@ secondary = #a9b3c2
 background-level= #cec8d8ff
 alert = #ff004b
 
+[bar/top]
+width = 100%
+height = 2.3%
+offset-x = 0%
+offset-y = 0%
+radius = 0
+fixed-center = true
+bottom = false
+
+background = ${colors.background-level}
+foreground = ${colors.background}
+
+padding-left = 6
+padding-right = 6
+
+module-margin-left = 2
+module-margin-right = 3
+ 
+font-0 = BreezeSans:pixelsize=14:style=Medium Condensed;4
+font-1 = Material Design Icons Desktop:pixelsize=21;5
+font-2 = BreezeSans:pixelsize=10:style=Bold Condensed;3
+
+modules-center = date
+
+override-redirect = true
+enable-ipc = true
+
+
 [bar/level]
 width = 19%
 height = 4.3%
@@ -83,7 +111,7 @@ cursor-click = pointer
 cursor-scroll = default
 
 [bar/workspace]
-width = 24%
+width = 25%
 height = 4.85%
 offset-x = 8%:10
 offset-y = 0%
@@ -248,7 +276,7 @@ font-1 = Material Design Icons Desktop:pixelsize=22;5
 font-2 = BreezeSans:pixelsize=10:style=Light Condensed;10
 font-3 = Material Design Icons Desktop:pixelsize=10;10
 font-4 = Material Design Icons Desktop:pixelsize=10;-8
-font-5 = icomoon:pixelsize=17;4
+font-5 = icomoon\-feather:pixelsize=17;4
 
 modules-center = cpu update news mtorrent
 
@@ -305,8 +333,8 @@ foreground = ${colors.foreground}
 border-size = 0
 border-color = #000
 
-padding-left = 0
-padding-right = 0
+padding-left = 6
+padding-right = 6
 
 module-margin-left = 1
 module-margin-right = 1
@@ -315,7 +343,7 @@ font-0 = BreezeSans:pixelsize=14:style=Medium Condensed;4
 font-1 = Material Design Icons Desktop:pixelsize=21;5
 font-2 = BreezeSans:pixelsize=10:style=Bold Condensed;3
  
-modules-center = wlan battery bluetooth date 
+modules-center = wlan battery bluetooth date
 
 wm-restack = bspwm
 
