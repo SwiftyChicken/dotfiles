@@ -15,13 +15,13 @@ tail = true
 [module/cpu]
 type = custom/script
 exec = ~/.config/polybar/scripts/cpu.sh 2> /dev/null || echo "%{T5}%{F#dae1ec}󰓦%{T4}%{O-13}󰓦%{T-}%{F-}" 
-format-prefix = " "
+format-prefix = " "
 format-foreground = ${colors.secondary}
 
 interval = 1
 tail = true
 
-click-left = pgrep gotop && xdotool search --name "gotop" windowactivate || alacritty -t gotop -e gotop &
+click-left = start-gotop.sh
 
 [module/update]
 type = custom/script
