@@ -3,7 +3,8 @@
 xwallpaper --zoom "$HOME/.config/bspwm/wallpaper"
 source $HOME/.config/env
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
+bspc monitor DP-1 -d I II III IV V VI VII VIII IX X
 
 bspc config border_width        	0
 bspc config window_gap          	5
@@ -15,7 +16,7 @@ bspc config focus_follows_pointer 	true
 bspc config pointer_follows_focus 	true
 bspc config single_monocle	 	true
 bspc config initial_polarity 		first_child
-bspc config automatic_scheme 		longest_side
+bspc config automatic_scheme 		spiral
 
 bspc config pointer_modifier 		control
 bspc config pointer_action1 		move
@@ -29,15 +30,18 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a Vim desktop='^3' follow=on 
 bspc rule -a Emacs desktop='^3' follow=on state=tiled
 bspc rule -a DrRacket desktop='^3' follow=off 
-bspc rule -a Zathura desktop='^4' follow=on state=pseudo_tiled
+bspc rule -a Zathura desktop='^4' follow=on state=tiled
 bspc rule -a Nsxiv desktop='^4' follow=on 
-bspc rule -a newsboat desktop='^5' follow=on state=pseudo_tiled
-bspc rule -a Gimp desktop='^8' state=floating 
+bspc rule -a newsboat desktop='^6' follow=on state=pseudo_tiled
+bspc rule -a Gimp desktop='^7' state=floating 
+bspc rule -a Racket desktop='^8' follow=on state=pseudo_tiled
 bspc rule -a discord desktop='^9' follow=off state=pseudo_tiled rectangle=1650x900+200+80
 
 bspc rule -a mpv focus=off state=floating
 bspc rule -a scratchpad rectangle=750x465+20+540 locked=on sticky=on state=floating hidden=on
+bspc rule -a gotop locked=on sticky=on state=floating
 bspc rule -a lf rectangle=960x460+10+550 locked=on sticky=on state=floating hidden=on
+bspc rule -a qb-lf locked=on state=floating 
 
 bspc rule -a Surf state=tiled
 bspc rule -a Dragon-drag-and-drop locked=on sticky=on 
@@ -49,7 +53,7 @@ bspc desktop '^5' -l monocle
 
 sid=$(wmctrl -lx | grep scratch.scratchpad| cut -d' ' -f1| head -1) \
 && [ -z "$(echo $sid)" ] \
-	&& alacritty -t scratchpad --class scratch,scratchpad \
+	&& alacritty -t scratchpad --class scratch,scratchpad -e zsh -c "macchina; zsh"\
 	& sleep 1 \
 	&& sid=$(wmctrl -lx | grep scratch.scratchpad| cut -d' ' -f1| head -1) \
 	&& echo "$sid" > /tmp/scratchID ;
