@@ -1,0 +1,48 @@
+#!/bin/sh
+app=$(echo $0|rev |cut -d'/' -f1| rev)
+
+# Flagshandler
+t=""
+while getopts ":t" OPTIONS; do
+  case $OPTIONS in
+    t  ) t="-t"
+         ;;
+    \? ) echo "$app: Unrecognized option '-$OPTARG'">&2
+         exit 1
+     esac
+done
+
+shift "$((OPTIND-1))"
+
+# Handles with which application the URL should be opened
+case $1 in
+	*youtube*watch*)
+		dunstify -r 5864642 "󰗃  YouTube" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#ff0041"
+		start-mpv.sh "$1"
+		;;
+	*twitch*videos*)
+		dunstify -r 5864642 "󰕃  Twitch" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#b736de"
+		start-mpv.sh -c "$1"
+		;;
+	*twitch*)
+		if [[ $(echo "$1" | cut -d'/' -f4) ]]; then
+			dunstify -r 5864642 "󰕃  Twitch" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#b736de"
+			start-mpv.sh "$1"
+		else
+			setsid -f qutebrowser ":open $t $1" &
+		fi
+		;;
+	*torrent|magnet*)
+		dunstify -u critical "Torrent" " Still a work in progress... :("
+		;;
+	*)
+		link=$(echo "$1" | tr './:' '|'|sed "s/|\+/\|/g"|sed "s/|$//")
+		supported="$(egrep -iw "$link" $XDG_DATA_HOME/youtube-dl/supported)"
+		if [ ! -z "$supported" ]; then
+			dunstify -r 5864642 "󰄙  MPV" "<span foreground='#FEFEFE'>Loading the video. Pleas wait...</span>" -h string:bgcolor:"#00021d" -h string:fgcolor:"#525cf5"
+			start-mpv.sh "$1"
+		else
+			setsid -f qutebrowser ":open $t $1" &
+		fi
+		;;
+	esac
