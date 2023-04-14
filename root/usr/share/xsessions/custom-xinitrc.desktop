@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=custom-xinitrc
-Comment=Executes the xinitrc script in your .config/X11 directory
-Exec=zsh -c xinitrc-helper
-TryExec=zsh -c xinitrc-helper
-Type=Application

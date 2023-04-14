@@ -1,1 +1,0 @@
-vnoremap t :Tabularize /\|<CR>

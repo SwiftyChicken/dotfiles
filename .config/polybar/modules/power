@@ -1,3 +1,0 @@
-[module/power-menu]
-type = custom/script
-exec = echo "󰐥 "

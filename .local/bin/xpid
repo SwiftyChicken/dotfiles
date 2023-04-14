@@ -1,4 +1,0 @@
-#!/bin/sh
-
-class=$(wmctrl -lx| grep "$(xtitle $1)"| cut -d' ' -f1)
-echo $class
