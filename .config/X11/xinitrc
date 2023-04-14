@@ -1,0 +1,40 @@
+#!/bin/bash
+
+xhost +si:localuser:root # Allow root to access X server
+
+# Fix DBUS SESSION
+if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
+
+  ## if not found, launch a new one
+  eval `dbus-launch --sh-syntax`
+
+  ## create bus symlink so bus can be used by root later
+  ln -sf "$(echo $DBUS_SESSION_BUS_ADDRESS|sed 's|^.*path=\(.*\),guid=.*$|\1|')" /run/user/1000/bus
+
+fi
+
+source ~/.config/env
+source ~/.config/aliasrc
+# Startup Background
+xrdb -merge ~/.config/X11/xresources &
+setxkbmap be && exec sxhkd &
+picom -b &
+#dunst &
+pipewire &
+pipewire-pulse &
+/usr/bin/emacs --fg-daemon &
+eww daemon &
+eww open-many top bot control &
+stalonetray -c ~/.config/stalonetray/stalonetrayrc &
+
+# Custome scirpts
+xwallpaper --zoom "$HOME/.config/xmonad/wallpaper"
+
+# Startup applicaitons
+#alacritty &
+#oneko -sakura -tofocus &
+xsetroot -cursor_name left_ptr &
+remaps
+
+# Display/Window manager
+exec xmonad

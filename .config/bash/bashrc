@@ -1,0 +1,13 @@
+#!/bin/bash
+
+[ -f "$HOME/.config/env" ] && source "$HOME/.config/env"
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+
+export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+
+# Vi mode
+set -o vi
+shopt -s autocd
+shopt -s cdspell
+shopt -s cmdhist
+

@@ -5,8 +5,29 @@
 !env
 !aliasrc
 
+!zsh/
+!zsh/*
+
 !eww/
 !eww/*
 
+!bash/
+!bash/*
+
+!emacs/
+!emacs/*
+
+!picom/
+!picom/*
+
 !xmonad/
 !xmonad/*
+
+!X11/
+!X11/*
+
+!alacritty/
+!alacritty/*
+
+!qutebrowser/
+!qutebrowser/*
