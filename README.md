@@ -1,15 +1,15 @@
 <p align="center">
 <span style="font-size:3em;">
     <a href="https://github.com/SwiftyChicken/dotfiles/wiki?raw=true">
-    <img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Wiki.png?raw=true" />
+    <img style="height: 51px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/BSPWM/Pictures/ReadMe/Wiki.png?raw=true" />
     </a>
 	&nbsp;&nbsp;
    <a href="https://github.com/SwiftyChicken/dotfiles/wiki/Extra:-Gallery">
-   <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Gallery.png?raw=true" />
+   <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/BSPWM/Pictures/ReadMe/Gallery.png?raw=true" />
    </a>
 	&nbsp;&nbsp;
   <a href="https://github.com/SwiftyChicken/dotfiles/wiki#installation">
-  <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Guide.png?raw=true" />
+  <img style="height: 50px; width: auto" src="https://github.com/SwiftyChicken/dotfiles/blob/BSPWM/Pictures/ReadMe/Guide.png?raw=true" />
   </a>
 </span>
 </p>
@@ -25,20 +25,20 @@
 * **Powermenu:** Rofi ( modified from [adi1090x](https://github.com/adi1090x/rofi))
 * **Bar:** Polybar
 * **Calendar:** eww
-* **Spotify theme:** [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Dribbblish)
+* **Spotify theme:** [Dribbblish](https://github.com/morpheusthewhite/spicetify-themes/tree/BSPWM/Dribbblish)
 * **Browser:** Qutebrowser
 * **Search bar/App launcher:** Dmenu2
-* **File Manager:** lf with [uberzug wrapper script](https://github.com/slavistan/lf-gadgets/tree/master/lf-ueberzug)
+* **File Manager:** lf with [uberzug wrapper script](https://github.com/slavistan/lf-gadgets/tree/BSPWM/lf-ueberzug)
 * **PDF reader:** Zathura
 * **Text Fonts:** mix of [BreezeSans](https://developer.tizen.org/design/platform/styles/typography) and [UbuntuMono Nerd Font](https://www.nerdfonts.com/)
 * **Icon Fonts:** mix of [Font Awsome 5](https://fontawesome.com/how-to-use/on-the-desktop/setup/getting-started), [Material Design Icons](https://github.com/Templarian/MaterialDesign-Font) and Icomoon-feather
 
 # <center>Screenshots</center>
 <p align="center">
-  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_1.png?raw=true" />
-  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_2.png?raw=true" />
-  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_3.png?raw=true" />
-  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/ReadMe/Screenshot-update_4.png?raw=true" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/BSPWM/Pictures/ReadMe/Screenshot-update_1.png?raw=true" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/BSPWM/Pictures/ReadMe/Screenshot-update_2.png?raw=true" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/BSPWM/Pictures/ReadMe/Screenshot-update_3.png?raw=true" />
+  <img width="49%" src="https://github.com/SwiftyChicken/dotfiles/blob/BSPWM/Pictures/ReadMe/Screenshot-update_4.png?raw=true" />
 </p>
 
 # <center>Installation</center>
@@ -66,7 +66,7 @@ P.S. If it's higher on the list it has a higher priority.
 - [ ] Open wifi menu when clicking on wifi icon (implement menu first)
 
 ### Widgets (eww)
-- [ ] Change [song.sh](https://github.com/SwiftyChicken/dotfiles/blob/master/.config/polybar/scripts/song.sh) to implement a eww widget instead
+- [ ] Change [song.sh](https://github.com/SwiftyChicken/dotfiles/blob/BSPWM/.config/polybar/scripts/song.sh) to implement a eww widget instead
 - [ ] Changing volume and brightness control to eww widget instead of polybar
 
 ### File Manager (lf)
