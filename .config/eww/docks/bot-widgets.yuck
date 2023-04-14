@@ -1,0 +1,92 @@
+(defwidget mode []
+  (button :class "widget_mode"
+          :tooltip "${mode} mode"
+          (image :path "./images/mode/${mode}.svg"
+                 :image-width 32)))
+
+(defwidget power []
+  (button :class "power_button"
+          :tooltip "power menu"
+          (image :path "./images/etc/power.svg"
+                 :image-width 30)))
+
+(defwidget info []
+  (box :class "modules_pill" 
+       :space-evenly false
+       (box :halign "start"
+            :space-evenly false
+            (wifi)
+            (battery :value bat_capcity)
+            (bluetooth))
+       (box :halign "end"
+            (dateTime))))
+
+(defwidget wifi []
+ (button :class "widget_wifi"
+         :tooltip "${wifi_signal==''?'no signal':wifi_name}"
+         (image :path "${eth_status=='connected'?'./images/wifi/eth.svg':
+                                                "${wifi_status=='disabled'?'./images/wifi/wifi-off.svg'
+                                                                          :"${wifi_signal==''?'./images/wifi/wifi-load.svg'
+                                                                                             :'./images/wifi/${wifi_internet=='disconnected'?'error/'
+                                                                                                                                            :''}wifi-${round(wifi_signal/20, 0)-1}.svg'}"}"}"
+                :image-width 32)))
+
+(defwidget battery [value]
+ (button :class "widget_bat"
+         (box :spacing-evenly false
+              :spacing -4
+              (label :yalign 0.60
+                     :halign "end"
+                     :angle 0
+                     :text "${value}%")
+              (image :path "./images/bat/${matches(bat_status, 'Not charging')?'bat-load.svg'
+                                                                              :'${matches(bat_status, 'Charging')?'charging/'
+                                                                                                                 :''}bat-${round((value/10), 0)*10}.svg'}"
+                     :image-width 36))))
+
+(defwidget bluetooth []
+  (button :class "widget_wifi"
+          :tooltip bluetooth_name
+         (image :path "./images/bluetooth/bt-${bluetooth_status=='no'?'off'
+                                                                      :"${bluetooth_connected=='connected'?'con':'on'}"}.svg"
+                :image-width 30)))
+
+(defwidget dateTime [] 
+  (button :class "widget_date"
+          (box :spacing-evenly false
+               :width 180
+               (label :text "${date_cmd}"))))
+
+(defwidget shortcut []
+  (box :class "modules_shortcut" 
+       :space-evenly false
+       (app :type "search"
+            :action "eww open search")
+       (app :type "screenshot"
+            :action "maim ~/rice.png")
+       (app :type "scratchpad")
+       (app :type "filemanager")))
+
+(defwidget app [type ?action]
+ (button :class "widget_shortcut widget_${type}"
+         ;:tooltip "${type}"
+         :onclick "${action}"
+         (image :path "./images/shortcut/${type}.svg"
+                :image-width 30)))
+
+(defwidget open-workspaces []
+  (box :class "workspaces_module"
+       :space-evenly false
+       :spacing -47
+       (image :class 'indicator'
+              :path "./images/workspace/indicator.svg"
+              :style "-gtk-icon-transform: translate(${52*(indicator-pos - 1)}px, 30px);"
+              :image-width 40)
+       (box :space-evenly false
+            :spacing -1
+            (for ws in workspaces
+             (literal :content `(button :class "ws-${ws}" 
+                      :onclick "xmonadctl focus-workspace-${ws}"
+                      (image :class {ws-${ws}?'workspace-on':'workspace-off'}
+                             :path "./images/workspace/WS-${ws}.svg"
+                             :image-width {ws-${ws}?45:1}))`)))))

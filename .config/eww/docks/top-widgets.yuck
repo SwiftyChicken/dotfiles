@@ -1,0 +1,84 @@
+(defwidget usage-progress [type ?specify value]
+ (box :class "widget_usages"
+      :width 24
+      (circular-progress :class type
+                         :thickness 3.75
+                         :value value
+                         :start-at 75
+                         :clockwise false
+                         :tooltip "using ${value}% of ${specify}${type}"
+                         (button :class "usage_button"))))
+
+(defwidget control [type value tooltip_value ?action]
+  (eventbox :class "${type}_control"
+            :onhover "${EWW_CMD} update ${type}_reveal=true"
+            :onhoverlost "${EWW_CMD} update ${type}_reveal=false"
+            (box :class "control"
+                 :space-evenly false
+                 :spacing 0
+                 (button :tooltip "${tooltip_value}% ${type}"
+                         (image :class "${extra_reveal?'close':'open'}"
+                                :path "./images/control/${type}-${type=='volume' && volume_muted=='true'?
+                                                                      'mute':"${value>50?'high':
+                                                                                         "${value>25?'mid':'low'}"}"}.svg"
+                                :image-width 28))
+                 (literal :content `(revealer :reveal ${type}_reveal
+                                              :transition "slideleft"
+                                              :duration "500ms"
+                                              (scale :class "progress_bar"
+                                                     :orientation "h"
+                                                     :round-digits 0
+                                                     :min 0
+                                                     :max 100
+                                                     :value value
+                                                     :onchange action))`))))
+
+(defwidget extra [?class]
+  (box :class class
+       :space-evenly false
+      (button :onclick "${EWW_CMD} update extra_reveal=${extra_reveal? false : true}"
+              :tooltip "mini widgets"
+              (image :class "${extra_reveal?'close':'open'}"
+                     :path "./images/menu/extra-menu.svg"
+                     :image-width 10))
+      (revealer :reveal extra_reveal
+                :transition "slideright"
+                :duration "300ms"
+                (box :class "children"
+                     :spacing 20 
+                     (children)))))
+
+(defwidget menu []
+  (button :class "menu" 
+          (box :space-evenly false
+               :spacing 7
+               (menu-dot)
+               (menu-dot)
+               (menu-dot))))
+
+(defwidget menu-dot []
+  (button :class "menu-dot"
+          :width 12))
+
+
+(defwidget spotify [artist title]
+  (button :class "song"
+          (box :halign "fill"
+               :space-evenly false
+               :spacing 5
+               (image :path "./images/etc/spotify.svg"
+                      :image-width 25)
+               (box :space-evenly false
+                    :spacing 5
+               (label :class "artist" 
+                      :yalign 0.6
+                      :text artist)
+               (box :space-evenly false
+                    :spacing 2
+                    (label :class "deco"
+                           :text "[")
+                    (label :class "title" 
+                           :yalign 0.6
+                           :markup title)
+                    (label :class "deco"
+                           :text "]"))))))

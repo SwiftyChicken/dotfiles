@@ -1,0 +1,54 @@
+(include "./docks/top-widgets.yuck")
+
+
+(defwidget top []
+  (box :class "space_top"
+       :orientation "horizontal"
+       (TL)
+       (TC)
+       (TR)
+       ))
+
+(defwidget TL []
+ (box :class "TL"
+      :halign "start"
+      :space-evenly false
+      :spacing 10
+      (button :class "usage_modules"
+              (box :spacing 12
+                   (usage-progress :type "ram"
+                                   :value {round('${EWW_RAM.used_mem_perc}', 0)})
+                   (usage-progress :type "cpu"
+                                   :value {round('${EWW_CPU.avg}', 0)})
+))
+     (box :class "control_modules"
+          :spacing 12
+          :space-evenly false
+          (control :type "brightness"
+                   :value backlight_value
+                   :tooltip_value backlight_tooltip
+                   :action "xbacklight -set {}")
+          (control :type "volume"
+                   :value volume_value
+                   :tooltip_value volume_tooltip
+                   :action "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%"))
+     (extra :class "extra_modules"
+            "󰚇"
+            "󰏗"
+            "󰂜"
+            ""
+            )
+     ))
+
+(defwidget TC []
+  (box :class "spotify_module"
+       :space-evenly false
+       :halign "center"
+       :visible spotify_open
+       (spotify :artist artist
+                :title title)))
+
+(defwidget TR []
+  (box :class "TR"
+       :halign "end"
+       (menu)))

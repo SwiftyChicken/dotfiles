@@ -1,0 +1,8 @@
+# Use gitignore as whitelist
+*
+
+# etc
+!README.md
+!.gitignore
+!.config/
+!.local/fonts/

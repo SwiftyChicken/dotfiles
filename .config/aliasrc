@@ -1,0 +1,25 @@
+#!/bin/sh
+
+ ####################################
+ #           COLOR PALLETE          #
+ ####################################
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+red="\e[1;31m"
+green="\e[1;32m"
+nrm="\e[0m"
+
+ ####################################
+ #          LIST OF ALIASES         #
+ ####################################
+
+alias open='xdg-open'
+alias rm='rm -I'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+alias ls='ls --color=auto'
+alias vim='start-vim.sh -w'
+alias vi='start-vim.sh -w'
+alias checkupdates='~/.local/bin/checkupdates'
+alias config='/usr/bin/git --git-dir=$HOME/Documents/git/dotfiles.git/ --work-tree=$HOME' 

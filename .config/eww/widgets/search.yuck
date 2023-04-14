@@ -1,0 +1,10 @@
+(defwidget search_bar []
+  (box :class "search_widget"
+       :space-evenly false
+       (input  :halign "fill"
+               :hexpand true
+               :value "Looking for something?"
+               :onaccept "eww close search")
+       (image :halign "end" 
+              :path "./images/etc/search.svg"
+              :image-width 26)))

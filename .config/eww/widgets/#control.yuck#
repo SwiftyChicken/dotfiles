@@ -1,0 +1,16 @@
+(defwidget control_indicator []
+  (box :class "control_widget control-${control_reveal?'open':'close'}"
+       :space-evenly false
+       :valign "start"
+       :spacing -330
+       (scale :class "${volume_muted=='true'&&control_type=="volume"?'progress_bar_off':'progress_bar'}"
+              :haling "center"
+              :width 350
+              :min 0
+              :max 125
+              :active false
+              :value {control_type=="volume"?'${volume_value==0?0:25 + volume_value}':
+                                             '${backlight_value==0?0:25 + backlight_value}'})
+       (image :path "./images/control/${control_type=='backlight'?'backlight':
+                                      '${volume_muted=='true'?'volume-off':'volume-on'}'}.svg"
+              :image-width 30)))

@@ -1,0 +1,86 @@
+(defvar spotify_open false)
+(defvar mode "tall")
+(defvar brightness_reveal false)
+(defvar volume_reveal false)
+(defvar extra_reveal false)
+(defvar ws-1   true)
+(defvar ws-2   false)
+(defvar ws-3   false)
+(defvar ws-4   false)
+(defvar ws-5   false)
+(defvar ws-6   false)
+(defvar ws-7   false)
+(defvar ws-8   false)
+(defvar ws-9   false)
+(defvar ws-10  false)
+(defvar workspaces "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]")
+
+(defvar indicator-pos "1")
+
+(defvar control_reveal false)
+(defvar control_type "backlight")
+
+(defpoll title :interval '0.1s'
+               "playerctl -p spotify metadata | grep title|tr -s ' '|cut -d' ' -f3-")
+
+(defpoll artist :interval '0.1s'
+                :initial "Spotify"
+                "playerctl -p spotify metadata | grep artist|tr -s ' '|cut -d' ' -f3-")
+
+(defpoll backlight_value :interval '0.1s'
+                         "xbacklight|cut -d'.' -f1")
+
+(defpoll backlight_tooltip :interval '3s'
+                         "eww get backlight_value")
+
+(defpoll volume_value :interval '0.1s'
+                      "wpctl get-volume @DEFAULT_AUDIO_SINK@ |cut -d' ' -f2| xargs -I{} echo '{}*100'|bc|cut -d'.' -f1")
+
+(defpoll volume_muted :interval '0.1s'
+                      "wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep MUTED >/dev/null && echo 'true' || echo 'false'")
+
+(defpoll volume_tooltip :interval '3s'
+                         "eww get volume_value")
+
+(defpoll wifi_signal :interval '1s'
+                     :initial ''
+                     "nmcli -t -f active,signal dev wifi|grep '^yes'|cut -d':' -f2")
+
+(defpoll wifi_internet :interval '5s'
+                       :initial 'disconnected'
+                       "ping -c 1 -W 5 8.8.8.8 >/dev/null && echo 'connected' || echo 'disconnected'")
+
+(defpoll wifi_name :interval '10s'
+                   :initial ''
+                   "nmcli -t -f active,ssid dev wifi|grep '^yes'|cut -d':' -f2")
+
+(defpoll wifi_status :interval '1s'
+                   :initial 'disabled'
+                   "nmcli radio wifi")
+
+(defpoll eth_status :interval '1s'
+                    :initial 'disconnected'
+                    "nmcli -g GENERAL.STATE c show 'Wired connection 1' | grep activ >/dev/null && echo 'connected' || echo 'disconnected'")
+
+(defpoll bat_capcity :interval "1m"
+                  "cat /sys/class/power_supply/BAT0/capacity")
+
+(defpoll bat_status :interval "1s"
+                    "cat /sys/class/power_supply/BAT0/status")
+
+(defpoll bluetooth_status :interval '1s'
+                   :initial 'disabled'
+                   "bluetoothctl show|grep 'Powered:' | cut -d':' -f2 | xargs")
+
+(defpoll bluetooth_connected :interval '1s'
+                       :initial 'disconnected'
+                       "bluetoothctl info| grep 'Connected: yes' > /dev/null && echo 'connected' || echo 'disconnected'")
+
+(defpoll bluetooth_name :interval '10s'
+                   :initial ''
+                   "bluetoothctl info| grep 'Name:' | cut -d':' -f2 | xargs")
+
+(defpoll date_cmd :interval "1m"
+                  "date '+%a %e %b %H:%M'")
+
+

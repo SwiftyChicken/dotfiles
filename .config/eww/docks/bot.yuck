@@ -1,0 +1,24 @@
+(include "./docks/bot-widgets.yuck")
+
+(defwidget bot []
+  (box :class "space_bot"
+       :orientation "horizontal"
+       (BL)
+       (BR)))
+
+(defwidget BL []
+  (box :class "BR"
+       :halign "start"
+       :space-evenly false
+       :spacing 10
+       (shortcut)
+       (open-workspaces)))
+
+(defwidget BR []
+  (box :class "BR"
+       :halign "end"
+       :space-evenly false
+       :spacing 10
+       (mode)
+       (info)
+       (power)))

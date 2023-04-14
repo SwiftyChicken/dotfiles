@@ -1,0 +1,12 @@
+*
+
+!.gitignore
+
+!env
+!aliasrc
+
+!eww/
+!eww/*
+
+!xmonad/
+!xmonad/*
