@@ -3,6 +3,7 @@
 
 (custom-theme-set-faces
  'salmon-dragon
+ ;  Command for available fonts >> fc-list -f "%{fullname} : %{foundry} : %{family}\n"
  '(default ((t (:family "Fira Code Medium"
                 :foundry "CTDB" 
                 :width normal 
@@ -52,8 +53,9 @@
                       (t (:foreground "medium blue"))))
 
  '(mode-line ((((supports :box t))
-	       (:height 200 
-		:weight light 
+	       (:height 180 
+		:family "Cartograph CF Thin"
+		:weight thin 
 		:foreground "#BCBEC9"
 		:background "#242736"
 		:box (:line-width (9 . 8)
