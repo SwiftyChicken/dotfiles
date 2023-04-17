@@ -19,10 +19,10 @@
 								 :box (:color "#66FC7E"))))
 				  (( eq evil-state 'normal)
 				   (propertize " <N> "
-					       'font-lock-face '(:background "#FF9447"
+					       'font-lock-face '(:background "#FEC900"
 								 :foreground "black"
 								 :family "Cartograph CF Extra Bold"
-								 :box (:color "#FF9447"))))
+								 :box (:color "#FEC900"))))
 				  (( eq evil-state 'insert)
 				   (propertize " <I> "
 					       'font-lock-face '(:background "#3399EE"
@@ -41,13 +41,13 @@
 								 :foreground "white"
 								 :family "Cartograph CF Extra Bold"
 								 :box (:color "#A37DF7"))))))
-		     (:eval (propertize (format-mode-line "%b")
+		     (:eval (propertize (format-mode-line " %b")
 					'face 'cogent-line-buffer-name-face
 					'help-echo (buffer-file-name)))))
 
-		     (right '((format-mode-line "%l:%c ")))
+		     (right '("%l:%c "))
 		     (len-right (length (format-mode-line right))))
 
-		(list '(:eval (concat left
+		(list left
 		      (mode-line-fill 'mode-line len-right)
-		      right)))))
+		      right)))
