@@ -17,7 +17,7 @@
                 :box nil 
                 :inverse-video nil 
                 :foreground "white" 
-                :background "#17151A" 
+                :background "#1B1524" 
                 :stipple nil 
                 :inherit nil))))
 
@@ -27,7 +27,7 @@
 
            ;Backgoround in Dark Theme
            (((class color) (background dark))
-            (:background "#17151A")) 
+            (:background "#1B1524")) 
 
            ;Backgoround in other cases
            (t (:background "gray"))))
@@ -57,9 +57,9 @@
 		:family "Cartograph CF Thin"
 		:weight thin 
 		:foreground "#BCBEC9"
-		:background "#252436"
+		:background "#272447"
 		:box (:line-width (9 . 8)
-		      :color "#252436")
+		      :color "#272447")
 		:slant normal 
 		:inverse-video nil))))
 
@@ -78,8 +78,8 @@
 	       (:background "darkseagreen2"))
 	      (((class color) (min-colors 88) (background dark))
 	       (:foreground "white"
-		:background "#5343B6"
-	        :box (:line-width (10 . 1) :color "#5343B6" :style nil)))
+		:background "#4B487C"
+	        :box (:line-width (10 . 1) :color "#4B487C" :style nil)))
 	      (((class color) (min-colors 16) (background light))
 	       (:background "darkseagreen2"))
 	      (((class color) (min-colors 16) (background dark))
@@ -116,18 +116,20 @@
  '(font-lock-builtin-face ((((class grayscale) (background light)) (:weight bold :foreground "LightGray"))
 			   (((class grayscale) (background dark)) (:weight bold :foreground "DimGray"))
 			   (((class color) (min-colors 88) (background light)) (:foreground "dark slate blue"))
-			   (((class color) (min-colors 88) (background dark)) (:foreground "#34A08D"))
+			   (((class color) (min-colors 88) (background dark)) (:foreground "#A986F7"))
 			   (((class color) (min-colors 16) (background light)) (:foreground "Orchid"))
 			   (((class color) (min-colors 16) (background dark)) (:foreground "LightSteelBlue"))
 			   (((class color) (min-colors 8)) (:weight bold :foreground "blue"))
 			   (t (:weight bold))))
 
  ; comments
- '(font-lock-comment-delimiter-face ((default (:foreground "#AAAEC3":inherit (font-lock-comment-face)))))
+ '(font-lock-comment-delimiter-face ((default (:foreground "#AAAEC3" :inherit (font-lock-comment-face)))))
  '(font-lock-comment-face ((((class grayscale) (background light)) (:slant italic :weight bold :foreground "DimGray"))
 			   (((class grayscale) (background dark)) (:slant italic :weight bold :foreground "LightGray"))
 			   (((class color) (min-colors 88) (background light)) (:foreground "red"))
-			   (((class color) (min-colors 88) (background dark)) (:foreground "#8389A8"))
+			   (((class color) (min-colors 88) (background dark)) (:family "Cartograph CF Light Italic"
+									       :weight medium
+									       :foreground "#8389A8"))
 			   (((class color) (min-colors 16) (background light)) (:foreground "red"))
 			   (((class color) (min-colors 16) (background dark)) (:foreground "red1"))
 			   (((class color) (min-colors 8) (background light)) (:foreground "red"))
@@ -142,7 +144,7 @@
 			    (((class color) (min-colors 88) (background light))
 			     (:foreground "dark cyan"))
 			    (((class color) (min-colors 88) (background dark))
-			     (:foreground "yellow"))
+			     (:foreground "#FF862F"))
 			    (((class color) (min-colors 16) (background light))
 			     (:foreground "CadetBlue"))
 			    (((class color) (min-colors 16) (background dark))
@@ -155,7 +157,7 @@
  '(font-lock-doc-face ((t (:inherit (font-lock-string-face)))))
  '(font-lock-doc-markup-face ((t (:inherit (font-lock-constant-face)))))
  '(font-lock-function-name-face ((((class color) (min-colors 88) (background light)) (:foreground "Blue1"))
-				 (((class color) (min-colors 88) (background dark)) (:foreground "#F41565"))
+				 (((class color) (min-colors 88) (background dark)) (:foreground "#2D6FF9"))
 				 (((class color) (min-colors 16) (background light)) (:foreground "Blue"))
 				 (((class color) (min-colors 16) (background dark)) (:foreground "LightSkyBlue"))
 				 (((class color) (min-colors 8)) (:weight bold :foreground "blue"))
@@ -165,7 +167,10 @@
  '(font-lock-keyword-face ((((class grayscale) (background light)) (:weight bold :foreground "LightGray"))
 			   (((class grayscale) (background dark)) (:weight bold :foreground "DimGray"))
 			   (((class color) (min-colors 88) (background light)) (:foreground "Purple"))
-			   (((class color) (min-colors 88) (background dark)) (:foreground "#2D6FF9"))
+			   (((class color) (min-colors 88) (background dark)) (:family "Cartograph CF Italic"
+									       :foreground "#EE5396"
+									       :weight black
+									       :slant italic))
 			   (((class color) (min-colors 16) (background light)) (:foreground "Purple"))
 			   (((class color) (min-colors 16) (background dark)) (:foreground "Cyan"))
 			   (((class color) (min-colors 8)) (:weight bold :foreground "cyan"))
@@ -181,7 +186,7 @@
  '(font-lock-string-face ((((class grayscale) (background light)) (:slant italic :foreground "DimGray"))
 			  (((class grayscale) (background dark)) (:slant italic :foreground "LightGray"))
 			  (((class color) (min-colors 88) (background light)) (:foreground "VioletRed4"))
-			  (((class color) (min-colors 88) (background dark)) (:foreground "#A37DF7"))
+			  (((class color) (min-colors 88) (background dark)) (:foreground "#F9C747"))
 			  (((class color) (min-colors 16) (background light)) (:foreground "RosyBrown"))
 			  (((class color) (min-colors 16) (background dark)) (:foreground "LightSalmon"))
 			  (((class color) (min-colors 8)) (:foreground "green"))
@@ -190,7 +195,7 @@
  '(font-lock-type-face ((((class grayscale) (background light)) (:weight bold :foreground "Gray90"))
 			(((class grayscale) (background dark)) (:weight bold :foreground "DimGray"))
 			(((class color) (min-colors 88) (background light)) (:foreground "ForestGreen"))
-			(((class color) (min-colors 88) (background dark)) (:foreground "red"))
+			(((class color) (min-colors 88) (background dark)) (:foreground "#20AEF1"))
 			(((class color) (min-colors 16) (background light)) (:foreground "ForestGreen"))
 			(((class color) (min-colors 16) (background dark)) (:foreground "PaleGreen"))
 			(((class color) (min-colors 8)) (:foreground "green"))
@@ -199,7 +204,7 @@
  '(font-lock-variable-name-face ((((class grayscale) (background light)) (:slant italic :weight bold :foreground "Gray90"))
 				 (((class grayscale) (background dark)) (:slant italic :weight bold :foreground "DimGray"))
 				 (((class color) (min-colors 88) (background light)) (:foreground "sienna"))
-				 (((class color) (min-colors 88) (background dark)) (:foreground "#20AEF1"))
+				 (((class color) (min-colors 88) (background dark)) (:foreground "#1DD8AB"))
 				 (((class color) (min-colors 16) (background light)) (:foreground "DarkGoldenrod"))
 				 (((class color) (min-colors 16) (background dark)) (:foreground "LightGoldenrod"))
 				 (((class color) (min-colors 8)) (:weight light :foreground "yellow"))
