@@ -7,7 +7,6 @@
   :init
   (evil-collection-init))
 
-
 ; Toggle evil-mode
 (global-set-key (kbd "C-e")
   (lambda ()

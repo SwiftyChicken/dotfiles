@@ -9,12 +9,8 @@
 					     (-1 . right-margin)
 					     ,(- reserve 0)))))
 
-(defun mode-line-empty ()
-  (propertize "  "
-              'font-lock-face '(:background "#131414" :box (:color "#131414"))))
-
 ;; Set the modeline to tell me the filename, hostname, etc..
-(setq mode-line-format
+(setq-default mode-line-format
       (let* ((left '((:eval (cond (( eq evil-state 'visual)
 				   (propertize " <V> "
 					       'font-lock-face '(:background "#66FC7E"
@@ -45,8 +41,11 @@
 								 :foreground "white"
 								 :family "Cartograph CF Extra Bold"
 								 :box (:color "#A37DF7"))))))
-			     " %b"))
-		     (right '("%l:%c"))
+		     (:eval (propertize " %b"
+					'face 'cogent-line-buffer-name-face
+					'help-echo (buffer-file-name)))))
+
+		     (right '("%l:%c "))
 		     (len-right (length (format-mode-line right))))
 
 		(list left

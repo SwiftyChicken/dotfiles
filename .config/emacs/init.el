@@ -56,14 +56,27 @@
 ;; Basics
 (load-theme 'salmon-dragon t)
 
+(use-package all-the-icons
+  :if (display-graphic-p)
+  :commands (all-the-icons-octicon
+             all-the-icons-faicon
+             all-the-icons-fileicon
+             all-the-icons-wicon
+             all-the-icons-material
+             all-the-icons-alltheicon))
+
+
 ; Evil mode
 (load-plugin "evil")
 
-; Evil mode
+; Dashboard mode
 (load-plugin "dashboard")
 
 ; Modeline
 (load-bin "simple-modeline")
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ATUO CONFIG ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

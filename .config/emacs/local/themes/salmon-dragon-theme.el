@@ -17,7 +17,7 @@
                 :box nil 
                 :inverse-video nil 
                 :foreground "white" 
-                :background "#131414" 
+                :background "#17151A" 
                 :stipple nil 
                 :inherit nil))))
 
@@ -27,7 +27,7 @@
 
            ;Backgoround in Dark Theme
            (((class color) (background dark))
-            (:background "#131414")) 
+            (:background "#17151A")) 
 
            ;Backgoround in other cases
            (t (:background "gray"))))
@@ -57,9 +57,9 @@
 		:family "Cartograph CF Thin"
 		:weight thin 
 		:foreground "#BCBEC9"
-		:background "#242736"
+		:background "#252436"
 		:box (:line-width (9 . 8)
-		      :color "#242736")
+		      :color "#252436")
 		:slant normal 
 		:inverse-video nil))))
 
