@@ -63,16 +63,38 @@
 		:slant normal 
 		:inverse-video nil))))
 
- '(mode-line-buffer-id ((t (:height 180 :weight thin))))
- '(mode-line-emphasis ((t (:height 180 :weight thin))))
- '(mode-line-highlight ((((supports :box t) (class color) (min-colors 88)) (:box (:line-width (20 . 20) :color "grey40" :style released-button))) (t (:inherit (highlight)))))
- '(mode-line-inactive ((default (:inherit (mode-line))) (((class color) (min-colors 88) (background light)) (:background "grey90" :foreground "grey20" :box (:line-width (1 . -1) :color "grey75" :style nil) :weight light)) (((class color) (min-colors 88) (background dark)) (:background "grey30" :foreground "grey80" :box (:line-width (1 . -1) :color "grey40" :style nil) :weight light))))
+ '(mode-line-inactive ((((supports :box t))
+	       (:height 180 
+		:family "Cartograph CF Thin"
+		:weight thin 
+		:foreground "#BCBEC9"
+		:background "#313141"
+		:box (:line-width (9 . 8)
+		      :color "#313141")
+		:slant normal 
+		:inverse-video nil))))
 
+ '(highlight ((((class color) (min-colors 88) (background light))
+	       (:background "darkseagreen2"))
+	      (((class color) (min-colors 88) (background dark))
+	       (:foreground "white"
+		:background "#5343B6"
+	        :box (:line-width (5 . 5) :color "#5343B6" :style released-button)))
+	      (((class color) (min-colors 16) (background light))
+	       (:background "darkseagreen2"))
+	      (((class color) (min-colors 16) (background dark))
+	       (:background "darkolivegreen"))
+	      (((class color) (min-colors 8))
+	       (:foreground "black" :background "green"))
+	      (t (:inverse-video t))))
+
+; '(mode-line-buffer-id ((t (:height 180 :weight thin))))
+; '(mode-line-emphasis ((t (:height 180 :weight thin))))
+; '(mode-line-highlight ((((supports :box t) (class color) (min-colors 88)) (:box (:line-width (20 . 20) :color "grey40" :style released-button))) (t (:inherit (highlight)))))
  ;'(fixed-pitch ((t (:family "Monospace"))))
  ;'(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
  ;'(escape-glyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
  ;'(homoglyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
- ;'(highlight ((((class color) (min-colors 88) (background light)) (:background "darkseagreen2")) (((class color) (min-colors 88) (background dark)) (:background "darkolivegreen")) (((class color) (min-colors 16) (background light)) (:background "darkseagreen2")) (((class color) (min-colors 16) (background dark)) (:background "darkolivegreen")) (((class color) (min-colors 8)) (:foreground "black" :background "green")) (t (:inverse-video t))))
  ;'(region ((((class color) (min-colors 88) (background dark)) (:extend t :background "blue3")) (((class color) (min-colors 88) (background light) (type gtk)) (:extend t :background "gtk_selection_bg_color" :distant-foreground "gtk_selection_fg_color")) (((class color) (min-colors 88) (background light) (type ns)) (:extend t :background "ns_selection_bg_color" :distant-foreground "ns_selection_fg_color")) (((class color) (min-colors 88) (background light)) (:extend t :background "lightgoldenrod2")) (((class color) (min-colors 16) (background dark)) (:extend t :background "blue3")) (((class color) (min-colors 16) (background light)) (:extend t :background "lightgoldenrod2")) (((class color) (min-colors 8)) (:extend t :foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:extend t :background "gray"))))
  ;'(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
  ;'(secondary-selection ((((class color) (min-colors 88) (background light)) (:extend t :background "yellow1")) (((class color) (min-colors 88) (background dark)) (:extend t :background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:extend t :background "yellow")) (((class color) (min-colors 16) (background dark)) (:extend t :background "SkyBlue4")) (((class color) (min-colors 8)) (:extend t :foreground "black" :background "cyan")) (t (:inverse-video t))))

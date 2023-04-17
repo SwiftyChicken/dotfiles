@@ -1,6 +1,8 @@
 (use-package evil
   :init
-  (setq evil-want-keybinding nil))
+  (setq evil-want-keybinding nil)
+  :config
+  (evil-set-initial-state 'dashboard-mode 'emacs))
 
 (use-package evil-collection
   :after evil

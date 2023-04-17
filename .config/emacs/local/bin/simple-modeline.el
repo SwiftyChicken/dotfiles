@@ -41,14 +41,13 @@
 								 :foreground "white"
 								 :family "Cartograph CF Extra Bold"
 								 :box (:color "#A37DF7"))))))
-		     (:eval (propertize " %b"
+		     (:eval (propertize (format-mode-line "%b")
 					'face 'cogent-line-buffer-name-face
 					'help-echo (buffer-file-name)))))
 
-		     (right '("%l:%c "))
+		     (right '((format-mode-line "%l:%c ")))
 		     (len-right (length (format-mode-line right))))
 
-		(list left
-		      ;; Fill until the end of line but 10 characters
+		(list '(:eval (concat left
 		      (mode-line-fill 'mode-line len-right)
-		      right)))
+		      right)))))
