@@ -1,4 +1,8 @@
 *
+!.gitignore
 !local/*
 !local/*/
+!elpa/*
+!elpa/*/
+
 !*.el
