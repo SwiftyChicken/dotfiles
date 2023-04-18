@@ -1,8 +1,11 @@
 *
+
 !.gitignore
-!local/*
+
+!local
 !local/*/
-!elpa/*
-!elpa/*/
+
+!elpa
+!elpa/dashboard-20230331.2304/
 
 !*.el
