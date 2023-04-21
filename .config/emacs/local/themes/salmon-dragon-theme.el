@@ -74,6 +74,14 @@
 		:slant normal 
 		:inverse-video nil))))
 
+ '(header-line ((default (:inherit (mode-line)))
+		(((type tty)) (:underline (:color foreground-color :style line) :inverse-video nil))
+		(((class color grayscale) (background light)) (:box nil :foreground "grey20" :background "grey90"))
+		(((class color grayscale) (background dark)) (:box nil :foreground "red" :background "#131414"))
+		(((class mono) (background light)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "black" :background "white"))
+
+		(((class mono) (background dark)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "white" :background "black"))))
+
  '(highlight ((((class color) (min-colors 88) (background light))
 	       (:background "darkseagreen2"))
 	      (((class color) (min-colors 88) (background dark))
@@ -99,9 +107,6 @@
  ;'(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
  ;'(secondary-selection ((((class color) (min-colors 88) (background light)) (:extend t :background "yellow1")) (((class color) (min-colors 88) (background dark)) (:extend t :background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:extend t :background "yellow")) (((class color) (min-colors 16) (background dark)) (:extend t :background "SkyBlue4")) (((class color) (min-colors 8)) (:extend t :foreground "black" :background "cyan")) (t (:inverse-video t))))
  ;'(trailing-whitespace ((((class color) (background light)) (:background "red1")) (((class color) (background dark)) (:background "red1")) (t (:inverse-video t))))
- ;'(link ((((class color) (min-colors 88) (background light)) (:underline (:color foreground-color :style line) :foreground "RoyalBlue3")) (((class color) (background light)) (:underline (:color foreground-color :style line) :foreground "blue")) (((class color) (min-colors 88) (background dark)) (:underline (:color foreground-color :style line) :foreground "cyan1")) (((class color) (background dark)) (:underline (:color foreground-color :style line) :foreground "cyan")) (t (:inherit (underline)))))
- ;'(link-visited ((default (:inherit (link))) (((class color) (background light)) (:foreground "magenta4")) (((class color) (background dark)) (:foreground "violet"))))
- ;'(header-line ((default (:inherit (mode-line))) (((type tty)) (:underline (:color foreground-color :style line) :inverse-video nil)) (((class color grayscale) (background light)) (:box nil :foreground "grey20" :background "grey90")) (((class color grayscale) (background dark)) (:box nil :foreground "grey90" :background "grey20")) (((class mono) (background light)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "black" :background "white")) (((class mono) (background dark)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "white" :background "black"))))
  ;'(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
  ;'(isearch ((((class color) (min-colors 88) (background light)) (:foreground "lightskyblue1" :background "magenta3")) (((class color) (min-colors 88) (background dark)) (:foreground "brown4" :background "palevioletred2")) (((class color) (min-colors 16)) (:foreground "cyan1" :background "magenta4")) (((class color) (min-colors 8)) (:foreground "cyan1" :background "magenta4")) (t (:inverse-video t))))
  ;'(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1")) (((class color) (min-colors 88) (background dark)) (:background "red4")) (((class color) (min-colors 16)) (:background "red")) (((class color) (min-colors 8)) (:background "red")) (((class color grayscale)) (:foreground "grey")) (t (:inverse-video t))))
@@ -127,7 +132,8 @@
  '(font-lock-comment-face ((((class grayscale) (background light)) (:slant italic :weight bold :foreground "DimGray"))
 			   (((class grayscale) (background dark)) (:slant italic :weight bold :foreground "LightGray"))
 			   (((class color) (min-colors 88) (background light)) (:foreground "red"))
-			   (((class color) (min-colors 88) (background dark)) (:family "Cartograph CF Light Italic"
+			   (((class color) (min-colors 88) (background dark)) (:family "Cartograph CF Italic"
+									       :height 165
 									       :weight medium
 									       :foreground "#8389A8"))
 			   (((class color) (min-colors 16) (background light)) (:foreground "red"))
@@ -210,7 +216,29 @@
 				 (((class color) (min-colors 8)) (:weight light :foreground "yellow"))
 				 (t (:slant italic :weight bold))))
 
- '(font-lock-warning-face ((t (:inherit (error)))))
- '(button ((t (:inherit (link))))))
+ '(font-lock-warning-face ((t (:foreground "#FF006B"
+
+					   :inherit (error)))))
+ '(button ((t (:inherit (link)))))
+
+; Links
+'(link ((((class color) (min-colors 88) (background light))
+	 (:underline (:color foreground-color :style line)
+		     :foreground "RoyalBlue3"))
+	(((class color) (background light))
+	 (:underline (:color foreground-color :style line)
+		     :foreground "blue"))
+	(((class color) (min-colors 88) (background dark))
+	 (:underline (:color foreground-color :style line)
+		     :family "Cartograph CF Italic"
+		     :foreground "#00FFB2"))
+	(((class color) (background dark))
+	 (:underline (:color foreground-color :style line)
+		     :foreground "red"))
+	(t (:inherit (underline)))))
+
+'(link-visited ((default (:inherit (link))) (((class color) (background light))
+					     (:foreground "magenta4"))
+		(((class color) (background dark)) (:foreground "violet")))))
 
 (provide-theme 'salmon-dragon)
