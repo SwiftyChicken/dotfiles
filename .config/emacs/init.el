@@ -40,12 +40,13 @@
 (use-package command-log-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; CUSTOME FUNCTIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(defun load-plugin (plugin)
-  (load (concat (expand-file-name plugin (concat (file-truename user-emacs-directory)
-                                                "local/plugin/"))
+; Configuration of plugins
+(defun load-lib (library)
+  (load (concat (expand-file-name library (concat (file-truename user-emacs-directory)
+                                                "local/lib/"))
                 ".el")))
 
+; Configuration of personal emacs functions
 (defun load-bin (bin)
   (load (concat (expand-file-name bin (concat (file-truename user-emacs-directory)
                                                 "local/bin/"))
@@ -53,28 +54,25 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; CONFIG SETTINGS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Basics
+;; BASICS
 (load-theme 'salmon-dragon t)
 
-(use-package all-the-icons
-  :if (display-graphic-p)
-  :commands (all-the-icons-octicon
-             all-the-icons-faicon
-             all-the-icons-fileicon
-             all-the-icons-wicon
-             all-the-icons-material
-             all-the-icons-alltheicon))
+; LOAD FILE MODES SPECIFIC CONFIGURATIONS
+(mapc 'load (directory-files-recursively (concat (file-truename user-emacs-directory)
+						 "local/etc/") ""))
 
-
-; Evil mode
-(load-plugin "evil")
+;; LOAD PLUGINS CONFIGURATIONS
+; Dashboard mode
+(load-lib "icons")
 
 ; Dashboard mode
-(load-plugin "dashboard")
+(load-lib "dashboard")
+
+; Evil mode
+(load-lib "evil")
 
 ; Modeline
 (load-bin "simple-modeline")
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ATUO CONFIG ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (custom-set-variables
@@ -83,7 +81,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(yuck-mode haskell-mode all-the-icons use-package undo-tree evil-collection dashboard command-log-mode)))
+   '(lsp-mode evil-textobj-anyblock on-parens rainbow-delimiters smartparens geiser quack racket-mode nyan-mode markdown-mode yuck-mode haskell-mode undo-tree command-log-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
