@@ -11,7 +11,7 @@
 
 ;; Set the modeline to tell me the filename, hostname, etc..
 (setq-default mode-line-format
-      (let* ((left '((:eval (cond (( eq evil-state 'visual)
+      (let* ((left '((:eval (cond ((eq evil-state 'visual)
 				   (propertize " <V> "
 					       'font-lock-face '(:background "#66FC7E"
 								 :foreground "black"
@@ -41,11 +41,13 @@
 								 :foreground "white"
 								 :family "Cartograph CF Extra Bold"
 								 :box (:color "#A37DF7"))))))
-		     (:eval (propertize (format-mode-line " %b")
+		     (:eval (propertize (format-mode-line " %b ")
 					'face 'cogent-line-buffer-name-face
-					'help-echo (buffer-file-name)))))
+					'help-echo (buffer-file-name)))
+		     (:eval (list (propertize (nyan-create) 'font-lock-face '(:background "#1E3666"
+									      :box (:line-width (1 . -3) :color "#272447")))))))
 
-		     (right '("%l:%c "))
+		     (right '("%l:%c"))
 		     (len-right (length (format-mode-line right))))
 
 		(list left
