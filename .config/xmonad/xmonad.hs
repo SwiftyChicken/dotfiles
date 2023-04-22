@@ -254,7 +254,7 @@ myCommands =
         , ("increase-master-count"     , sendMessage $ IncMasterN ( 1)                    )
         , ("decrease-master-size"      , sendMessage Shrink                               )
         , ("focus-master"              , windows W.focusMaster                            )
-        , ("test"                      , windows $ W.view "3"                               )
+        , ("test"                      , windows $ W.view "3"                             )
         , ("quit"                      , io $ exitWith ExitSuccess                        )
         ]
 -----------------------------------------------------------------------
