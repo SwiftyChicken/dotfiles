@@ -7,7 +7,7 @@
   (dashboard-show-shortcuts t)
   (dashboard-center-content t)
   (dashboard-startup-banner (concat (file-truename user-emacs-directory)
-				    "local/etc/salmon-dragon.png"))
+				    "local/share/salmon-dragon.png"))
   (dashboard-banner-logo-title "Welcome to Emacs")
   ;; Add icons
   (dashboard-set-heading-icons t)

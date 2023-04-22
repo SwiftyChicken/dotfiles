@@ -89,11 +89,14 @@
            (point))))
     (cons beg end)))
 
-
 (defun selection-hl ()
   (when (derived-mode-p  'dashboard-mode)
 	;; Activate selection highlighting
 	(setq hl-line-range-function #'my-hl-line-range-function)
+	(face-remap-add-relative 'highlight
+				 '(:foreground "white"
+				   :background "#4B487C"
+				   :box (:line-width (10 . 1) :color "#4B487C" :style nil)))
 	(hl-line-mode t)
 	(forward-char)
 	;; Hide cursor

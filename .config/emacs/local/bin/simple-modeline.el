@@ -43,9 +43,7 @@
 								 :box (:color "#A37DF7"))))))
 		     (:eval (propertize (format-mode-line " %b ")
 					'face 'cogent-line-buffer-name-face
-					'help-echo (buffer-file-name)))
-		     (:eval (list (propertize (nyan-create) 'font-lock-face '(:background "#1E3666"
-									      :box (:line-width (1 . -3) :color "#272447")))))))
+					'help-echo (buffer-file-name)))))
 
 		     (right '("%l:%c"))
 		     (len-right (length (format-mode-line right))))

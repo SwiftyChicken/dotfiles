@@ -25,16 +25,18 @@
            ;Backgoround in Light Theme
  '(fringe ((((class color) (background light))
             (:background "white"))     
+
            ;Backgoround in Dark Theme
            (((class color) (background dark))
             (:background "#1B1524")) 
+
            ;Backgoround in other cases
            (t (:background "gray"))))
-
 
            ;Backgoround in Light Theme
  '(cursor ((((background light))
             (:background "black"))
+
            ;Backgoround in Dark Theme
            (((background dark))
             (:background "white"))))
@@ -43,9 +45,11 @@
  '(minibuffer-prompt ((((background light))
                        (:foreground "cyan"
                         :background "red")) 
+
                       ;Backgoround in Dark Theme
                       (((background dark))
                        (:foreground "#FEC900"))
+
                       ;Backgoround in other cases
                       (t (:foreground "medium blue"))))
 
@@ -82,7 +86,7 @@
  '(highlight ((((class color) (min-colors 88) (background light))
 	       (:background "darkseagreen2"))
 	      (((class color) (min-colors 88) (background dark))
-	       (:background "#262032"))
+	       (:background "#302C41"))
 	      (((class color) (min-colors 16) (background light))
 	       (:background "darkseagreen2"))
 	      (((class color) (min-colors 16) (background dark))
@@ -129,7 +133,7 @@
  ;; DISPLAY LINENUMBER
  '(line-number                 ((nil (:foreground "#BDC3E4"))))
  '(line-number-current-line    ((nil (:foreground "#FFFFFF"
-				      :background "#3F3956"))))
+				      :background "#302C41"))))
 
  ;; INDENTATION HIGHLIGHT
  '(highlight-indent-guides-stack-character-face  ((nil (:foreground "#3A374C"))))

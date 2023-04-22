@@ -2,7 +2,7 @@
 (tool-bar-mode   -1)
 (menu-bar-mode   -1)
 (scroll-bar-mode -1)
-(set-fringe-mode 40)
+(set-fringe-mode 20)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; LOAD RELEVANT PATHS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'custom-theme-load-path (concat (file-truename user-emacs-directory)
