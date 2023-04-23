@@ -92,7 +92,7 @@
 (defun selection-hl ()
   (when (derived-mode-p  'dashboard-mode)
 	;; Activate selection highlighting
-	(setq hl-line-range-function #'my-hl-line-range-function)
+	(setq-local hl-line-range-function #'my-hl-line-range-function)
 	(face-remap-add-relative 'highlight
 				 '(:foreground "white"
 				   :background "#4B487C"
@@ -103,4 +103,7 @@
 	(setq cursor-type nil)))
 
 (add-hook 'focus-in-hook
- (lambda () (selection-hl)))
+	  (lambda () (selection-hl)))
+
+(add-hook 'focus-out-hook
+	  (lambda () (selection-hl)))
