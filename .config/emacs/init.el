@@ -2,7 +2,7 @@
 (tool-bar-mode   -1)
 (menu-bar-mode   -1)
 (scroll-bar-mode -1)
-(set-fringe-mode 20)
+(set-fringe-mode 40)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; LOAD RELEVANT PATHS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'custom-theme-load-path (concat (file-truename user-emacs-directory)
@@ -16,7 +16,8 @@
 (global-set-key (kbd "C-r")
   (lambda ()
     (interactive)
-    (load-file user-init-file)))
+    (load-file user-init-file)
+    (evil-normal-state)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; SETUP PACKAGE MANAGER ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Initialize package sources
@@ -68,8 +69,8 @@
 ; Dashboard mode
 (load-lib "dashboard")
 
-; Evil mode
-(load-lib "evil")
+; Evil + GOD mode
+(load-lib "evil-god")
 
 ; Modeline
 (load-bin "simple-modeline")
