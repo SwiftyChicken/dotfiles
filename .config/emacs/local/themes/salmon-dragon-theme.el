@@ -129,10 +129,10 @@
  ;; DISPLAY LINENUMBER
  '(line-number                 ((nil (:foreground "#BDC3E4"))))
  '(line-number-current-line    ((nil (:foreground "#FFFFFF"
-				      :background "#3F3956"))))
+				      :background "#463F63"))))
 
  ;; INDENTATION HIGHLIGHT
- '(highlight-indent-guides-stack-character-face  ((nil (:foreground "#3A374C"))))
+ '(highlight-indent-guides-stack-character-face  ((nil (:foreground "#524D6F"))))
  '(highlight-indent-guides-top-character-face    ((nil (:foreground "#E6B91B"))))
  '(highlight-indent-guides-character-face        ((nil (:foreground "#1B1524"))))
 
