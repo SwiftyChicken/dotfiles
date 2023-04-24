@@ -119,9 +119,6 @@
 ;'(secondary-selection ((((class color) (min-colors 88) (background light)) (:extend t :background "yellow1")) (((class color) (min-colors 88) (background dark)) (:extend t :background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:extend t :background "yellow")) (((class color) (min-colors 16) (background dark)) (:extend t :background "SkyBlue4")) (((class color) (min-colors 8)) (:extend t :foreground "black" :background "cyan")) (t (:inverse-video t))))
 ;'(trailing-whitespace ((((class color) (background light)) (:background "red1")) (((class color) (background dark)) (:background "red1")) (t (:inverse-video t))))
 ;'(tooltip ((((class color)) (:inherit (variable-pitch) :foreground "black" :background "lightyellow")) (t (:inherit (variable-pitch)))))
-;'(isearch ((((class color) (min-colors 88) (background light)) (:foreground "lightskyblue1" :background "magenta3")) (((class color) (min-colors 88) (background dark)) (:foreground "brown4" :background "palevioletred2")) (((class color) (min-colors 16)) (:foreground "cyan1" :background "magenta4")) (((class color) (min-colors 8)) (:foreground "cyan1" :background "magenta4")) (t (:inverse-video t))))
-;'(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1")) (((class color) (min-colors 88) (background dark)) (:background "red4")) (((class color) (min-colors 16)) (:background "red")) (((class color) (min-colors 8)) (:background "red")) (((class color grayscale)) (:foreground "grey")) (t (:inverse-video t))))
-;'(lazy-highlight ((((class color) (min-colors 88) (background light)) (:background "paleturquoise")) (((class color) (min-colors 88) (background dark)) (:background "paleturquoise4")) (((class color) (min-colors 16)) (:background "turquoise3")) (((class color) (min-colors 8)) (:background "turquoise3")) (t (:underline (:color foreground-color :style line)))))
 ;'(match ((((class color) (min-colors 88) (background light)) (:background "khaki1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
 ;'(next-error ((t (:inherit (region)))))
 ;'(query-replace ((t (:inherit (isearch)))))
@@ -130,7 +127,40 @@
  '(line-number                 ((nil (:foreground "#BDC3E4"))))
  '(line-number-current-line    ((nil (:foreground "#FFFFFF"
 				      :background "#463F63"))))
+ ;; ISEARCH/EVIL-SEARCH HIGHLIGTH
+ '(isearch ((((class color) (min-colors 88) (background light))
+	     (:foreground "lightskyblue1" :background "magenta3"))
+	    (((class color) (min-colors 88) (background dark))
+	     (:foreground "#008E6C"
+			  :background "white"
+			  :box (:line-width (2 . 2)
+			       :color "#008E6C")))
+	    (((class color) (min-colors 16))
+	     (:foreground "cyan1" :background "magenta4"))
+	    (((class color) (min-colors 8))
+	     (:foreground "cyan1" :background "magenta4"))
+	    (t (:inverse-video t))))
 
+ ; Other selections
+ '(lazy-highlight ((((class color) (min-colors 88) (background light))
+		    (:background "paleturquoise"))
+		   (((class color) (min-colors 88) (background dark))
+		    (:foreground "#008E6C"
+				 :background "#1B1524"
+				 :box (:line-width (2 . 2)
+			       :color "#008E6C")))
+		   (((class color) (min-colors 16))
+		    (:background "turquoise3"))
+		   (((class color) (min-colors 8))
+		    (:background "turquoise3"))
+		   (t (:underline (:color foreground-color :style line)))))
+
+ '(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1"))
+		 (((class color) (min-colors 88) (background dark)) (:background "#FF006B"))
+		 (((class color) (min-colors 16)) (:background "red"))
+		 (((class color) (min-colors 8)) (:background "red"))
+		 (((class color grayscale)) (:foreground "grey"))
+		 (t (:inverse-video t))))
  ;; INDENTATION HIGHLIGHT
  '(highlight-indent-guides-stack-character-face  ((nil (:foreground "#524D6F"))))
  '(highlight-indent-guides-top-character-face    ((nil (:foreground "#E6B91B"))))
