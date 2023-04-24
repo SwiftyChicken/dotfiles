@@ -47,6 +47,6 @@
 
 ; isearch history like evil-search/vim
 (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
-(define-key isearch-mode-map (kbd "C-j") 'isearch-ring-advance)
+(define-key isearch-mode-map (kbd "C-n") 'isearch-ring-advance)
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
-(define-key isearch-mode-map (kbd "C-k") 'isearch-ring-retreat)
+(define-key isearch-mode-map (kbd "C-p") 'isearch-ring-retreat)

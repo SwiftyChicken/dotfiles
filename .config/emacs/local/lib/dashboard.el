@@ -104,6 +104,5 @@
 
 (add-hook 'focus-in-hook
 	  (lambda () (selection-hl)))
-
 (add-hook 'focus-out-hook
 	  (lambda () (selection-hl)))
