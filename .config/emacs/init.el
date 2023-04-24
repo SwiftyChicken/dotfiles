@@ -10,10 +10,10 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; CUSTOME KEYBINDINGS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make ESC quit prompts
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(global-set-key (kbd "C-o") 'keyboard-escape-quit)
 
 ; Reload config
-(global-set-key (kbd "C-r")
+(global-set-key (kbd "C-S-R")
   (lambda ()
     (interactive)
     (load-file user-init-file)
@@ -68,6 +68,10 @@
 
 ; Dashboard mode
 (load-lib "dashboard")
+
+; Search and completions mode
+(load-lib "ivy")
+(load-lib "help")
 
 ; Evil + GOD mode
 (load-lib "evil-god")
