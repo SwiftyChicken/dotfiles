@@ -9,6 +9,9 @@
                 eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
+(add-hook 'buffer-list-update-hook (lambda () (when (string-equal "*" (substring (buffer-name) 0 1))
+						(display-line-numbers-mode 0))))
+
 ; GIVE THE PARENTHESIS MORE FLAIR!!!
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
