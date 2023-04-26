@@ -2,7 +2,9 @@
 (tool-bar-mode   -1)
 (menu-bar-mode   -1)
 (scroll-bar-mode -1)
-(set-fringe-mode 40)
+(set-fringe-mode 10)
+(setq-default cursor-in-non-selected-windows nil)
+(setq-default truncate-lines t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; LOAD RELEVANT PATHS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'custom-theme-load-path (concat (file-truename user-emacs-directory)
@@ -11,6 +13,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; CUSTOME KEYBINDINGS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make ESC quit prompts
 (global-set-key (kbd "C-o") 'keyboard-escape-quit)
+(global-set-key (kbd "C-x C-k") 'kill-current-buffer)
+
+; Window management (-> breaks C-w : which is vim equivalent of `db`)
+(global-set-key (kbd "C-w") nil)
+(global-set-key (kbd "C-w C-v") 'split-window-right)
+(global-set-key (kbd "C-w C-h") 'split-window-bellow)
+(global-set-key (kbd "C-w C-o") 'delete-other-windows)
+(global-set-key (kbd "C-w C-c") 'delete-window)
 
 ; Reload config
 (global-set-key (kbd "C-S-R")
@@ -76,6 +86,8 @@
 ; Evil + GOD mode
 (load-lib "evil-god")
 
+(load-lib "tabs")
+
 ; Modeline
 (load-bin "simple-modeline")
 
@@ -86,7 +98,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(lsp-mode evil-textobj-anyblock on-parens rainbow-delimiters smartparens geiser quack racket-mode nyan-mode markdown-mode yuck-mode haskell-mode undo-tree command-log-mode)))
+   '(geiser-racket lsp-mode evil-textobj-anyblock on-parens rainbow-delimiters smartparens geiser quack racket-mode nyan-mode markdown-mode yuck-mode haskell-mode undo-tree command-log-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
