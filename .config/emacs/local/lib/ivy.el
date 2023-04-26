@@ -1,8 +1,10 @@
 (use-package ivy
   :diminish
+  :custom
+  (ivy-extra-directories ()) ; Ommit ./ and ../ directories
   :bind (("C-s" . swiper)
          :map ivy-minibuffer-map
-         ("C-l" . ivy-partial-or-done)
+         ("C-l" . ivy-alt-done)
          ("C-h" . backward-kill-word)
          ("C-j" . ivy-next-line)
          ("C-n" . ivy-next-history-element)
@@ -15,7 +17,7 @@
          ("C-k" . ivy-previous-line)
          ("C-p" . ivy-previous-history-element)
          ("<up>" . ivy-previous-history-element)
-         ("C-l" . ivy-partial-or-done)
+         ("C-l" . ivy-alt-done)
          ("C-h" . backward-kill-word)
          ("C-d" . ivy-switch-buffer-kill)
          :map ivy-reverse-i-search-map
