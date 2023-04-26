@@ -4,7 +4,7 @@
 (custom-theme-set-faces
  'salmon-dragon
  ; MAIN FACES
- ;  Command for available fonts >> fc-list -f "%{fullname} : %{foundry} : %{family}\n"
+ ; Command for available fonts >> fc-list -f "%{fullname} : %{foundry} : %{family}\n"
  '(default ((t (:family "Fira Code Medium"
                 :foundry "CTDB" 
                 :width normal 
@@ -50,31 +50,61 @@
                       (t (:foreground "medium blue"))))
 
  '(mode-line ((((supports :box t))
-	       (:height 180 
-		:family "Cartograph CF Thin"
-		:weight thin 
-		:foreground "#BCBEC9"
+	       (:height 190 
+		:family "Roboto Light"
+		:weight light 
+		:foreground "white"
 		:background "#272447"
-		:box (:line-width (9 . 8)
+		:box (:line-width (6 . 5)
 		      :color "#272447")
 		:slant normal 
 		:inverse-video nil))))
 
  '(mode-line-inactive ((((supports :box t))
-	       (:height 180 
-		:family "Cartograph CF Thin"
-		:weight thin 
-		:foreground "#BCBEC9"
-		:background "#313141"
-		:box (:line-width (9 . 8)
+		(:background "#313141"
+		:box (:line-width (6 . 5)
 		      :color "#313141")
-		:slant normal 
-		:inverse-video nil))))
+		:inherit 'mode-line))))
+;; centaur-tabs
+
+   '(centaur-tabs-default ((t (:family "Roboto Light"
+				       :height 180 
+				       :weight light 
+				       :slant normal))))
+
+   '(centaur-tabs-selected ((t (:background "#1B1524"
+					    :foreground "white"
+					    :box (:line-width (10 . 1)
+							      :color "#1B1524")
+					    :inherit 'centaur-tabs-default))))
+
+   '(centaur-tabs-unselected ((t (:foreground "white"
+					      :background "#322F55" 
+					      :box (:line-width (10 . 1)
+					   			:color "#322F55")
+					      :inherit 'centaur-tabs-default))))
+
+   '(centaur-tabs-selected-modified ((t (:background "#1B1524"
+						     :foreground "white"
+						     :box (:line-width (10 . 1)
+								       :color "#1B1524")
+						     :inherit 'centaur-tabs-default))))
+
+   '(centaur-tabs-unselected-modified ((t (:foreground "white"
+						       :slant italic
+						       :background "#322F55" 
+						       :box (:line-width (10 . 1)
+									 :color "#322F55")
+						       :inherit 'centaur-tabs-default))))
+
+   '(centaur-tabs-modified-marker-selected ((t (:inherit 'centaur-tabs-selected))))
+   '(centaur-tabs-modified-marker-unselected ((t (:inherit 'centaur-tabs-unselected))))
+   ;'(centaur-tabs-active-bar-face ((t (:background "#E6B91B"))))
 
  '(header-line ((default (:inherit (mode-line)))
 		(((type tty)) (:underline (:color foreground-color :style line) :inverse-video nil))
 		(((class color grayscale) (background light)) (:box nil :foreground "grey20" :background "grey90"))
-		(((class color grayscale) (background dark)) (:box nil :foreground "red" :background "#131414"))
+		(((class color grayscale) (background dark)) (:box nil :foreground "#F9C747" :background "#1B1524"))
 		(((class mono) (background light)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "black" :background "white"))
 
 		(((class mono) (background dark)) (:underline (:color foreground-color :style line) :box nil :inverse-video nil :foreground "white" :background "black"))))
