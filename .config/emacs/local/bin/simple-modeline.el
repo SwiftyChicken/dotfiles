@@ -1,12 +1,8 @@
 (defun mode-line-fill (reserve)
   "Return empty space using FACE and leaving RESERVE space on the right."
-  (unless reserve
-    (setq reserve 10))
-  (when (and window-system (eq 'right (get-scroll-bar-mode)))
-    (setq reserve (- reserve 3)))
   (propertize " " 'display `(space :align-to (- right
 						(-1 . right-margin)
-						,(- reserve 0)))))
+						,(+ reserve 2)))))
 
 ;; Set the modeline to tell me the filename, hostname, etc..
 (setq-default mode-line-format
@@ -40,11 +36,13 @@
 											     :foreground "white"
 											     :family "Cartograph CF Extra Bold"
 											     :box (:color "#A37DF7"))))))
-				     (:eval (propertize (format-mode-line " %b ")
-							'face 'cogent-line-buffer-name-face
+				     (:eval (propertize (format-mode-line "  %b ")
+							'face '(:foreground "#A0ACF0" :inherit cogent-line-buffer-name-face)
 							'help-echo (buffer-file-name)))))
 
-			     (right '("%l:%c"))
+			     (right '((:eval (propertize (format-mode-line "%l:%c")
+							'face '(:family "Cartograph CF Thin" :inherit cogent-line-buffer-name-face)
+							'help-echo (buffer-file-name)))))
 			     (len-right (length (format-mode-line right))))
 
 			(concat (format-mode-line left)
