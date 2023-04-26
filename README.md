@@ -2,6 +2,7 @@ I'm currently working on my new rice so, if you're looking for my previous BSPWM
 
 # Current setup
 <p align="center">
+  <img width="90%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/rice-2.png?raw=true" />
   <img width="90%" src="https://github.com/SwiftyChicken/dotfiles/blob/master/Pictures/rice.png?raw=true" />
 </p>
 
