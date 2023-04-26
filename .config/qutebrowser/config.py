@@ -22,7 +22,7 @@ config.set("fileselect.folder.command", ['lfselect', '{}'])
 
 ### Open Videos in mpv if possible
 # config.bind('f', 'hint links spawn --detach urlhandler {hint-url}')
-# config.bind('F', 'hint links spawn --detach urlhandler -t {hint-url}')
+config.bind('F', 'hint links spawn --detach urlhandler -t {hint-url}')
 config.bind('gi', 'spawn --detach urlhandler {url:pretty}')
 config.bind('gI', 'spawn --detach urlhandler -t {url:pretty}')
 config.bind('i', 'hint inputs --first')
