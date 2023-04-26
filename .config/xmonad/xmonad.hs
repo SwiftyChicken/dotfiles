@@ -27,6 +27,7 @@ import Data.Maybe
 --	  	 			                      OLD  			                              		--
 ----------------------------------------------------------------------------------
 import XMonad.Layout.Spacing
+import XMonad.Layout.SimplestFloat
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -154,7 +155,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 ----------------------------------------------------------------------------------
 --	  	 			                         LAYOUTS                              		--
 ----------------------------------------------------------------------------------
-myLayout = spacing 10 $ avoidStruts (tiled ||| Full)
+myLayout = spacing 10 $ avoidStruts (tiled ||| Full ||| simplestFloat)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
