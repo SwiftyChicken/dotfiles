@@ -8,6 +8,7 @@
   (setq evil-search-module 'isearch) 
   :custom
   (evil-echo-state nil)
+  (evil-want-C-u-scroll t)
   (evil-ex-search-persistent-highlight nil)
   :config
   ; Set Of Extra defined keybindings ;p
@@ -50,3 +51,11 @@
 (define-key isearch-mode-map (kbd "C-j") 'isearch-ring-advance)
 (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
 (define-key isearch-mode-map (kbd "C-k") 'isearch-ring-retreat)
+
+; centaur tabs
+(define-key evil-normal-state-map (kbd "g t") 'centaur-tabs-forward)
+(define-key evil-normal-state-map (kbd "C-o") 'centaur-tabs-forward)
+(define-key evil-normal-state-map (kbd "<tab>") 'centaur-tabs-forward)
+(define-key evil-normal-state-map (kbd "g T") 'centaur-tabs-backward)
+(define-key evil-normal-state-map (kbd "C-i") 'centaur-tabs-backward)
+(define-key evil-normal-state-map (kbd "<backtab>") 'centaur-tabs-backward)
