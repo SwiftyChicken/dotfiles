@@ -3,6 +3,8 @@
 
 (defwidget top []
   (box :class "space_top"
+       :style "opacity: 1"
+       :active true
        :orientation "horizontal"
        (TL)
        (TC)

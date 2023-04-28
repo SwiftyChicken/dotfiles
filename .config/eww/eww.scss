@@ -23,6 +23,7 @@ $reverse-bezier: cubic-bezier(1.275,0.52,1.385,0.315);
 .space_top{
   background: $top-bg;
   padding: 3px 0px;
+  transition: opacity 0.5s $bezier;
 }
 
 .modules_shortcut{
@@ -341,8 +342,9 @@ tooltip {
 //  margin: 0px 0px 7px 0px;
 //  border-radius: 90px;
 //}
-    }
-.control-open {
+
+.control-indicator {
+    transition: opacity 0.2s ease-out;
     scale {
       border: 2px solid darker($bot-bg);
       border-radius: 90px;
@@ -365,12 +367,6 @@ tooltip {
       background-image: linear-gradient(90deg, #1E1F27 0%, #2D3636 50%, #4B5A5B 100%);
     }
   }
-
-.control-close {
-    image {
-      -gtk-icon-transform: translate(0px, -100px);
-    }
-}
 
 .indicator {
     -gtk-icon-transform: translate(0px, 30px);
