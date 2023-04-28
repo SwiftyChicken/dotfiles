@@ -1,5 +1,7 @@
 (defwidget control_indicator []
-  (box :class "control_widget control-${control_reveal?'open':'close'}"
+  (box :class "control_widget control-indicator"
+       :style "opacity: ${control_reveal?'1':'0'}"
+       :active control_reveal
        :space-evenly false
        :valign "start"
        :spacing -330
