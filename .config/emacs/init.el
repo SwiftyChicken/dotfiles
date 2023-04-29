@@ -5,6 +5,7 @@
 (set-fringe-mode 10)
 (setq-default cursor-in-non-selected-windows nil)
 (setq-default truncate-lines t)
+(setq backup-directory-alist '(("." . "~/.cache/emacs_backup")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; LOAD RELEVANT PATHS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'custom-theme-load-path (concat (file-truename user-emacs-directory)
