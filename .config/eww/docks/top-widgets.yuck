@@ -11,8 +11,8 @@
 
 (defwidget control [type value tooltip_value ?action]
   (eventbox :class "${type}_control"
-            :onhover "${EWW_CMD} update ${type}_reveal=true"
-            :onhoverlost "${EWW_CMD} update ${type}_reveal=false"
+            :onhover "${EWW_CONFIG_DIR}/scripts/control_hover.sh ${type}"
+            :onhoverlost "${EWW_CONFIG_DIR}/scripts/control_hover.sh -c ${type}"
             (box :class "control"
                  :space-evenly false
                  :spacing 0

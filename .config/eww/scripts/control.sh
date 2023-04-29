@@ -2,9 +2,7 @@
 
 script_name=${BASH_SOURCE[0]}
 for pid in $(pidof -x $script_name); do 
-  if [ $pid != $$ ]; then
-    kill -9 $pid
-  fi 
+  [ "$pid" != "$$" ] && kill -9 $pid
 done
 
 xdo raise -N eww-control
