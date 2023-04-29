@@ -1,8 +1,10 @@
 (use-package which-key
-  :defer 0
+  :after god-mode
+  :init
+  (which-key-mode)
   :diminish which-key-mode
   :config
-  (which-key-mode)
+  (which-key-enable-god-mode-support)
   (setq which-key-idle-delay 1))
 
 (use-package helpful

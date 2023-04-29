@@ -29,13 +29,10 @@
   :config
   (ivy-mode 1))
 
-(use-package ivy-rich
-  :after ivy
-  :init
-  (ivy-rich-mode 1))
-
 (use-package counsel
-  :bind (("C-x b" . 'counsel-switch-buffer-other-window)
+  :bind (("M-x" . counsel-M-x)
+	 ("C-x C-f" . counsel-find-file)
+	 ("C-x b" . 'counsel-switch-buffer-other-window)
 	 ;("C-x C-b" . 'counsel-switch-buffer)
 	 ("C-x C-b" . (lambda () (interactive)
 			(minibuffer-with-setup-hook
@@ -62,3 +59,7 @@
   (ivy-prescient-mode 1))
 
 (global-set-key (kbd "C-x C-t") 'switch-to-buffer-other-tab)
+
+(use-package ivy-rich
+  :after counsel
+  :init (ivy-rich-mode 1))
