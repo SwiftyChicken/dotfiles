@@ -18,6 +18,7 @@
   (evil-define-key 'normal global-map (kbd "C-l") 'evil-window-right)
   (evil-define-key 'normal global-map (kbd "SPC") 'evil-execute-in-god-state)
   (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
+  (global-set-key [remap evil-quit] 'kill-current-buffer)
   ; Let the fun begin... >:)
   (evil-mode 1))
 
