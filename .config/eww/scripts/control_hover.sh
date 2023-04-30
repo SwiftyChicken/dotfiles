@@ -9,7 +9,17 @@ while getopts ":c:" opt; do
 	    script_name=${BASH_SOURCE[0]}
 
 	    for pid in $(pidof -x $script_name); do 
-		[ $pid != $$ ] && kill -9 $pid
+		[ $pid != $$ ] && {
+		    args="$(cut -d '' -f2- /proc/$pid/cmdline)"
+
+		    expr index "$args" "volume" > /dev/null \
+			&& eww update volume_reveal=false
+
+		    expr index "$args" "brigthness" > /dev/null \
+			&& eww update brightness_reveal=false
+
+		    kill -9 $pid
+		}
 	    done
 
 	    eww update ${OPTARG}_reveal=false
