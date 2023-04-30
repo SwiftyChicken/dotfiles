@@ -16,7 +16,7 @@ nrm="\e[0m"
 
 alias open='xdg-open'
 alias rm='rm -I'
-alias grep='grep --color=auto'
+alias grep='rg'
 alias diff='diff --color=auto'
 alias ls='exa'
 alias vim='start-vim.sh -w'
